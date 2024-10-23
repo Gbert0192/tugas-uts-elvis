@@ -2,4 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "preline";
+@import "preline/dist/preline.css";
