@@ -15,8 +15,10 @@
     "ejs": "^3.1.10",
     "express": "^4.21.1",
     "nodemon": "^3.1.7",
+    "path": "^0.12.7",
     "postcss": "^8.4.47",
     "preline": "^2.5.1",
+    "prettier": "^3.3.3",
     "tailwindcss": "^3.4.14"
   }
 }
