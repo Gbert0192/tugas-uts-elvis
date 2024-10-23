@@ -9,3 +9,4 @@ module.exports = {
   },
   plugins: [require("preline/plugin")],
 };
+//KALAU MAU UBAH TANYA W DLU (~GBERT), JANGAN ASAL, KUTABOK NTAR
