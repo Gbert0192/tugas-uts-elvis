@@ -1,40 +1,236 @@
 <!-- ========== HEADER ========== -->
 <header class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7">
-  <nav class="relative max-w-7xl w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center px-4 md:px-6 md:px-8 mx-auto">
+  <nav
+    class="relative max-w-7xl w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center px-4 md:px-6 md:px-8 mx-auto"
+  >
     <div class="md:col-span-3">
       <!-- Logo -->
-      <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="../templates/creative-agency/index.html" aria-label="Preline">
-        <svg class="w-28 h-auto" width="116" height="32" viewBox="0 0 116 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M33.5696 30.8182V11.3182H37.4474V13.7003H37.6229C37.7952 13.3187 38.0445 12.9309 38.3707 12.5369C38.7031 12.1368 39.134 11.8045 39.6634 11.5398C40.1989 11.2689 40.8636 11.1335 41.6577 11.1335C42.6918 11.1335 43.6458 11.4044 44.5199 11.946C45.3939 12.4815 46.0926 13.291 46.6158 14.3743C47.139 15.4515 47.4006 16.8026 47.4006 18.4276C47.4006 20.0095 47.1451 21.3452 46.6342 22.4347C46.1295 23.518 45.4401 24.3397 44.5661 24.8999C43.6982 25.4538 42.7256 25.7308 41.6484 25.7308C40.8852 25.7308 40.2358 25.6046 39.7003 25.3523C39.1709 25.0999 38.737 24.7829 38.3984 24.4013C38.0599 24.0135 37.8014 23.6226 37.6229 23.2287H37.5028V30.8182H33.5696ZM37.4197 18.4091C37.4197 19.2524 37.5367 19.9879 37.7706 20.6158C38.0045 21.2436 38.343 21.733 38.7862 22.0838C39.2294 22.4285 39.768 22.6009 40.402 22.6009C41.0421 22.6009 41.5838 22.4254 42.027 22.0746C42.4702 21.7176 42.8056 21.2251 43.0334 20.5973C43.2673 19.9633 43.3842 19.2339 43.3842 18.4091C43.3842 17.5904 43.2704 16.8703 43.0426 16.2486C42.8149 15.6269 42.4794 15.1406 42.0362 14.7898C41.593 14.4389 41.0483 14.2635 40.402 14.2635C39.7618 14.2635 39.2202 14.4328 38.777 14.7713C38.34 15.1098 38.0045 15.59 37.7706 16.2116C37.5367 16.8333 37.4197 17.5658 37.4197 18.4091ZM49.2427 25.5V11.3182H53.0559V13.7926H53.2037C53.4622 12.9124 53.8961 12.2476 54.5055 11.7983C55.1149 11.3428 55.8166 11.1151 56.6106 11.1151C56.8076 11.1151 57.02 11.1274 57.2477 11.152C57.4754 11.1766 57.6755 11.2105 57.8478 11.2536V14.7436C57.6632 14.6882 57.4077 14.639 57.0815 14.5959C56.7553 14.5528 56.4567 14.5312 56.1859 14.5312C55.6073 14.5312 55.0903 14.6574 54.6348 14.9098C54.1854 15.156 53.8284 15.5007 53.5638 15.9439C53.3052 16.3871 53.176 16.898 53.176 17.4766V25.5H49.2427ZM64.9043 25.777C63.4455 25.777 62.1898 25.4815 61.1373 24.8906C60.0909 24.2936 59.2845 23.4503 58.7182 22.3608C58.1519 21.2652 57.8688 19.9695 57.8688 18.4737C57.8688 17.0149 58.1519 15.7346 58.7182 14.6328C59.2845 13.531 60.0816 12.6723 61.1096 12.0568C62.1437 11.4413 63.3563 11.1335 64.7474 11.1335C65.683 11.1335 66.5539 11.2843 67.3603 11.5859C68.1728 11.8814 68.8806 12.3277 69.4839 12.9247C70.0932 13.5218 70.5672 14.2727 70.9057 15.1776C71.2443 16.0762 71.4135 17.1288 71.4135 18.3352V19.4155H59.4384V16.978H67.7111C67.7111 16.4117 67.588 15.91 67.3418 15.473C67.0956 15.036 66.754 14.6944 66.317 14.4482C65.8861 14.1958 65.3844 14.0696 64.812 14.0696C64.2149 14.0696 63.6856 14.2081 63.2239 14.4851C62.7684 14.7559 62.4114 15.1222 62.1529 15.5838C61.8944 16.0393 61.762 16.5471 61.7559 17.1072V19.4247C61.7559 20.1264 61.8851 20.7327 62.1437 21.2436C62.4083 21.7545 62.7807 22.1484 63.2608 22.4254C63.741 22.7024 64.3103 22.8409 64.9689 22.8409C65.406 22.8409 65.8061 22.7794 66.1692 22.6562C66.5324 22.5331 66.8432 22.3485 67.1018 22.1023C67.3603 21.8561 67.5572 21.5545 67.6927 21.1974L71.3304 21.4375C71.1458 22.3116 70.7672 23.0748 70.1948 23.7273C69.6285 24.3736 68.896 24.8783 67.9974 25.2415C67.1048 25.5985 66.0738 25.777 64.9043 25.777ZM78.9474 30.8182V11.3182H82.8117V30.8182H78.9474ZM84.4059 11.3182H88.2735V30.8182H84.4059V11.3182ZM93.0836 11.3182H97.0178L102.836 30.8182H99.0691L94.9438 18.7751H94.5696V30.8182H90.6188V11.3182H93.0836ZM104.778 30.8182V11.3182H108.645V30.8182H104.778ZM117.667 30.8182V11.3182H121.533V30.8182H117.667Z" fill="#00A3FF"/>
+      <a
+        class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
+        href="../templates/creative-agency/index.html"
+        aria-label="Preline"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="145"
+          height="26"
+          viewBox="0 0 145 26"
+          fill="none"
+        >
+          <g clip-path="url(#clip0_77_67)">
+            <path
+              d="M2.93847 13.5749C2.93847 18.769 6.82511 22.7522 11.8493 22.7522C16.6834 22.7522 19.1169 19.5971 19.1169 16.1238V14.8812H12.0702V16.7908H17.1897C17.2213 18.6714 15.515 20.8702 11.85 20.8702C7.80554 20.8702 4.9933 17.8425 4.9933 13.5728C4.9933 9.46227 8.02645 6.37089 12.1971 6.37089C14.9147 6.37089 17.0635 7.03995 19.0545 8.44242L19.1807 8.34694V6.56397C17.6954 5.513 15.1679 4.49315 12.134 4.49315C6.98291 4.49315 2.93847 8.5082 2.93847 13.5749ZM0 13.5749C0 20.4579 5.05572 25.5882 11.8521 25.5882C18.0453 25.5882 21.8373 21.6687 21.8373 15.3275V12.0741H12.0702V13.925H20.0651V15.6457C20.0651 20.617 17.0004 23.7084 11.85 23.7084C6.19394 23.7084 1.99101 19.3425 1.99101 13.5749C1.99101 7.96644 6.41485 3.53695 12.134 3.53695C14.8516 3.53695 17.3167 4.206 19.1807 5.513V3.63243C17.3798 2.32614 15.0094 1.65708 12.134 1.65708C5.27523 1.65708 0 6.91477 0 13.5749ZM25.8473 15.2016V25.0465H27.7114V15.232C27.7114 13.0332 29.133 11.4716 31.2502 11.4716C31.8814 11.4716 32.4508 11.6307 33.0512 11.886C33.2738 11.3295 33.549 10.7959 33.8731 10.2926C33.2097 9.84631 32.2299 9.55987 31.2818 9.55987C28.0908 9.55987 25.8473 11.886 25.8473 15.2002V15.2016ZM23.0982 25.0479H24.9623V15.2002C24.9623 11.3103 27.5536 8.66733 31.3133 8.66733C32.5757 8.66733 33.8731 9.08177 34.4419 9.43257C34.7925 9.01812 35.1684 8.57185 35.6741 8.15952C34.505 7.33133 32.9249 6.85323 31.2187 6.85323C26.2576 6.85323 23.0982 10.2311 23.0982 15.2341V25.0479ZM52.3266 14.0212V16.7929C53.4318 15.2957 54.38 13.9894 55.265 12.903C57.5092 10.1306 59.4673 8.60084 62.5011 8.60084C66.6087 8.60084 69.6103 11.7241 69.6103 16.121C69.6103 20.4232 66.6718 23.7055 62.6274 23.7055C59.341 23.7055 56.4972 21.4424 55.8338 18.3517L54.5069 20.1707C55.5498 23.1984 58.6152 25.5882 62.5965 25.5882C67.716 25.5882 71.475 21.4459 71.475 16.1238C71.475 10.7389 67.6838 6.69198 62.4983 6.69198C57.1291 6.68986 54.6647 10.7389 52.3266 14.0212ZM58.1088 15.423H58.0457L56.5919 17.4308C56.8444 19.7252 59.1517 22.784 62.6274 22.784C66.1662 22.784 68.7287 19.8843 68.7287 16.092C68.7287 12.2998 66.1058 9.49622 62.5039 9.49622C58.9974 9.49622 56.9741 12.077 55.5519 13.9894C54.8569 14.913 53.6584 16.411 52.3259 18.2909V21.3497C53.5581 19.5017 55.2328 17.3347 56.4636 15.8374C58.5493 13.3196 59.813 11.4079 62.4668 11.4079C65.0616 11.4079 66.8275 13.4158 66.8275 16.092C66.8275 18.8644 65.1528 20.9013 62.6253 20.9013C59.9708 20.9013 58.1067 18.4472 58.1067 15.7073L58.1088 15.423ZM56.2441 0V7.93462C56.8128 7.48834 57.4454 6.94447 58.1088 6.69198V0H56.2441ZM53.4641 10.8343C54.0328 10.1016 54.6647 9.30456 55.3282 8.6355V0H53.4641V10.8343ZM45.8809 19.9154L45.8493 19.8836C45.0596 20.5201 43.7636 20.9034 42.5314 20.9034C40.0067 20.9034 38.1076 18.9939 38.1076 16.155C38.1076 13.4469 39.9724 11.3754 42.4683 11.3754C45.1543 11.3754 46.7975 13.3507 46.7975 15.9958V25.0486H48.6615V15.9011C48.6615 12.2043 46.1018 9.49622 42.4999 9.49622C38.9295 9.49622 36.1804 12.2043 36.1804 16.1557C36.1804 20.0752 38.898 22.8795 42.4999 22.784C43.859 22.7522 45.249 22.2422 45.8809 21.7939V19.9154ZM33.3675 16.1238C33.3675 21.6687 37.2541 25.5882 42.4992 25.5882C43.6682 25.5882 45.0274 25.2346 45.8802 24.5684V22.6885C45.3114 23.1666 43.9214 23.7084 42.4992 23.7084C38.2023 23.7084 35.2946 20.6488 35.2946 16.1238C35.2946 11.8224 38.3916 8.60367 42.4992 8.60367C46.5752 8.60367 49.5459 11.6307 49.5459 15.8692V25.0465H51.4394V15.8374C51.4394 10.5472 47.7421 6.66015 42.4971 6.66015C37.3488 6.66015 33.3675 10.7707 33.3675 16.1238Z"
+              fill="#00AB4E"
+            />
+            <path
+              d="M98.1284 2.07275V25.0364H94.4255V7.14302L87.7491 24.2712H84.9663L78.2934 7.52705V25.0364H74.5933V2.07275H79.9695L86.3577 18.5304L92.7466 2.07275H98.1284ZM109.707 6.85729C114.925 6.85729 118.657 10.0463 118.657 16.0105V25.0364H115.115V22.037H114.957C114.134 24.0781 112.016 25.4813 109.644 25.5138C104.425 25.5774 100.883 21.846 100.883 16.2326C100.883 10.6191 104.486 6.85729 109.704 6.85729H109.707ZM109.707 22.0065C112.87 21.9747 115.052 19.7738 115.02 16.0741C114.989 12.2472 112.68 10.3334 109.739 10.3334C106.797 10.3334 104.549 12.6617 104.549 16.0423C104.549 19.7419 106.763 22.037 109.704 22.0065H109.707ZM125.077 15.0218V25.0364H121.44V14.6398C121.44 9.50523 123.812 6.82546 128.904 6.82546C130.137 6.82546 131.276 7.08078 132.066 7.39975V10.8766C131.307 10.5576 130.295 10.3659 129.156 10.3659C126.531 10.3674 125.074 12.1836 125.074 15.0218H125.077ZM145 21.4004V24.8773C144.241 25.1 143.134 25.3554 141.424 25.3554C138.578 25.3554 136.775 23.5377 136.775 20.6034V10.8759H133.802V7.43087H136.775V3.98657H140.417V7.43087H144.625V10.8759H140.417V19.8699C140.417 21.0178 141.303 21.7795 142.346 21.7795C143.198 21.7831 144.241 21.5921 145 21.4004Z"
+              fill="#00AB4E"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_77_67">
+              <rect width="145" height="25.5882" fill="white" />
+            </clipPath>
+          </defs>
         </svg>
       </a>
+      <!-- End Logo -->
     </div>
-    <div class="md:col-span-9 flex justify-between items-center md:justify-end">
-      <ul class="hidden md:flex flex-row items-center space-x-8">
-        <li>
-          <a class="inline-block py-2 px-4 rounded-md font-semibold text-black hover:bg-gray-100 transition" href="#home">Beranda</a>
-        </li>
-        <li>
-          <a class="inline-block py-2 px-4 rounded-md font-semibold text-black hover:bg-gray-100 transition" href="#about">Tentang</a>
-        </li>
-        <li>
-          <a class="inline-block py-2 px-4 rounded-md font-semibold text-black hover:bg-gray-100 transition" href="#services">Layanan</a>
-        </li>
-        <li>
-          <a class="inline-block py-2 px-4 rounded-md font-semibold text-black hover:bg-gray-100 transition" href="#contact">Kontak</a>
-        </li>
-      </ul>
-      <div class="hidden md:flex">
-        <a href="#" class="inline-block py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition">Masuk</a>
+
+    <!-- Button Group -->
+    <div
+      class="flex items-center gap-x-1 md:gap-x-2 ms-auto py-1 md:ps-6 md:order-3 md:col-span-3"
+    >
+      <!-- location start -->
+      <button
+        type="button"
+        class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl border border-transparent bg-lime-400 text-black hover:bg-lime-500 focus:outline-none focus:bg-lime-500 transition disabled:opacity-50 disabled:pointer-events-none"
+        aria-haspopup="dialog"
+        aria-expanded="false"
+        aria-controls="location-modal"
+        data-hs-overlay="#location-modal"
+      >
+        Location
+      </button>
+      <div
+        id="location-modal"
+        class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none"
+        role="dialog"
+        tabindex="-1"
+        aria-labelledby="location-modal-label"
+      >
+        <div
+          class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center"
+        >
+          <div
+            class="w-full flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto"
+          >
+            <div class="flex justify-between items-center py-3 px-4 border-b">
+              <h1 id="location-modal-label" class="font-bold text-gray-800">
+                Location
+              </h1>
+              <button
+                type="button"
+                class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none"
+                aria-label="Close"
+                data-hs-overlay="#location-modal"
+              >
+                <span class="sr-only">Close</span>
+                <svg
+                  class="shrink-0 size-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 6 6 18"></path>
+                  <path d="m6 6 12 12"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="p-4 overflow-y-auto">
+              <ul class="list-none pl-5 space-y-2">
+                <li
+                  class="text-gray-800 hover:bg-gray-200 hover:shadow-lg transition-shadow duration-300 rounded-md p-2"
+                >
+                  <a class="no-underline text-gray-800" href="/products/binjai"
+                    >Binjai</a
+                  >
+                  <br />
+                  <span>Binjai, Sumatra Utara</span>
+                </li>
+                <li
+                  class="text-gray-800 hover:bg-gray-200 hover:shadow-lg transition-shadow duration-300 rounded-md p-2"
+                >
+                  Item kedua
+                </li>
+                <li
+                  class="text-gray-800 hover:bg-gray-200 hover:shadow-lg transition-shadow duration-300 rounded-md p-2"
+                >
+                  Item ketiga
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex justify-end items-center gap-x-2 py-3 px-4 border-t"
+            ></div>
+          </div>
+        </div>
       </div>
-      <div class="md:hidden flex items-center">
-        <button id="menu-button" class="text-gray-700 focus:outline-none">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" d="M3 6h18M3 12h18m-7 6h7" clip-rule="evenodd" />
+      <!-- location end -->
+
+      <button
+        type="button"
+        class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl bg-white border border-gray-200 text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
+      >
+        Sign in
+      </button>
+      <button
+        type="button"
+        class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl border border-transparent bg-lime-400 text-black hover:bg-lime-500 focus:outline-none focus:bg-lime-500 transition disabled:opacity-50 disabled:pointer-events-none"
+      >
+        Hire us
+      </button>
+
+      <div class="md:hidden">
+        <button
+          type="button"
+          class="hs-collapse-toggle size-[38px] flex justify-center items-center text-sm font-semibold rounded-xl border border-gray-200 text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
+          id="hs-navbar-hcail-collapse"
+          aria-expanded="false"
+          aria-controls="hs-navbar-hcail"
+          aria-label="Toggle navigation"
+          data-hs-collapse="#hs-navbar-hcail"
+        >
+          <svg
+            class="hs-collapse-open:hidden shrink-0 size-4"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" x2="21" y1="6" y2="6" />
+            <line x1="3" x2="21" y1="12" y2="12" />
+            <line x1="3" x2="21" y1="18" y2="18" />
+          </svg>
+          <svg
+            class="hs-collapse-open:block hidden shrink-0 size-4"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
           </svg>
         </button>
       </div>
     </div>
+    <!-- End Button Group -->
+
+    <!-- Collapse /burger -->
+    <div
+      id="hs-navbar-hcail"
+      class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block md:w-auto md:basis-auto md:order-2 md:col-span-6"
+      aria-labelledby="hs-navbar-hcail-collapse"
+    >
+      <div
+        class="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:justify-center md:items-center md:gap-y-0 md:gap-x-7 md:mt-0"
+      >
+        <div>
+          <a
+            class="relative inline-block text-black focus:outline-none before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 before:bg-lime-400"
+            href="#"
+            aria-current="page"
+            >Work</a
+          >
+        </div>
+        <div>
+          <a
+            class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600"
+            href="#"
+            >Services</a
+          >
+        </div>
+        <div>
+          <a
+            class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600"
+            href="#"
+            >About</a
+          >
+        </div>
+        <div>
+          <a
+            class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600"
+            href="#"
+            >Careers</a
+          >
+        </div>
+        <div>
+          <a
+            class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600"
+            href="#"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- End Collapse -->
   </nav>
 </header>
 <!-- ========== END HEADER ========== -->
