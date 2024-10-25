@@ -7,16 +7,16 @@
       <p class="mt-1 text-sm text-gray-600">
         Enter your registered phone number
       </p>
-      <form class="mt-7">
+      <form class="mt-7" method="post" action="/main" id="myForm">
         <div class="flex items-center border border-gray-200 rounded-md h-12">
           <span class="p-4 text-lg">+62</span>
           <input
             type="number"
-            id="phoneNum"
-            name="phoneNum"
+            id="noHp"
             class="block w-full text-lg disabled:pointer-events-none"
             required
-            placeholder="12345678"
+            placeholder="82162625555"
+            name="noHp"
           />
         </div>
 
@@ -26,13 +26,13 @@
             >Remember me on this device for 60 days</label
           >
         </div>
+        <button
+          type="submit"
+          class="mt-7 w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-3xl bg-green-500 text-white hover:bg-green-600 focus:outline-none focus:bg-green-600 h-12"
+        >
+          Continue
+        </button>
       </form>
-      <button
-        type="submit"
-        class="mt-7 w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-3xl bg-green-500 text-white hover:bg-green-600 focus:outline-none focus:bg-green-600 h-12"
-      >
-        Continue
-      </button>
     </div>
 
     <div class="mt-5">

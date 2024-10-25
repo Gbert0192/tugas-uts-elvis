@@ -8,8 +8,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/css/loginPage.css" />
   </head>
+
   <body>
     <%- body %>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("myForm")
+          .addEventListener("submit", function (e) {
+            const noHpInput = document.getElementById("noHp");
+            let noHpValue = noHpInput.value;
+
+            if (!noHpValue.startsWith("62")) {
+              noHpInput.value = "62" + noHpValue;
+            } else {
+              return;
+            }
+          });
+      });
+    </script>
     <script src="/js/preline.js"></script>
   </body>
 </html>
