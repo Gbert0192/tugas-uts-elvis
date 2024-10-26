@@ -3,11 +3,13 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-#phoneNum::placeholder {
+#password,
+#noHp::placeholder {
   letter-spacing: 2px;
 }
 
-#phoneNum:focus {
+#password,
+#noHp:focus {
   border: none;
   outline: none;
 }

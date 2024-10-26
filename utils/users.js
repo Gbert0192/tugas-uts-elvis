@@ -18,9 +18,18 @@ const loadUsers = () => {
 };
 
 //ini buat cari data users
-const findUser = (noHp) => {
+const findUser = (noHp, password) => {
   const users = loadUsers();
-  const filterUser = users.find((user) => user.noHp === noHp);
+  const filterUser = users.find(
+    (user) => user.noHp === noHp && user.password === password
+  );
   return filterUser;
 };
-module.exports = { loadUsers, findUser };
+
+const findUserId = (id) => {
+  const users = loadUsers();
+  const filterUser = users.find((user) => user.id === id);
+  return filterUser;
+};
+
+module.exports = { loadUsers, findUser, findUserId };

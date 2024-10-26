@@ -1,7 +1,16 @@
 [
   {
+    "id": 1,
     "noHp": "6282162305550",
+    "password": "gilbert",
     "nama": "Gilbert Tiofandy",
     "email": "gtiofandy@gmail.com"
+  },
+  {
+    "id": 2,
+    "noHp": "6288819282220",
+    "password": "wiepin",
+    "nama": "Zhang Wie Pin",
+    "email": "wiepin@gmail.com"
   }
 ]
