@@ -5,7 +5,7 @@ const isAuthenticated = (req, res, next) => {
     return next(); // Jika terautentikasi, lanjutkan ke rute berikutnya
   }
   // Jika tidak terautentikasi, arahkan ke halaman login
-  res.redirect("/login");
+  res.redirect("/");
 };
 
-module.exports = isAuthenticated;
+module.exports = { isAuthenticated };
