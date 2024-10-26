@@ -1,9 +1,9 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const { loadUsers, findUser } = require("./utils/users");
-
+// const path = require("path");
 const app = express();
-const productsRoutes = require("./routes/products"); // Import routes
+// const productsRoutes = require("./routes/products");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -29,19 +29,25 @@ app.post("/main", (req, res) => {
 app.get("/main/:noHp", (req, res) => {
   const users = loadUsers();
   const user = findUser(req.params.noHp);
+
   if (user) {
-    res.render("homePage", {
-      layout: "homePage",
+    res.render("loginPage/homePage", {
+      layout: "partials/main",
       title: "Main Page Login",
       users,
     });
   } else {
-    res.send(`<h1>User with ${req.params.noHp} Not Found</h1>`);
+    res.render("errors/404", {
+      layout: false,
+    });
   }
 });
 
 app.get("/main", (req, res) => {
-  res.render("homeNoLogin", { layout: "homeNoLogin", title: "Main Page" });
+  res.render("loginPage/homeNoLogin", {
+    layout: "partials/main",
+    title: "Main Page (without login)",
+  });
 });
 
 const PORT = process.env.PORT || 3000;
