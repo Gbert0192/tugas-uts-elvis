@@ -20,10 +20,17 @@ const loadUsers = () => {
 //ini buat cari data users
 const findUser = (noHp, password) => {
   const users = loadUsers();
-  const filterUser = users.find(
-    (user) => user.noHp === noHp && user.password === password
-  );
-  return filterUser;
+  const filterUser = users.find((user) => user.noHp === noHp);
+
+  // Cek apakah pengguna ditemukan
+  if (filterUser) {
+    if (filterUser.password !== password) {
+      return "Password salah";
+    }
+    return filterUser; // Mengembalikan pengguna jika password benar
+  }
+
+  return null;
 };
 
 const findUserId = (id) => {
