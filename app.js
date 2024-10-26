@@ -1,10 +1,9 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const { loadUsers, findUser } = require("./utils/users");
-const { loadproducts } = require("./utils/products");
-
+const productsRoutes = require("./routes/products");
+const path = require("path");
 const app = express();
-// const productsRoutes = require("./routes/products");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -29,7 +28,6 @@ app.post("/main", (req, res) => {
 
 app.get("/main/:noHp", (req, res) => {
   const users = loadUsers();
-  const products = loadproducts();
   const user = findUser(req.params.noHp);
 
   if (user) {
@@ -37,7 +35,6 @@ app.get("/main/:noHp", (req, res) => {
       layout: "partials/main",
       title: "Main Page Login",
       users,
-      products,
     });
   } else {
     res.render("errors/404", {
