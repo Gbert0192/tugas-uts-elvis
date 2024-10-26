@@ -1,9 +1,9 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const { loadUsers, findUser } = require("./utils/users");
-// const path = require("path");
+const productsRoutes = require("./routes/products");
+const path = require("path");
 const app = express();
-// const productsRoutes = require("./routes/products");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
