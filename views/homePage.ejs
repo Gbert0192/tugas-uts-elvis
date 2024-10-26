@@ -7,4 +7,39 @@
     <li><%=user.email %></li>
   </ul>
   <% }) %>
+
+  <body class="bg-gray-100 p-4">
+
+    <% products.forEach(locationData => { %>
+      <h1 class="text-2xl font-bold text-gray-700 mb-4"><%= locationData.location %></h1>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <% locationData.products.forEach(item => { %>
+          <div class="border border-gray-300 rounded-lg p-4 shadow-lg bg-white">
+            
+            <!-- Product Name (Red Box) -->
+            <div class="text-center font-semibold text-lg text-red-500 mb-2">
+              <%= item.name %>
+            </div>
+  
+            <!-- Price and Stock (Blue Box) -->
+            <div class="text-center text-blue-500 text-md mb-2">
+              Price: $<%= item.price %> | Stock: <%= item.stock %>
+            </div>
+  
+            <!-- Category -->
+            <div class="text-center text-gray-600 text-sm">
+              Category: <%= item.category %>
+            </div>
+            
+          </div>
+        <% }) %>
+      </div>
+    <% }) %>
+  
+    <script src="https://cdn.jsdelivr.net/npm/@preline/plugin@1.0.0-beta.5/dist/preline.js"></script>
+  </body>
 </main>
+
+
+

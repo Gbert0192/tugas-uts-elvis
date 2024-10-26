@@ -1,6 +1,7 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const { loadUsers, findUser } = require("./utils/users");
+const { loadproducts} = require("./utils/products");
 
 const app = express();
 const productsRoutes = require("./routes/products"); // Import routes
@@ -28,12 +29,13 @@ app.post("/main", (req, res) => {
 
 app.get("/main/:noHp", (req, res) => {
   const users = loadUsers();
+  const products = loadproducts();
   const user = findUser(req.params.noHp);
   if (user) {
     res.render("homePage", {
       layout: "homePage",
       title: "Main Page Login",
-      users,
+      users,products,
     });
   } else {
     res.send(`<h1>User with ${req.params.noHp} Not Found</h1>`);
