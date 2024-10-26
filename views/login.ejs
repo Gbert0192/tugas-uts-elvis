@@ -1,0 +1,154 @@
+<div
+  class="container mx-auto p-4 max-w-lg flex items-center justify-center h-screen"
+>
+  <div class="bg-white shadow-sm rounded-lg p-4 sm:p-7">
+    <div class="">
+      <h1 class="block text-2xl font-bold text-gray-800">Secured Login</h1>
+      <p class="mt-1 text-sm text-gray-600">
+        Enter your registered phone number
+      </p>
+      <form class="mt-7" method="post" action="/main" id="myForm">
+        <div class="flex items-center border border-gray-200 rounded-md h-12">
+          <span class="p-4 text-lg">+62</span>
+          <input
+            type="number"
+            id="noHp"
+            class="block w-full text-lg disabled:pointer-events-none"
+            required
+            placeholder="82162625555"
+            name="noHp"
+          />
+          <span>82162305550</span>
+        </div>
+
+        <div class="flex items-center mt-5">
+          <input type="checkbox" class="bg-aqua" />
+          <label for="remember" class="ml-1 text-xs text-gray-500"
+            >Remember me on this device for 60 days</label
+          >
+        </div>
+        <button
+          type="submit"
+          class="mt-7 w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-3xl bg-green-500 text-white hover:bg-green-600 focus:outline-none focus:bg-green-600 h-12"
+        >
+          Continue
+        </button>
+      </form>
+    </div>
+
+    <div class="mt-5">
+      <div class="grid gap-y-4">
+        <div
+          class="py-3 flex items-center text-xs text-gray-400 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6"
+        >
+          or
+        </div>
+
+        <button
+          type="button"
+          class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-3xl border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 h-10"
+        >
+          <svg
+            class="w-4 h-auto"
+            width="46"
+            height="47"
+            viewBox="0 0 46 47"
+            fill="none"
+          >
+            <path
+              d="M46 24.0287C46 22.09 45.8533 20.68 45.5013 19.2112H23.4694V27.9356H36.4069C36.1429 30.1094 34.7347 33.37 31.5957 35.5731L31.5663 35.8669L38.5191 41.2719L38.9885 41.3306C43.4477 37.2181 46 31.1669 46 24.0287Z"
+              fill="#4285F4"
+            />
+            <path
+              d="M23.4694 47C29.8061 47 35.1161 44.9144 39.0179 41.3012L31.625 35.5437C29.6301 36.9244 26.9898 37.8937 23.4987 37.8937C17.2793 37.8937 12.0281 33.7812 10.1505 28.1412L9.88649 28.1706L2.61097 33.7812L2.52296 34.0456C6.36608 41.7125 14.287 47 23.4694 47Z"
+              fill="#34A853"
+            />
+            <path
+              d="M10.1212 28.1413C9.62245 26.6725 9.32908 25.1156 9.32908 23.5C9.32908 21.8844 9.62245 20.3275 10.0918 18.8588V18.5356L2.75765 12.8369L2.52296 12.9544C0.909439 16.1269 0 19.7106 0 23.5C0 27.2894 0.909439 30.8731 2.49362 34.0456L10.1212 28.1413Z"
+              fill="#FBBC05"
+            />
+            <path
+              d="M23.4694 9.07688C27.8699 9.07688 30.8622 10.9863 32.5344 12.5725L39.1645 6.11C35.0867 2.32063 29.8061 0 23.4694 0C14.287 0 6.36607 5.2875 2.49362 12.9544L10.0918 18.8588C11.9987 13.1894 17.25 9.07688 23.4694 9.07688Z"
+              fill="#EB4335"
+            />
+          </svg>
+          Continue with Google
+        </button>
+        <button
+          type="button"
+          class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-3xl border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 h-10"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1024 1024"
+            id="facebook"
+            class="w-4 h-auto"
+            width="46"
+            height="47"
+            fill="none"
+          >
+            <path
+              fill="#1877f2"
+              d="M1024,512C1024,229.23016,794.76978,0,512,0S0,229.23016,0,512c0,255.554,187.231,467.37012,432,505.77777V660H302V512H432V399.2C432,270.87982,508.43854,200,625.38922,200,681.40765,200,740,210,740,210V336H675.43713C611.83508,336,592,375.46667,592,415.95728V512H734L711.3,660H592v357.77777C836.769,979.37012,1024,767.554,1024,512Z"
+            ></path>
+            <path
+              fill="#fff"
+              d="M711.3,660,734,512H592V415.95728C592,375.46667,611.83508,336,675.43713,336H740V210s-58.59235-10-114.61078-10C508.43854,200,432,270.87982,432,399.2V512H302V660H432v357.77777a517.39619,517.39619,0,0,0,160,0V660Z"
+            ></path>
+          </svg>
+          Continue with Facebook
+        </button>
+        <button
+          type="button"
+          class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-3xl border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 h-10"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 17 17"
+            id="apple"
+            class="w-4 h-auto"
+            width="48"
+            height="49"
+          >
+            <g fill-rule="evenodd">
+              <path
+                fill="currentColor"
+                d="M11.6218,4.7571c-0.0193291,-2.02332 1.65317,-2.99846 1.72865,-3.04467c-0.939167,-1.37684 -2.40442,-1.56532 -2.92624,-1.58735c-1.24564,-0.125075 -2.431,0.734352 -3.06342,0.734352c-0.630702,0 -1.60726,-0.7153 -2.63953,-0.694961c-1.35921,0.0188997 -2.61125,0.789063 -3.31105,2.00483c-1.41025,2.44865 -0.360481,6.07511 1.01479,8.0616c0.671226,0.970026 1.47351,2.06429 2.52553,2.02476c1.0148,-0.0397892 1.39689,-0.654453 2.62078,-0.654453c1.22488,0 1.56888,0.654453 2.64224,0.634268c1.08898,-0.0196037 1.78139,-0.990762 2.44848,-1.96475c0.771157,-1.12822 1.0887,-2.22035 1.10719,-2.27707c-0.0234604,-0.0085233 -2.12539,-0.815491 -2.14743,-3.23655v0Z"
+                transform="translate(.745 3.743)"
+              ></path>
+              <path
+                fill="currentColor"
+                d="M2.49696,2.55553c0.559066,-0.677623 0.934193,-1.61793 0.831414,-2.55553c-0.804695,0.031969 -1.78039,0.537152 -2.3568,1.21266c-0.51813,0.599437 -0.97158,1.55665 -0.848624,2.47462c0.897671,0.0697992 1.81466,-0.455431 2.37401,-1.13175v0Z"
+                transform="translate(7.857)"
+              ></path>
+            </g>
+          </svg>
+
+          Continue with Apple
+        </button>
+      </div>
+    </div>
+    <div class="text-center mt-7">
+      <p class="text-xs text-gray-500">
+        2024 Grab Inc.
+        <a
+          class="text-blue-500 hover:underline focus:outline-none focus:underline"
+          href=""
+          >Terms and Conditions.</a
+        ><br />
+        Invisible reCAPTCHA by Google
+        <a
+          href=""
+          class="text-blue-500 hover:underline focus:outline-none focus:underline"
+          >Privacy Policy</a
+        >
+        and
+        <a
+          href=""
+          class="text-blue-500 hover:underline focus:outline-none focus:underline"
+          >Terms of use</a
+        >
+      </p>
+    </div>
+  </div>
+</div>
