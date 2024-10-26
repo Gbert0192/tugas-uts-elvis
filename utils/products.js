@@ -17,4 +17,4 @@ const loadproducts = () => {
   return users;
 };
 
-module.exports = { loadproducts};
+module.exports = { loadproducts };

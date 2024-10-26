@@ -1,6 +1,7 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const { loadUsers, findUser } = require("./utils/users");
+const { loadproducts } = require("./utils/products");
 
 const app = express();
 // const productsRoutes = require("./routes/products");
