@@ -1,12 +1,10 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session"); // Tambahkan ini
-const { loadUsers, findUser, findUserId } = require("./utils/users");
+const { findUser, findUserId } = require("./utils/users");
 const { loadProducts } = require("./utils/products");
 const { isAuthenticated } = require("./middleware/auth"); // Pastikan Anda memiliki middleware ini
-const productsRoutes = require("./routes/products");
-const path = require("path");
-const { title } = require("process");
+
 const app = express();
 
 app.set("view engine", "ejs");
@@ -18,38 +16,42 @@ app.use(express.json());
 // Inisialisasi middleware session
 app.use(
   session({
-    secret: "your_secret_key", // Ganti dengan kunci yang lebih aman
+    secret: "secret aja",
     resave: false,
     saveUninitialized: true,
   })
 );
 
 // Halaman login
+// Route untuk menampilkan halaman login
 app.get("/", (req, res) => {
+  const nomorHp = req.session.nomorHp || null; // Ambil nomor HP dari session
   const message = req.session.message || null; // Ambil pesan dari session
   req.session.message = null; // Hapus pesan dari session setelah diambil
 
+  // Render halaman login dengan nomor HP dan pesan
   res.render("loginPage/login", {
     layout: "loginPage/mainLogin",
     title: "Login Page",
-    message, // Kirimkan pesan ke view
+    message,
+    nomorHp,
   });
 });
 
 // Proses login dan redirect
 app.post("/main", (req, res) => {
-  const result = findUser(req.body.noHp, req.body.password); // Menggunakan fungsi yang sudah dimodifikasi
-
+  const result = findUser(req.body.noHp, req.body.password);
   // Jika password salah
   if (result === "Password salah") {
     req.session.message = "Password Salah, Mohon coba kembali";
+    req.session.nomorHp = req.body.noHp;
     return res.redirect("/");
   }
 
   // Jika pengguna ditemukan
   if (result) {
-    req.session.isAuthenticated = true;
-    req.session.userId = result.id;
+    req.session.isAuthenticated = true; // Tandai pengguna sebagai terautentikasi
+    req.session.userId = result.id; // Simpan ID pengguna ke session
     return res.redirect(`main/${result.id}`);
   }
 
@@ -60,14 +62,12 @@ app.post("/main", (req, res) => {
 
 // Menggunakan middleware checkAuth pada route /main/:id
 app.get("/main/:id", isAuthenticated, (req, res) => {
-  const requestedId = parseInt(req.params.id, 10); // ID yang diminta
-  const loggedInUserId = req.session.userId; // ID pengguna yang sedang login
+  const requestedId = parseInt(req.params.id, 10); //ini ubah dari string ke integer
+  const loggedInUserId = req.session.userId;
 
-  // Cek apakah pengguna dengan ID yang diminta ada
   const user = findUserId(requestedId);
   if (user) {
     if (requestedId === loggedInUserId) {
-      // Jika ID sama, tampilkan halaman utama
       const products = loadProducts();
       return res.render("loginPage/homePage", {
         layout: "partials/main",
@@ -83,7 +83,6 @@ app.get("/main/:id", isAuthenticated, (req, res) => {
       });
     }
   } else {
-    // Jika pengguna tidak ditemukan, tampilkan halaman 404
     return res.render("errors/error", {
       layout: false,
       message: "User not found",
@@ -92,7 +91,6 @@ app.get("/main/:id", isAuthenticated, (req, res) => {
   }
 });
 
-// Halaman utama tanpa login
 app.get("/main", (req, res) => {
   res.render("loginPage/homeNoLogin", {
     layout: "partials/main",
@@ -100,7 +98,6 @@ app.get("/main", (req, res) => {
   });
 });
 
-// Menangani 404 untuk route yang tidak ada
 app.use((req, res) => {
   res.status(404).render("errors/error", {
     layout: false,
