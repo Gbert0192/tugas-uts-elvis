@@ -3,7 +3,7 @@ const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session"); // Tambahkan ini
 const { loadUsers, findUser, findUserId } = require("./utils/users");
 const { loadProducts } = require("./utils/products");
-const checkAuth = require("./middleware/auth"); // Pastikan Anda memiliki middleware ini
+const { isAuthenticated } = require("./middleware/auth"); // Pastikan Anda memiliki middleware ini
 const productsRoutes = require("./routes/products");
 const path = require("path");
 const app = express();
@@ -43,14 +43,6 @@ app.post("/main", (req, res) => {
   }
 });
 
-// Middleware untuk mengecek autentikasi
-const isAuthenticated = (req, res, next) => {
-  if (req.session.isAuthenticated) {
-    return next(); // Jika terautentikasi, lanjutkan ke rute berikutnya
-  }
-  res.redirect("/"); // Jika tidak, arahkan ke halaman login
-};
-
 // Menggunakan middleware checkAuth pada route /main/:id
 app.get("/main/:id", isAuthenticated, (req, res) => {
   const requestedId = parseInt(req.params.id, 10); // ID yang diminta
@@ -77,9 +69,10 @@ app.get("/main/:id", isAuthenticated, (req, res) => {
     }
   } else {
     // Jika pengguna tidak ditemukan, tampilkan halaman 404
-    return res.render("errors/404", {
+    return res.render("errors/error", {
       layout: false,
       message: "User not found",
+      code: "404",
     });
   }
 });
