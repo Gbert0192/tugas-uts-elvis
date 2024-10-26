@@ -1,0 +1,190 @@
+[
+  {
+    "location": "binjai",
+    "products": [
+      {
+        "id": 1,
+        "name": "Air Mineral",
+        "price": 5000,
+        "stock": 100,
+        "category": "Makanan & Minuman"
+      },
+      {
+        "id": 2,
+        "name": "Apel Fuji",
+        "price": 25000,
+        "stock": 50,
+        "category": "Buah-buahan"
+      },
+      {
+        "id": 3,
+        "name": "Sapu Lidi",
+        "price": 15000,
+        "stock": 30,
+        "category": "Peralatan Rumah Tangga"
+      },
+      {
+        "id": 4,
+        "name": "Minyak Goreng",
+        "price": 35000,
+        "stock": 20,
+        "category": "Makanan & Minuman"
+      },
+      {
+        "id": 5,
+        "name": "Sabun Cuci Piring",
+        "price": 12000,
+        "stock": 80,
+        "category": "Peralatan Rumah Tangga"
+      },
+      {
+        "id": 6,
+        "name": "Beras 5kg",
+        "price": 60000,
+        "stock": 40,
+        "category": "Makanan & Minuman"
+      }
+    ]
+  },
+  {
+    "location": "medan",
+    "products": [
+      {
+        "id": 7,
+        "name": "Telur Ayam 1kg",
+        "price": 25000,
+        "stock": 60,
+        "category": "Makanan & Minuman"
+      },
+      {
+        "id": 8,
+        "name": "Mangga Harum Manis",
+        "price": 30000,
+        "stock": 45,
+        "category": "Buah-buahan"
+      },
+      {
+        "id": 9,
+        "name": "Tissue Gulung",
+        "price": 10000,
+        "stock": 100,
+        "category": "Peralatan Rumah Tangga"
+      },
+      {
+        "id": 10,
+        "name": "Kopi Bubuk 200g",
+        "price": 15000,
+        "stock": 70,
+        "category": "Makanan & Minuman"
+      },
+      {
+        "id": 11,
+        "name": "Jeruk Medan",
+        "price": 18000,
+        "stock": 55,
+        "category": "Buah-buahan"
+      },
+      {
+        "id": 12,
+        "name": "Shampo 100ml",
+        "price": 12000,
+        "stock": 90,
+        "category": "Kecantikan & Kesehatan"
+      }
+    ]
+  },
+  {
+    "location": "jakarta",
+    "products": [
+      {
+        "id": 13,
+        "name": "Daging Sapi 1kg",
+        "price": 120000,
+        "stock": 25,
+        "category": "Makanan & Minuman"
+      },
+      {
+        "id": 14,
+        "name": "Kacang Almond 500g",
+        "price": 70000,
+        "stock": 30,
+        "category": "Makanan & Minuman"
+      },
+      {
+        "id": 15,
+        "name": "Madu Murni 250ml",
+        "price": 45000,
+        "stock": 40,
+        "category": "Makanan & Minuman"
+      },
+      {
+        "id": 16,
+        "name": "Susu UHT 1L",
+        "price": 18000,
+        "stock": 50,
+        "category": "Makanan & Minuman"
+      },
+      {
+        "id": 17,
+        "name": "Shampoo Anti Ketombe 200ml",
+        "price": 25000,
+        "stock": 60,
+        "category": "Kecantikan & Kesehatan"
+      },
+      {
+        "id": 18,
+        "name": "Pisang Cavendish",
+        "price": 30000,
+        "stock": 75,
+        "category": "Buah-buahan"
+      }
+    ]
+  },
+  {
+    "location": "surabaya",
+    "products": [
+      {
+        "id": 19,
+        "name": "Ayam Potong 1kg",
+        "price": 35000,
+        "stock": 80,
+        "category": "Makanan & Minuman"
+      },
+      {
+        "id": 20,
+        "name": "Kentang 1kg",
+        "price": 15000,
+        "stock": 100,
+        "category": "Buah-buahan"
+      },
+      {
+        "id": 21,
+        "name": "Minyak Wijen 100ml",
+        "price": 30000,
+        "stock": 40,
+        "category": "Makanan & Minuman"
+      },
+      {
+        "id": 22,
+        "name": "Tepung Terigu 1kg",
+        "price": 12000,
+        "stock": 90,
+        "category": "Makanan & Minuman"
+      },
+      {
+        "id": 23,
+        "name": "Ikan Lele 1kg",
+        "price": 25000,
+        "stock": 60,
+        "category": "Makanan & Minuman"
+      },
+      {
+        "id": 24,
+        "name": "Pepaya California",
+        "price": 20000,
+        "stock": 85,
+        "category": "Buah-buahan"
+      }
+    ]
+  }
+]
