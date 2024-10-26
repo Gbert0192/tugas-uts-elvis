@@ -13,7 +13,7 @@ app.use(express.json());
 
 //ini login page
 app.get("/", (req, res) => {
-  res.render("login", { layout: "partials/mainLogin", title: "Login Page" });
+  res.render("login", { layout: "loginPage/mainLogin", title: "Login Page" });
 });
 
 //login page redirect ke page main
