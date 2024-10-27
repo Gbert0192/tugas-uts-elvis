@@ -58,11 +58,11 @@ app.post("/", (req, res) => {
   return res.redirect("/");
 });
 
+//halaman register
 app.get("/register", (req, res) => {
   const errorMessages = req.session.messages || null;
 
-  // Reset pesan setelah merender
-  req.session.messages = null; // Gunakan messages untuk konsistensi
+  req.session.messages = null;
 
   res.render("loginPage/register", {
     layout: "loginPage/mainLogin",
@@ -73,7 +73,7 @@ app.get("/register", (req, res) => {
   });
 });
 
-// Di route POST /register
+//proses register pengguna baru, jika berhasil , dialihkan ke login// proses post aja
 app.post(
   "/register",
   [
@@ -84,21 +84,20 @@ app.post(
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       const errorMessages = errors.array().map((err) => err.msg);
-      req.session.messages = errorMessages; // Menyimpan pesan kesalahan
-      return res.redirect("/register"); // Mengalihkan kembali ke halaman pendaftaran
+      req.session.messages = errorMessages;
+      return res.redirect("/register");
     }
 
     const { noHp, email, nama, password } = req.body;
 
     const available = userManager.availableUsers(noHp);
     if (available) {
-      req.session.messages = ["User Already Exists!"]; // Menyimpan pesan kesalahan
-      return res.redirect("/register"); // Mengalihkan kembali ke halaman pendaftaran
+      req.session.messages = ["User Already Exists!"];
+      return res.redirect("/register");
     }
-
     userManager.addUser({ noHp, email, nama, password });
-    req.session.messages = ["User Added!"]; // Menyimpan pesan sukses
-    res.redirect("/"); // Mengalihkan ke halaman utama
+    req.session.message = "User Added!";
+    res.redirect("/");
   }
 );
 
@@ -133,6 +132,7 @@ app.get("/main/:id", isAuthenticated, (req, res) => {
   }
 });
 
+//halaman /main
 app.get("/main", (req, res) => {
   res.render("loginPage/homeNoLogin", {
     layout: "partials/main",
@@ -140,6 +140,7 @@ app.get("/main", (req, res) => {
   });
 });
 
+//halaman 404/ not found
 app.use((req, res) => {
   res.status(404).render("errors/error", {
     layout: false,

@@ -1,6 +1,5 @@
 const fs = require("fs");
 
-// Kelas dasar untuk manajemen file
 class FileManager {
   constructor(dataPath) {
     this.dataPath = dataPath;
@@ -27,7 +26,6 @@ class FileManager {
   }
 }
 
-// Kelas untuk manajemen pengguna yang mewarisi dari FileManager
 class UserManager extends FileManager {
   constructor(dataPath) {
     super(dataPath);
