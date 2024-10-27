@@ -2,12 +2,13 @@
   class="container mx-auto p-4 max-w-lg flex items-center justify-center h-screen"
 >
   <div class="bg-white shadow-sm rounded-lg p-4 sm:p-7">
-    <div class="">
+    <div>
       <h1 class="block text-2xl font-bold text-gray-800">Secured Login</h1>
       <p class="mt-1 text-sm text-gray-600">
-        Enter your registered phone number
+        Enter your registered phone number & The Password
       </p>
       <form class="mt-7" method="post" action="/main" id="myForm">
+        <!-- number phone input -->
         <div class="flex items-center border border-gray-200 rounded-md h-12">
           <span class="p-4 text-lg">+62</span>
           <input
@@ -17,16 +18,41 @@
             required
             placeholder="82162625555"
             name="noHp"
+            value="<%= nomorHp || null %>"
           />
-          <span>82162305550</span>
+        </div>
+        <!-- password input -->
+        <div class="mt-4">
+          <span class="text-gray-800 font-bold text-xl">Password</span>
+          <div class="flex items-center border border-gray-200 rounded-md h-12">
+            <input
+              type="password"
+              id="password"
+              class="block w-full text-lg disabled:pointer-events-none pl-3 placeholder-gray-500"
+              required
+              placeholder="Masukkan Password Anda"
+              name="password"
+            />
+            <button
+              type="button"
+              id="togglePassword"
+              class="flex items-center justify-center w-12 h-full text-gray-600 focus:outline-none"
+            >
+              <span id="toggleText">Show</span>
+            </button>
+          </div>
+          <% if (typeof message !== 'undefined' && message) { %>
+          <div
+            class="bg-red-500 text-sm text-white rounded-lg p-4 mt-4"
+            role="alert"
+            tabindex="-1"
+            aria-labelledby="hs-solid-color-danger-label"
+          >
+            <%= message %>
+          </div>
+          <% } %>
         </div>
 
-        <div class="flex items-center mt-5">
-          <input type="checkbox" class="bg-aqua" />
-          <label for="remember" class="ml-1 text-xs text-gray-500"
-            >Remember me on this device for 60 days</label
-          >
-        </div>
         <button
           type="submit"
           class="mt-7 w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-3xl bg-green-500 text-white hover:bg-green-600 focus:outline-none focus:bg-green-600 h-12"

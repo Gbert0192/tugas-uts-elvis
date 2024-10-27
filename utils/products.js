@@ -11,10 +11,10 @@ if (!fs.existsSync(dataPath)) {
 }
 
 //ini buat load data users
-const loadproducts = () => {
+const loadProducts = () => {
   const buffers = fs.readFileSync(dataPath, "utf-8");
   const users = JSON.parse(buffers);
   return users;
 };
 
-module.exports = { loadproducts};
+module.exports = { loadProducts };

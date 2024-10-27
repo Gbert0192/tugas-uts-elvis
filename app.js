@@ -1,10 +1,11 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
-const { loadUsers, findUser } = require("./utils/users");
-const { loadproducts} = require("./utils/products");
+const session = require("express-session"); // Tambahkan ini
+const { findUser, findUserId } = require("./utils/users");
+const { loadProducts } = require("./utils/products");
+const { isAuthenticated } = require("./middleware/auth"); // Pastikan Anda memiliki middleware ini
 
 const app = express();
-const productsRoutes = require("./routes/products"); // Import routes
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -12,38 +13,97 @@ app.use(expressLayouts);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//ini login page
+// Inisialisasi middleware session
+app.use(
+  session({
+    secret: "secret aja",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+// Halaman login
+// Route untuk menampilkan halaman login
 app.get("/", (req, res) => {
-  res.render("login", { layout: "partials/mainLogin", title: "Login Page" });
+  const nomorHp = req.session.nomorHp || null; // Ambil nomor HP dari session
+  const message = req.session.message || null; // Ambil pesan dari session
+  req.session.message = null; // Hapus pesan dari session setelah diambil
+
+  // Render halaman login dengan nomor HP dan pesan
+  res.render("loginPage/login", {
+    layout: "loginPage/mainLogin",
+    title: "Login Page",
+    message,
+    nomorHp,
+  });
 });
 
-//login page redirect ke page main
+// Proses login dan redirect
 app.post("/main", (req, res) => {
-  const user = findUser(req.body.noHp);
-  if (user) {
-    res.redirect(`/main/${req.body.noHp}`);
-  } else {
-    res.send(`<h1>User with ${req.body.noHp} Not Found</h1>`);
+  const result = findUser(req.body.noHp, req.body.password);
+  // Jika password salah
+  if (result === "Password salah") {
+    req.session.message = "Password Salah, Mohon coba kembali";
+    req.session.nomorHp = req.body.noHp;
+    return res.redirect("/");
   }
+
+  // Jika pengguna ditemukan
+  if (result) {
+    req.session.isAuthenticated = true; // Tandai pengguna sebagai terautentikasi
+    req.session.userId = result.id; // Simpan ID pengguna ke session
+    return res.redirect(`main/${result.id}`);
+  }
+
+  // Jika pengguna tidak ditemukan
+  req.session.message = "User dengan nomor HP tidak ditemukan";
+  return res.redirect("/");
 });
 
-app.get("/main/:noHp", (req, res) => {
-  const users = loadUsers();
-  const products = loadproducts();
-  const user = findUser(req.params.noHp);
+// Menggunakan middleware checkAuth pada route /main/:id
+app.get("/main/:id", isAuthenticated, (req, res) => {
+  const requestedId = parseInt(req.params.id, 10); //ini ubah dari string ke integer
+  const loggedInUserId = req.session.userId;
+
+  const user = findUserId(requestedId);
   if (user) {
-    res.render("homePage", {
-      layout: "homePage",
-      title: "Main Page Login",
-      users,products,
-    });
+    if (requestedId === loggedInUserId) {
+      const products = loadProducts();
+      return res.render("loginPage/homePage", {
+        layout: "partials/main",
+        title: "Main Page Login",
+        user,
+        products,
+      });
+    } else {
+      return res.status(403).render("errors/error", {
+        layout: false,
+        code: "403",
+        message: "Access Forbidden: You cannot access this page.",
+      });
+    }
   } else {
-    res.send(`<h1>User with ${req.params.noHp} Not Found</h1>`);
+    return res.render("errors/error", {
+      layout: false,
+      message: "User not found",
+      code: "404",
+    });
   }
 });
 
 app.get("/main", (req, res) => {
-  res.render("homeNoLogin", { layout: "homeNoLogin", title: "Main Page" });
+  res.render("loginPage/homeNoLogin", {
+    layout: "partials/main",
+    title: "Main Page (without login)",
+  });
+});
+
+app.use((req, res) => {
+  res.status(404).render("errors/error", {
+    layout: false,
+    message: "Page not found",
+    code: "404",
+  });
 });
 
 const PORT = process.env.PORT || 3000;
