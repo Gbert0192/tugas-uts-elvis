@@ -25,7 +25,10 @@
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
       >
         <% locationData.products.forEach(item => { %>
-        <div class="border border-gray-300 rounded-lg shadow-lg p-4 bg-white">
+        <div
+          class="border border-gray-300 rounded-lg shadow-lg p-4 bg-white cursor-pointer"
+          onclick="openModal('<%= item.id %>','<%= item.name %>','<%= item.price %>','<%= item.stock %>')"
+        >
           <!-- Image Placeholder (Green Box) -->
           <div
             class="w-full h-40 border-2 border-green-500 flex items-center justify-center mb-2"
@@ -46,17 +49,110 @@
           <div class="text-center text-blue-500 text-md mb-2">
             Price: $<%= item.price %> | Stock: <%= item.stock %>
           </div>
-
-          <!-- Category -->
-          <div class="text-center text-gray-600 text-sm">
-            Category: <%= item.category %>
-          </div>
         </div>
         <% }) %>
       </div>
     </div>
     <% }) %>
 
+    <!-- item popup box-->
+    <div
+      id="productModal"
+      class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="bg-white w-96 p-6 rounded-lg shadow-lg relative">
+        <button
+          class="absolute top-2 right-2 text-gray-500"
+          onclick="closeModal()"
+        >
+          ✕
+        </button>
+
+        <!-- Green Box: Product Image -->
+        <div
+          class="w-full h-60 border-2 border-green-500 flex items-center justify-center mb-4"
+        >
+          <img
+            id="modalImage"
+            src="https://via.placeholder.com/150"
+            alt="Product Image"
+            class="object-contain h-full"
+          />
+        </div>
+
+        <!-- Red Box: Product Name -->
+        <div
+          class="text-center font-semibold text-lg text-red-500 mb-2"
+          id="modalName"
+        ></div>
+
+        <!-- Blue Box: Price and Stock -->
+        <div
+          class="text-center text-blue-500 text-md mb-4"
+          id="modalPriceStock"
+        ></div>
+
+        <!-- Yellow Box: Quantity Selector -->
+        <div class="flex items-center justify-center mb-4">
+          <button class="bg-yellow-400 p-2 rounded" onclick="updateCount(-1)">
+            -
+          </button>
+          <span id="productCount" class="mx-4 text-lg">1</span>
+          <button class="bg-yellow-400 p-2 rounded" onclick="updateCount(1)">
+            +
+          </button>
+        </div>
+
+        <!-- Orange Box: Put in Cart Button -->
+        <button
+          class="bg-orange-500 w-full py-2 text-white font-bold rounded"
+          onclick="putInCart()"
+        >
+          Put in Cart
+        </button>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/@preline/plugin@1.0.0-beta.5/dist/preline.js"></script>
+
+    <!-- you might want to change sum stuff here-->
+    <script>
+      let currentProductId = null;
+      let currentProductCount = 1;
+
+      function openModal(id, name, price, stock) {
+        currentProductId = id;
+        currentProductCount = 1;
+
+        document.getElementById("modalName").innerText = name;
+        document.getElementById("modalPriceStock").innerText =
+          "Price: $" + price + " | Stock: " + stock;
+        document.getElementById("productCount").innerText = currentProductCount;
+
+        document.getElementById("productModal").classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("productModal").classList.add("hidden");
+      }
+
+      function updateCount(change) {
+        if (currentProductCount + change >= 1) {
+          currentProductCount += change;
+          document.getElementById("productCount").innerText =
+            currentProductCount;
+        }
+      }
+
+      function putInCart() {
+        alert(
+          "Added to cart:\nProduct ID: " +
+            currentProductId +
+            "\nQuantity: " +
+            currentProductCount
+        );
+        closeModal();
+      }
+    </script>
   </body>
 </main>
