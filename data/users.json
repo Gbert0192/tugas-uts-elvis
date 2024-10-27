@@ -12,5 +12,47 @@
     "password": "wiepin",
     "nama": "Zhang Wie Pin",
     "email": "wiepin@gmail.com"
+  },
+  {
+    "noHp": "6285373766235",
+    "email": "amah@gmail.com",
+    "nama": "amah",
+    "password": "amah",
+    "id": 3
+  },
+  {
+    "noHp": "62342",
+    "email": "asd@gmail",
+    "nama": "ad",
+    "password": "asd",
+    "id": 4
+  },
+  {
+    "noHp": "62132",
+    "email": "gtiofandy@gmail",
+    "nama": "asd",
+    "password": "asd",
+    "id": 5
+  },
+  {
+    "noHp": "62234",
+    "email": "324@gmail",
+    "nama": "sad",
+    "password": "asd",
+    "id": 6
+  },
+  {
+    "noHp": "6223",
+    "email": "gtiofandy@gmail",
+    "nama": "ads",
+    "password": "ads",
+    "id": 7
+  },
+  {
+    "noHp": "6234",
+    "email": "234@gmail",
+    "nama": "324",
+    "password": "234",
+    "id": 8
   }
 ]

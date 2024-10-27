@@ -1,7 +1,7 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
-const { body, validationResult } = require("express-validator");
+const { body, validationResult, check } = require("express-validator");
 
 const userManager = require("./utils/users");
 const { loadProducts } = require("./utils/products");
@@ -59,52 +59,46 @@ app.post("/", (req, res) => {
 });
 
 app.get("/register", (req, res) => {
+  const errorMessages = req.session.messages || null;
+
+  // Reset pesan setelah merender
+  req.session.messages = null; // Gunakan messages untuk konsistensi
+
   res.render("loginPage/register", {
     layout: "loginPage/mainLogin",
     title: "Register",
     method: "Sign In",
     href: "/",
+    errorMessages,
   });
 });
 
+// Di route POST /register
 app.post(
   "/register",
   [
-    body("noHp").isMobilePhone("id-ID").withMessage("Nomor HP tidak valid!"),
+    body("noHp").isMobilePhone("id-ID").withMessage("Nomor HP tidak valid!\n"),
     body("email").isEmail().withMessage("Email tidak valid!"),
   ],
   (req, res) => {
     const errors = validationResult(req);
-    const hasErrors = !errors.isEmpty();
+    if (!errors.isEmpty()) {
+      const errorMessages = errors.array().map((err) => err.msg);
+      req.session.messages = errorMessages; // Menyimpan pesan kesalahan
+      return res.redirect("/register"); // Mengalihkan kembali ke halaman pendaftaran
+    }
 
     const { noHp, email, nama, password } = req.body;
 
-    if (hasErrors) {
-      return res.render("loginPage/register", {
-        layout: "loginPage/mainLogin",
-        title: "Register",
-        method: "Sign In",
-        href: "/",
-        hpMessage: "Nomor HP tidak valid",
-        emailMessage: "Email tidak valid",
-      });
-    }
-
     const available = userManager.availableUsers(noHp);
     if (available) {
-      return res.render("loginPage/register", {
-        layout: "loginPage/mainLogin",
-        title: "Register",
-        method: "Sign In",
-        href: "/",
-        errors: [],
-        message: "User Already Exists!",
-      });
+      req.session.messages = ["User Already Exists!"]; // Menyimpan pesan kesalahan
+      return res.redirect("/register"); // Mengalihkan kembali ke halaman pendaftaran
     }
 
     userManager.addUser({ noHp, email, nama, password });
-    req.session.message = "User Added!";
-    res.redirect("/");
+    req.session.messages = ["User Added!"]; // Menyimpan pesan sukses
+    res.redirect("/"); // Mengalihkan ke halaman utama
   }
 );
 

@@ -26,14 +26,6 @@
                 aria-label="Nomor Telepon"
               />
             </div>
-            <% if (typeof hpMessage !== 'undefined' && hpMessage) { %>
-            <div
-              class="bg-red-500 text-sm text-white rounded-lg p-4 mt-4"
-              role="alert"
-            >
-              <%= hpMessage %>
-            </div>
-            <% } %>
           </div>
 
           <!-- email input -->
@@ -51,14 +43,6 @@
                 name="email"
               />
             </div>
-            <% if (typeof hpMessage !== 'undefined' && hpMessage) { %>
-            <div
-              class="bg-red-500 text-sm text-white rounded-lg p-4 mt-4"
-              role="alert"
-            >
-              <%= hpMessage %>
-            </div>
-            <% } %>
           </div>
 
           <!-- name input -->
@@ -106,6 +90,14 @@
               role="alert"
             >
               <%= message %>
+            </div>
+            <% } %> <% if (typeof errorMessages !== 'undefined' &&
+            errorMessages) { %>
+            <div
+              class="bg-red-500 text-sm text-white rounded-lg p-4 mt-4"
+              role="alert"
+            >
+              <%= errorMessages %>
             </div>
             <% } %>
           </div>
