@@ -1,7 +1,7 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
-const { body, validationResult, check } = require("express-validator");
+const { body, validationResult } = require("express-validator");
 
 const userManager = require("./utils/users");
 const { loadProducts } = require("./utils/products");
@@ -30,7 +30,8 @@ app.get("/", (req, res) => {
   const message = req.session.message || null;
   req.session.message = null;
 
-  res.render("loginPage/login", {
+  res.status(200).render("loginPage/login", {
+    // Tambahkan status 200 secara eksplisit
     layout: "loginPage/mainLogin",
     title: "Login Page",
     message,
@@ -58,13 +59,14 @@ app.post("/", (req, res) => {
   return res.redirect("/");
 });
 
-//halaman register
+// Halaman register
 app.get("/register", (req, res) => {
   const errorMessages = req.session.messages || null;
 
   req.session.messages = null;
 
-  res.render("loginPage/register", {
+  res.status(200).render("loginPage/register", {
+    // Status 200 secara eksplisit
     layout: "loginPage/mainLogin",
     title: "Register",
     method: "Sign In",
@@ -73,7 +75,7 @@ app.get("/register", (req, res) => {
   });
 });
 
-//proses register pengguna baru, jika berhasil , dialihkan ke login// proses post aja
+// Proses register pengguna baru
 app.post(
   "/register",
   [
@@ -110,7 +112,8 @@ app.get("/main/:id", isAuthenticated, (req, res) => {
   if (user) {
     if (requestedId === loggedInUserId) {
       const products = loadProducts();
-      return res.render("loginPage/homePage", {
+      return res.status(200).render("loginPage/homePage", {
+        // Status 200 eksplisit
         layout: "partials/main",
         title: "Main Page Login",
         user,
@@ -124,7 +127,8 @@ app.get("/main/:id", isAuthenticated, (req, res) => {
       });
     }
   } else {
-    return res.render("errors/error", {
+    return res.status(404).render("errors/error", {
+      // Status 404 eksplisit
       layout: false,
       message: "User tidak ditemukan",
       code: "404",
@@ -132,15 +136,16 @@ app.get("/main/:id", isAuthenticated, (req, res) => {
   }
 });
 
-//halaman /main
+// Halaman /main tanpa login
 app.get("/main", (req, res) => {
-  res.render("loginPage/homeNoLogin", {
+  res.status(200).render("loginPage/homeNoLogin", {
+    // Status 200 eksplisit
     layout: "partials/main",
     title: "Main Page (without login)",
   });
 });
 
-//halaman 404/ not found
+// Halaman 404 / Not Found
 app.use((req, res) => {
   res.status(404).render("errors/error", {
     layout: false,
@@ -149,6 +154,7 @@ app.use((req, res) => {
   });
 });
 
+// Menjalankan server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
