@@ -1,113 +1,219 @@
-<main>
-  <h1>Hellow This Is Index Page</h1>
-  <ul>
-    <li><%=user.nama %></li>
-    <li><%=user.noHp %></li>
-    <li><%=user.email %></li>
-  </ul>
-
-  <link
-    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-    rel="stylesheet"
-  />
-  <link
-    href="https://cdn.jsdelivr.net/npm/@preline/plugin@1.0.0-beta.5/dist/preline.css"
-    rel="stylesheet"
-  />
-  <body class="bg-gray-100 p-4">
-
-    <% products.forEach(locationData => { %>
-      <div class="border border-gray-300 rounded-lg p-6 mb-8 bg-white shadow-lg">
-        <h1 class="text-2xl font-bold text-gray-700 mb-4"><%= locationData.location %></h1>
-  
-        <!-- Product Cards Container -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          <% locationData.products.forEach(item => { %>
-            <div class="border border-gray-300 rounded-lg shadow-lg p-4 bg-white cursor-pointer" onclick="openModal('<%= item.id %>','<%= item.name %>','<%= item.price %>','<%= item.stock %>')">
-              
-              <!-- Image Placeholder (Green Box) -->
-              <div class="w-full h-40 border-2 border-green-500 flex items-center justify-center mb-2">
-                <img src="https://via.placeholder.com/150" alt="<%= item.name %>" class="object-contain h-full">
-              </div>
-              
-              <!-- Product Name (Red Box) -->
-              <div class="text-center font-semibold text-lg text-red-500 mb-2">
-                <%= item.name %>
-              </div>
-  
-              <!-- Price and Stock (Blue Box) -->
-              <div class="text-center text-blue-500 text-md mb-2">
-                Price: $<%= item.price %> | Stock: <%= item.stock %>
-              </div>
-  
-            </div>
-          <% }) %>
-        </div>
+<main class="bg-gray-100">
+  <div class="container mx-auto">
+    <!-- Categories Section -->
+    <div class="flex justify-center space-x-8 py-8 flex-wrap">
+      <div class="text-center">
+        <img
+          alt="Mom & Baby"
+          class="mx-auto rounded-full"
+          height="50"
+          src="https://storage.googleapis.com/a1aa/image/XE6mqqshS2YpIVjuhn4wdvoVhlP4NJhNNw3ESxFZ508nfw1JA.jpg"
+          width="50"
+        />
+        <p class="mt-2 text-sm">Mom & Baby</p>
       </div>
-    <% }) %>
-  
-
-    <!-- item popup box-->
-    <div id="productModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
-      <div class="bg-white w-96 p-6 rounded-lg shadow-lg relative">
-        <button class="absolute top-2 right-2 text-gray-500" onclick="closeModal()">✕</button>
-  
-        <!-- Green Box: Product Image -->
-        <div class="w-full h-60 border-2 border-green-500 flex items-center justify-center mb-4">
-          <img id="modalImage" src="https://via.placeholder.com/150" alt="Product Image" class="object-contain h-full">
-        </div>
-        
-        <!-- Red Box: Product Name -->
-        <div class="text-center font-semibold text-lg text-red-500 mb-2" id="modalName"></div>
-  
-        <!-- Blue Box: Price and Stock -->
-        <div class="text-center text-blue-500 text-md mb-4" id="modalPriceStock"></div>
-  
-        <!-- Yellow Box: Quantity Selector -->
-        <div class="flex items-center justify-center mb-4">
-          <button class="bg-yellow-400 p-2 rounded" onclick="updateCount(-1)">-</button>
-          <span id="productCount" class="mx-4 text-lg">1</span>
-          <button class="bg-yellow-400 p-2 rounded" onclick="updateCount(1)">+</button>
-        </div>
-  
-        <!-- Orange Box: Put in Cart Button -->
-        <button class="bg-orange-500 w-full py-2 text-white font-bold rounded" onclick="putInCart()">Put in Cart</button>
+      <div class="text-center">
+        <img
+          alt="Fruit & Vegetable"
+          class="mx-auto rounded-full"
+          height="50"
+          src="https://storage.googleapis.com/a1aa/image/PQAgnuF6kP5zId8hi8EtIpoaiyZnKg5VGdJpHCHqptVofw1JA.jpg"
+          width="50"
+        />
+        <p class="mt-2 text-sm">Fruit & Vegetable</p>
+      </div>
+      <!-- Tambahkan kategori lain di sini -->
+      <div class="text-center">
+        <img
+          alt="Snacks & Ice Cream"
+          class="mx-auto rounded-full"
+          height="50"
+          src="https://storage.googleapis.com/a1aa/image/ZOd4sw03MwbDJlYnHeEoJkLgpucrw6rYLA85d54mfsUgeDXnA.jpg"
+          width="50"
+        />
+        <p class="mt-2 text-sm">Snacks & Ice Cream</p>
+      </div>
+      <div class="text-center">
+        <img
+          alt="Health & Personal Care"
+          class="mx-auto rounded-full"
+          height="50"
+          src="https://storage.googleapis.com/a1aa/image/fjWbGkyyKuRzASSuaKWLiQQyhmK6H7n2fvuVZc2NO2pSeDXnA.jpg"
+          width="50"
+        />
+        <p class="mt-2 text-sm">Health & Personal Care</p>
+      </div>
+      <div class="text-center">
+        <img
+          alt="Staples & Cooking"
+          class="mx-auto rounded-full"
+          height="50"
+          src="https://storage.googleapis.com/a1aa/image/fdESEtfehrYfoTz6AHdwu1bkehABMiZbiCaJ0S7aPHbsxPcdC.jpg"
+          width="50"
+        />
+        <p class="mt-2 text-sm">Staples & Cooking</p>
+      </div>
+      <div class="text-center">
+        <img
+          alt="Beverages"
+          class="mx-auto rounded-full"
+          height="50"
+          src="https://storage.googleapis.com/a1aa/image/wRqGfWjJGb1WViLtGwBZN0uasGWcWDkeArEhdxPXaDNdeDXnA.jpg"
+          width="50"
+        />
+        <p class="mt-2 text-sm">Beverages</p>
+      </div>
+      <div class="text-center">
+        <img
+          alt="Frozen & Meat"
+          class="mx-auto rounded-full"
+          height="50"
+          src="https://storage.googleapis.com/a1aa/image/NfrE87RUEE2jY63IFUVUYvmcD7KEaew3KCc44T7fsoZe4HuOB.jpg"
+          width="50"
+        />
+        <p class="mt-2 text-sm">Frozen & Meat</p>
+      </div>
+      <div class="text-center">
+        <img
+          alt="Dairy & Eggs"
+          class="mx-auto rounded-full"
+          height="50"
+          src="https://storage.googleapis.com/a1aa/image/fPevwDeeKPzqBQ3Ne66YeLfWq8Eo6SVEhVbKWEowvxWGNfhrTA.jpg"
+          width="50"
+        />
+        <p class="mt-2 text-sm">Dairy & Eggs</p>
+      </div>
+      <div class="text-center">
+        <img
+          alt="Instant Food"
+          class="mx-auto rounded-full"
+          height="50"
+          src="https://storage.googleapis.com/a1aa/image/lWKHw6RyUU42LVi5F5iE1DYoWgX58LyifSzsCrWE0hZFfhrTA.jpg"
+          width="50"
+        />
+        <p class="mt-2 text-sm">Instant Food</p>
+      </div>
+      <div class="text-center">
+        <img
+          alt="Home Care"
+          class="mx-auto rounded-full"
+          height="50"
+          src="https://storage.googleapis.com/a1aa/image/fRsd3xQ8un1xcKKVIaVDIxVTPgtloDmww4rtRiPB1VFLfhrTA.jpg"
+          width="50"
+        />
+        <p class="mt-2 text-sm">Home Care</p>
+      </div>
+      <div class="text-center">
+        <img
+          alt="Breakfast & Bakery"
+          class="mx-auto rounded-full"
+          height="50"
+          src="https://storage.googleapis.com/a1aa/image/Xxt3k39KbNJzE56NiTNkprzSQLIxVoVpif1JssXzjvkIfhrTA.jpg"
+          width="50"
+        />
+        <p class="mt-2 text-sm">Breakfast & Bakery</p>
+      </div>
+      <div class="text-center">
+        <img
+          alt="Hobby & Lifestyle"
+          class="mx-auto rounded-full"
+          height="50"
+          src="https://storage.googleapis.com/a1aa/image/Hg3WJS95fgzAK6ixVYFvDDyHfdgW8PoR73SiOgzQdKrUeDXnA.jpg"
+          width="50"
+        />
+        <p class="mt-2 text-sm">Hobby & Lifestyle</p>
       </div>
     </div>
-  
-    <script src="https://cdn.jsdelivr.net/npm/@preline/plugin@1.0.0-beta.5/dist/preline.js"></script>
 
-    <!-- you might want to change sum stuff here-->
-    <script>  
-      let currentProductId = null;
-      let currentProductCount = 1;
+    <!-- Banner Section -->
+    <div class="relative">
+      <div class="w-full h-96 bg-gray-200 flex items-center justify-center">
+        <span class="text-gray-500"> Placeholder (1200x400) </span>
+      </div>
+    </div>
 
-      function openModal(id, name, price, stock) {
-      currentProductId = id;
-      currentProductCount = 1;
-
-      document.getElementById('modalName').innerText = name;
-      document.getElementById('modalPriceStock').innerText = 'Price: $' + price + ' | Stock: ' + stock;
-      document.getElementById('productCount').innerText = currentProductCount;
-
-      document.getElementById('productModal').classList.remove('hidden');
-      }
-
-      function closeModal() {
-      document.getElementById('productModal').classList.add('hidden');
-      }
-
-      function updateCount(change) {
-      if (currentProductCount + change >= 1) {
-          currentProductCount += change;
-          document.getElementById('productCount').innerText = currentProductCount;
-      }
-      }
-
-      function putInCart() {
-      alert('Added to cart:\nProduct ID: ' + currentProductId + '\nQuantity: ' + currentProductCount);
-      closeModal();
-      }
-    </script>
-  </body>
+    <!-- Top Stores Section -->
+    <div class="mt-8 px-4">
+      <div class="flex justify-between items-center">
+        <h2 class="text-2xl font-bold">Top stores on GrabMart</h2>
+        <a class="text-green-600" href="#">Lihat semuanya &gt;</a>
+      </div>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-4"
+      >
+        <div class="text-center">
+          <div
+            class="mx-auto w-36 h-36 bg-gray-200 flex items-center justify-center"
+          >
+            <span class="text-gray-500"> Placeholder (150x150) </span>
+          </div>
+          <p class="mt-2 font-bold">GrabMart Kilat</p>
+          <p class="text-sm text-gray-600">
+            1.7km - <i class="fas fa-star text-yellow-500"></i> 4.8
+          </p>
+          <p class="text-xs text-orange-600">Gratis Ongkir</p>
+        </div>
+        <div class="text-center">
+          <div
+            class="mx-auto w-36 h-36 bg-gray-200 flex items-center justify-center"
+          >
+            <span class="text-gray-500"> Placeholder (150x150) </span>
+          </div>
+          <p class="mt-2 font-bold">ALFAMART - SUTAN SYAHRIR KC75</p>
+          <p class="text-sm text-gray-600">
+            1.9km - <i class="fas fa-star text-yellow-500"></i> 4.8
+          </p>
+          <p class="text-xs text-orange-600">26577/UKS/AT-SPRM</p>
+        </div>
+        <div class="text-center">
+          <div
+            class="mx-auto w-36 h-36 bg-gray-200 flex items-center justify-center"
+          >
+            <span class="text-gray-500"> Placeholder (150x150) </span>
+          </div>
+          <p class="mt-2 font-bold">ALFAMIDI - JAKSA 2 MH50</p>
+          <p class="text-sm text-gray-600">
+            3.6km - <i class="fas fa-star text-yellow-500"></i> 4.8
+          </p>
+          <p class="text-xs text-orange-600">PDM GRABMART MIDI</p>
+        </div>
+        <div class="text-center">
+          <div
+            class="mx-auto w-36 h-36 bg-gray-200 flex items-center justify-center"
+          >
+            <span class="text-gray-500"> Placeholder (150x150) </span>
+          </div>
+          <p class="mt-2 font-bold">INDOMARET - GUNTUR JAY</p>
+          <p class="text-sm text-gray-600">
+            5.0km - <i class="fas fa-star text-yellow-500"></i> 4.8
+          </p>
+          <p class="text-xs text-orange-600">SPBU GUNTUR JAY</p>
+        </div>
+        <div class="text-center">
+          <div
+            class="mx-auto w-36 h-36 bg-gray-200 flex items-center justify-center"
+          >
+            <span class="text-gray-500"> Placeholder (150x150) </span>
+          </div>
+          <p class="mt-2 font-bold">DAN DAN MART - TEMPAT KETUPAT KOSONG</p>
+          <p class="text-sm text-gray-600">
+            4.8km - <i class="fas fa-star text-yellow-500"></i> 4.8
+          </p>
+          <p class="text-xs text-orange-600">069876/GRABMART/UD123</p>
+        </div>
+        <div class="text-center">
+          <div
+            class="mx-auto w-36 h-36 bg-gray-200 flex items-center justify-center"
+          >
+            <span class="text-gray-500"> Placeholder (150x150) </span>
+          </div>
+          <p class="mt-2 font-bold">PINKI MART - BISA ORDER AJA</p>
+          <p class="text-sm text-gray-600">
+            1.3km - <i class="fas fa-star text-yellow-500"></i> 4.8
+          </p>
+          <p class="text-xs text-orange-600">0894321/G/2-2</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
