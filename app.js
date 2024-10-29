@@ -30,8 +30,8 @@ app.get("/", (req, res) => {
   const message = req.session.message || null;
   req.session.message = null;
 
-  res.status(200).render("loginPage/login", {
-    // Tambahkan status 200 secara eksplisit
+  // Mengatur status dan header Content-Type
+  res.status(200).set("Content-Type", "text/html").render("loginPage/login", {
     layout: "loginPage/mainLogin",
     title: "Login Page",
     message,
