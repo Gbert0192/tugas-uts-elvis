@@ -3,8 +3,13 @@ const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
 const { body, validationResult } = require("express-validator");
 
+//function untuk menghandle user rendering - async
 const userManager = require("./utils/users");
-const { loadProducts } = require("./utils/products");
+
+//function untuk menghandle product rendering - async
+const productManager = require("./utils/products");
+
+//middle ware auth
 const { isAuthenticated } = require("./middleware/auth");
 
 const app = express();
@@ -30,8 +35,7 @@ app.get("/", (req, res) => {
   const message = req.session.message || null;
   req.session.message = null;
 
-  // Mengatur status dan header Content-Type
-  res.status(200).set("Content-Type", "text/html").render("loginPage/login", {
+  res.render("loginPage/login", {
     layout: "loginPage/mainLogin",
     title: "Login Page",
     message,
@@ -42,8 +46,8 @@ app.get("/", (req, res) => {
 });
 
 // Proses login dan redirect
-app.post("/", (req, res) => {
-  const result = userManager.findUser(req.body.noHp, req.body.password);
+app.post("/", async (req, res) => {
+  const result = await userManager.findUser(req.body.noHp, req.body.password);
   if (result === false) {
     req.session.message = "Password Salah, Mohon coba kembali";
     req.session.nomorHp = req.body.noHp;
@@ -62,11 +66,9 @@ app.post("/", (req, res) => {
 // Halaman register
 app.get("/register", (req, res) => {
   const errorMessages = req.session.messages || null;
-
   req.session.messages = null;
 
-  res.status(200).render("loginPage/register", {
-    // Status 200 secara eksplisit
+  res.render("loginPage/register", {
     layout: "loginPage/mainLogin",
     title: "Register",
     method: "Sign In",
@@ -79,10 +81,14 @@ app.get("/register", (req, res) => {
 app.post(
   "/register",
   [
-    body("noHp").isMobilePhone("id-ID").withMessage("Nomor HP tidak valid!\n"),
+    body("noHp").isMobilePhone("id-ID").withMessage("Nomor HP tidak valid!"),
     body("email").isEmail().withMessage("Email tidak valid!"),
+    body("nama").notEmpty().withMessage("Nama tidak boleh kosong!"),
+    body("password")
+      .isLength({ min: 6 })
+      .withMessage("Password minimal 6 karakter!"),
   ],
-  (req, res) => {
+  async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       const errorMessages = errors.array().map((err) => err.msg);
@@ -91,44 +97,60 @@ app.post(
     }
 
     const { noHp, email, nama, password } = req.body;
-
-    const available = userManager.availableUsers(noHp);
+    const available = await userManager.availableUsers(noHp);
     if (available) {
       req.session.messages = ["User Already Exists!"];
       return res.redirect("/register");
     }
-    userManager.addUser({ noHp, email, nama, password });
+    await userManager.addUser({ noHp, email, nama, password });
     req.session.message = "User Added!";
     res.redirect("/");
   }
 );
 
 // Mengambil data pengguna berdasarkan ID
-app.get("/main/:id", isAuthenticated, (req, res) => {
+app.get("/main/:id", isAuthenticated, async (req, res) => {
   const requestedId = parseInt(req.params.id, 10);
   const loggedInUserId = req.session.userId;
 
-  const user = userManager.findUserId(requestedId);
+  const user = await userManager.findUserId(requestedId);
   if (user) {
     if (requestedId === loggedInUserId) {
-      const products = loadProducts();
-      return res.status(200).render("loginPage/homePage", {
-        // Status 200 eksplisit
-        layout: "partials/main",
-        title: "Main Page Login",
-        user,
-        products,
-      });
+      try {
+        const stores = await productManager.loadStores();
+        console.log(stores);
+        return res
+          .status(200)
+          .set("Content-Type", "text/html")
+          .render("homePage", {
+            layout: "partials/main",
+            title: "Main Page Login",
+            user,
+            stores,
+          });
+      } catch (error) {
+        console.error("Error loading products:", error);
+        return res
+          .status(500)
+          .set("Content-type", "text/html")
+          .render("errors/error", {
+            layout: false,
+            message: "Terjadi kesalahan saat memuat produk. " + error.message,
+            code: "500",
+          });
+      }
     } else {
-      return res.status(403).render("errors/error", {
-        layout: false,
-        code: "403",
-        message: "Access Forbidden: Anda tidak dapat mengakses halaman ini.",
-      });
+      return res
+        .status(403)
+        .set("Content-type", "text/html")
+        .render("errors/error", {
+          layout: false,
+          code: "403",
+          message: "Access Forbidden: Anda tidak dapat mengakses halaman ini.",
+        });
     }
   } else {
     return res.status(404).render("errors/error", {
-      // Status 404 eksplisit
       layout: false,
       message: "User tidak ditemukan",
       code: "404",
@@ -136,13 +158,8 @@ app.get("/main/:id", isAuthenticated, (req, res) => {
   }
 });
 
-// Halaman /main tanpa login
 app.get("/main", (req, res) => {
-  res.status(200).render("loginPage/homeNoLogin", {
-    // Status 200 eksplisit
-    layout: "partials/main",
-    title: "Main Page (without login)",
-  });
+  res.redirect("/register");
 });
 
 // Halaman 404 / Not Found
@@ -153,6 +170,8 @@ app.use((req, res) => {
     code: "404",
   });
 });
+
+app.get("/favicon.ico", (req, res) => res.status(204).end());
 
 // Menjalankan server
 const PORT = process.env.PORT || 3000;
