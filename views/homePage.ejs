@@ -127,8 +127,17 @@
 
     <!-- Banner Section -->
     <div class="relative">
-      <div class="w-full h-96 bg-gray-200 flex items-center justify-center">
-        <span class="text-gray-500"> Placeholder (1200x400) </span>
+      <div class="w-full h-96 bg-gray-200">
+        <img
+          src="/img/home-page-banner.png"
+          alt=""
+          class="w-full h-full object-cover"
+        />
+        <span
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 text-black text-6xl font-bold"
+        >
+          From Desktop To Your Door
+        </span>
       </div>
     </div>
 
@@ -136,83 +145,12 @@
     <div class="mt-8 px-4">
       <div class="flex justify-between items-center">
         <h2 class="text-2xl font-bold">Top stores on GrabMart</h2>
-        <a class="text-green-600" href="#">Lihat semuanya &gt;</a>
       </div>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-4"
       >
-        <div class="text-center">
-          <div
-            class="mx-auto w-36 h-36 bg-gray-200 flex items-center justify-center"
-          >
-            <span class="text-gray-500"> Placeholder (150x150) </span>
-          </div>
-          <p class="mt-2 font-bold">GrabMart Kilat</p>
-          <p class="text-sm text-gray-600">
-            1.7km - <i class="fas fa-star text-yellow-500"></i> 4.8
-          </p>
-          <p class="text-xs text-orange-600">Gratis Ongkir</p>
-        </div>
-        <div class="text-center">
-          <div
-            class="mx-auto w-36 h-36 bg-gray-200 flex items-center justify-center"
-          >
-            <span class="text-gray-500"> Placeholder (150x150) </span>
-          </div>
-          <p class="mt-2 font-bold">ALFAMART - SUTAN SYAHRIR KC75</p>
-          <p class="text-sm text-gray-600">
-            1.9km - <i class="fas fa-star text-yellow-500"></i> 4.8
-          </p>
-          <p class="text-xs text-orange-600">26577/UKS/AT-SPRM</p>
-        </div>
-        <div class="text-center">
-          <div
-            class="mx-auto w-36 h-36 bg-gray-200 flex items-center justify-center"
-          >
-            <span class="text-gray-500"> Placeholder (150x150) </span>
-          </div>
-          <p class="mt-2 font-bold">ALFAMIDI - JAKSA 2 MH50</p>
-          <p class="text-sm text-gray-600">
-            3.6km - <i class="fas fa-star text-yellow-500"></i> 4.8
-          </p>
-          <p class="text-xs text-orange-600">PDM GRABMART MIDI</p>
-        </div>
-        <div class="text-center">
-          <div
-            class="mx-auto w-36 h-36 bg-gray-200 flex items-center justify-center"
-          >
-            <span class="text-gray-500"> Placeholder (150x150) </span>
-          </div>
-          <p class="mt-2 font-bold">INDOMARET - GUNTUR JAY</p>
-          <p class="text-sm text-gray-600">
-            5.0km - <i class="fas fa-star text-yellow-500"></i> 4.8
-          </p>
-          <p class="text-xs text-orange-600">SPBU GUNTUR JAY</p>
-        </div>
-        <div class="text-center">
-          <div
-            class="mx-auto w-36 h-36 bg-gray-200 flex items-center justify-center"
-          >
-            <span class="text-gray-500"> Placeholder (150x150) </span>
-          </div>
-          <p class="mt-2 font-bold">DAN DAN MART - TEMPAT KETUPAT KOSONG</p>
-          <p class="text-sm text-gray-600">
-            4.8km - <i class="fas fa-star text-yellow-500"></i> 4.8
-          </p>
-          <p class="text-xs text-orange-600">069876/GRABMART/UD123</p>
-        </div>
-        <div class="text-center">
-          <div
-            class="mx-auto w-36 h-36 bg-gray-200 flex items-center justify-center"
-          >
-            <span class="text-gray-500"> Placeholder (150x150) </span>
-          </div>
-          <p class="mt-2 font-bold">PINKI MART - BISA ORDER AJA</p>
-          <p class="text-sm text-gray-600">
-            1.3km - <i class="fas fa-star text-yellow-500"></i> 4.8
-          </p>
-          <p class="text-xs text-orange-600">0894321/G/2-2</p>
-        </div>
+        <% stores.forEach(store => { %>
+        <%-include('./homePagePartials/store.ejs', { store }) %> <% }) %>
       </div>
     </div>
   </div>

@@ -1,20 +1,22 @@
-const fs = require("fs");
-//ini buat bikin folder kalau blm ada folder data di root aja
-const dirPath = "./data";
-if (!fs.existsSync(dirPath)) {
-  fs.mkdirSync(dirPath);
+const FileManager = require("./fileManager"); // Mengimpor kelas FileManager
+
+class ProductManager extends FileManager {
+  constructor(dataPath) {
+    super(dataPath); // Memanggil konstruktor superclass dengan dataPath
+  }
+
+  async loadStores() {
+    const data = await this.loadData(); // Memanggil loadData() jika diperlukan
+    return data;
+  }
+
+  saveProducts(products) {
+    this.saveData(products);
+  }
 }
-//ini buat bikin file users.json
+
+// Penggunaan
 const dataPath = "./data/products.json";
-if (!fs.existsSync(dataPath)) {
-  fs.writeFileSync(dataPath, "[]", "utf-8");
-}
+const productManager = new ProductManager(dataPath);
 
-//ini buat load data users
-const loadProducts = () => {
-  const buffers = fs.readFileSync(dataPath, "utf-8");
-  const users = JSON.parse(buffers);
-  return users;
-};
-
-module.exports = { loadProducts};
+module.exports = productManager;

@@ -1,38 +1,12 @@
-const fs = require("fs");
-
-class FileManager {
-  constructor(dataPath) {
-    this.dataPath = dataPath;
-    this.createDirAndFile();
-  }
-
-  createDirAndFile() {
-    const dirPath = "./data";
-    if (!fs.existsSync(dirPath)) {
-      fs.mkdirSync(dirPath);
-    }
-    if (!fs.existsSync(this.dataPath)) {
-      fs.writeFileSync(this.dataPath, "[]", "utf-8");
-    }
-  }
-
-  loadData() {
-    const buffers = fs.readFileSync(this.dataPath, "utf-8");
-    return JSON.parse(buffers);
-  }
-
-  saveData(data) {
-    fs.writeFileSync(this.dataPath, JSON.stringify(data, null, 2));
-  }
-}
+const FileManager = require("./fileManager");
 
 class UserManager extends FileManager {
   constructor(dataPath) {
-    super(dataPath);
+    super(dataPath); // Memanggil konstruktor superclass dengan dataPath
   }
 
-  findUser(noHp, password) {
-    const users = this.loadData();
+  async findUser(noHp, password) {
+    const users = await this.loadData(); // Menunggu hasil loadData
     const user = users.find((user) => user.noHp === noHp);
     if (user) {
       if (user.password === password) {
@@ -43,20 +17,20 @@ class UserManager extends FileManager {
     return null; // User tidak ditemukan
   }
 
-  availableUsers(noHp) {
-    const users = this.loadData();
+  async availableUsers(noHp) {
+    const users = await this.loadData(); // Menunggu hasil loadData
     return users.find((user) => user.noHp === noHp);
   }
 
-  addUser(user) {
-    const users = this.loadData();
+  async addUser(user) {
+    const users = await this.loadData(); // Menunggu hasil loadData
     user.id = users.length + 1; // ID = panjang pengguna + 1
     users.push(user);
-    this.saveData(users);
+    await this.saveData(users); // Menunggu hasil saveData
   }
 
-  findUserId(id) {
-    const users = this.loadData();
+  async findUserId(id) {
+    const users = await this.loadData(); // Menunggu hasil loadData
     return users.find((user) => user.id === id);
   }
 }
@@ -64,5 +38,4 @@ class UserManager extends FileManager {
 // Penggunaan
 const dataPath = "./data/users.json";
 const userManager = new UserManager(dataPath);
-
 module.exports = userManager;
