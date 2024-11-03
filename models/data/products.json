@@ -1,0 +1,582 @@
+[
+  {
+    "storeId": 101,
+    "storeName": "Toko Serba Ada",
+    "address": "Jl. Kebon Jeruk No. 12, Jakarta",
+    "image": "https://example.com/images/store1.jpg",
+    "rating": "4.8",
+    "products": [
+      {
+        "productId": 201,
+        "productName": "Beras 5kg",
+        "price": 50000,
+        "description": "Beras berkualitas untuk masakan harian Anda.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 202,
+        "productName": "Minyak Goreng 1L",
+        "price": 15000,
+        "description": "Minyak goreng berkualitas untuk menggoreng makanan lezat.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 203,
+        "productName": "Gula Pasir 1kg",
+        "price": 12000,
+        "description": "Gula pasir murni, cocok untuk segala jenis minuman dan makanan.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 204,
+        "productName": "Susu UHT 1L",
+        "price": 12000,
+        "description": "Susu UHT segar untuk kebutuhan nutrisi Anda.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 205,
+        "productName": "Teh Celup",
+        "price": 8000,
+        "description": "Teh celup pilihan untuk menemani waktu santai Anda.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 206,
+        "productName": "Kopi Bubuk 250g",
+        "price": 35000,
+        "description": "Kopi bubuk berkualitas untuk pagi yang menyegarkan.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 207,
+        "productName": "Biskuit Oreo",
+        "price": 20000,
+        "description": "Biskuit Oreo dengan rasa cokelat dan krim yang lezat.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 208,
+        "productName": "Mie Instan",
+        "price": 3000,
+        "description": "Mie instan praktis dan enak untuk semua kesempatan.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 209,
+        "productName": "Bubur Instan",
+        "price": 15000,
+        "description": "Bubur instan lezat dan mudah disajikan.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 210,
+        "productName": "Kecap Manis",
+        "price": 10000,
+        "description": "Kecap manis untuk menambah cita rasa masakan Anda.",
+        "isFreeShipping": true
+      }
+    ]
+  },
+  {
+    "storeId": 102,
+    "storeName": "Supermarket ABC",
+    "address": "Jl. Raya No. 45, Bandung",
+    "image": "https://example.com/images/store2.jpg",
+    "rating": "4.9",
+    "products": [
+      {
+        "productId": 211,
+        "productName": "Telur Ayam 1kg",
+        "price": 20000,
+        "description": "Telur ayam segar untuk berbagai masakan.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 212,
+        "productName": "Daging Sapi 1kg",
+        "price": 120000,
+        "description": "Daging sapi segar dan berkualitas tinggi.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 213,
+        "productName": "Ayam Potong 1kg",
+        "price": 60000,
+        "description": "Ayam potong segar untuk masakan lezat.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 214,
+        "productName": "Sayur Bayam 250g",
+        "price": 5000,
+        "description": "Bayam segar dan penuh nutrisi.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 215,
+        "productName": "Kacang Tanah 500g",
+        "price": 25000,
+        "description": "Kacang tanah yang cocok untuk camilan dan masakan.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 216,
+        "productName": "Bawang Merah 250g",
+        "price": 8000,
+        "description": "Bawang merah segar untuk menambah aroma masakan.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 217,
+        "productName": "Bawang Putih 250g",
+        "price": 10000,
+        "description": "Bawang putih segar dengan aroma yang khas.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 218,
+        "productName": "Cabai Merah 250g",
+        "price": 15000,
+        "description": "Cabai merah segar untuk masakan pedas.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 219,
+        "productName": "Saus Tomat",
+        "price": 12000,
+        "description": "Saus tomat segar, cocok untuk berbagai masakan.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 220,
+        "productName": "Susu Kental Manis",
+        "price": 10000,
+        "description": "Susu kental manis untuk menambah cita rasa pada minuman.",
+        "isFreeShipping": true
+      }
+    ]
+  },
+  {
+    "storeId": 103,
+    "storeName": "Toko Kue Manis",
+    "address": "Jl. Kue No. 10, Yogyakarta",
+    "image": "https://example.com/images/store3.jpg",
+    "rating": "5.0",
+    "products": [
+      {
+        "productId": 221,
+        "productName": "Kue Coklat",
+        "price": 30000,
+        "description": "Kue coklat lembut dengan rasa manis yang pas.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 222,
+        "productName": "Roti Bakar",
+        "price": 15000,
+        "description": "Roti bakar hangat dengan isian manis.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 223,
+        "productName": "Kue Lapis",
+        "price": 20000,
+        "description": "Kue lapis warna-warni dengan rasa lezat.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 224,
+        "productName": "Kue Cubir",
+        "price": 18000,
+        "description": "Kue cubir tradisional yang lembut.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 225,
+        "productName": "Donat",
+        "price": 25000,
+        "description": "Donat manis dengan taburan gula atau cokelat.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 226,
+        "productName": "Brownies",
+        "price": 35000,
+        "description": "Brownies cokelat lembut yang lezat.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 227,
+        "productName": "Kue Tart",
+        "price": 60000,
+        "description": "Kue tart spesial untuk berbagai acara.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 228,
+        "productName": "Pudding",
+        "price": 15000,
+        "description": "Pudding manis dengan rasa yang menyegarkan.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 229,
+        "productName": "Kue Kering",
+        "price": 20000,
+        "description": "Kue kering renyah dan lezat untuk camilan.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 230,
+        "productName": "Kue Pudding",
+        "price": 17000,
+        "description": "Kue pudding lembut dengan berbagai rasa.",
+        "isFreeShipping": true
+      }
+    ]
+  },
+  {
+    "storeId": 104,
+    "storeName": "Toko Buah Segar",
+    "address": "Jl. Buah No. 5, Medan",
+    "image": "https://example.com/images/store4.jpg",
+    "rating": "4.5",
+    "products": [
+      {
+        "productId": 231,
+        "productName": "Apel",
+        "price": 15000,
+        "description": "Apel segar dengan rasa manis dan renyah.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 232,
+        "productName": "Pisang",
+        "price": 5000,
+        "description": "Pisang segar untuk camilan sehat.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 233,
+        "productName": "Jeruk",
+        "price": 12000,
+        "description": "Jeruk segar kaya vitamin C.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 234,
+        "productName": "Mangga",
+        "price": 20000,
+        "description": "Mangga manis dan juicy untuk menyegarkan hari Anda.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 235,
+        "productName": "Anggur",
+        "price": 30000,
+        "description": "Anggur segar dengan rasa manis.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 236,
+        "productName": "Kiwi",
+        "price": 25000,
+        "description": "Kiwi segar yang kaya akan nutrisi.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 237,
+        "productName": "Semangka",
+        "price": 15000,
+        "description": "Semangka segar untuk menyegarkan tubuh.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 238,
+        "productName": "Pepaya",
+        "price": 8000,
+        "description": "Pepaya segar untuk meningkatkan kesehatan pencernaan.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 239,
+        "productName": "Strawberry",
+        "price": 40000,
+        "description": "Strawberry segar dan manis untuk camilan.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 240,
+        "productName": "Nanas",
+        "price": 20000,
+        "description": "Nanas segar yang enak dan juicy.",
+        "isFreeShipping": true
+      }
+    ]
+  },
+  {
+    "storeId": 105,
+    "storeName": "Toko Elektronik XYZ",
+    "address": "Jl. Elektronik No. 3, Jakarta",
+    "image": "https://example.com/images/store5.jpg",
+    "rating": "4.7",
+    "products": [
+      {
+        "productId": 241,
+        "productName": "Smartphone XYZ",
+        "price": 3000000,
+        "description": "Smartphone dengan kamera 48MP dan baterai tahan lama.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 242,
+        "productName": "Laptop ABC",
+        "price": 12000000,
+        "description": "Laptop ringan dengan performa tinggi.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 243,
+        "productName": "Televisi 55\"",
+        "price": 7000000,
+        "description": "Televisi LED 55 inci dengan kualitas gambar UHD.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 244,
+        "productName": "Kamera DSLR",
+        "price": 6000000,
+        "description": "Kamera DSLR untuk fotografi profesional.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 245,
+        "productName": "Headphone Bluetooth",
+        "price": 1500000,
+        "description": "Headphone wireless dengan suara jernih.",
+        "isFreeShipping": true
+      }
+    ]
+  },
+  {
+    "storeId": 106,
+    "storeName": "Toko Peralatan Dapur",
+    "address": "Jl. Dapur No. 8, Surabaya",
+    "image": "https://example.com/images/store6.jpg",
+    "rating": "4.6",
+    "products": [
+      {
+        "productId": 246,
+        "productName": "Blender 600W",
+        "price": 800000,
+        "description": "Blender dengan daya 600W untuk smoothies.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 247,
+        "productName": "Panci Set 5 Pcs",
+        "price": 1200000,
+        "description": "Set panci lengkap untuk memasak.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 248,
+        "productName": "Mikrofon Oven",
+        "price": 1000000,
+        "description": "Mikrofon oven untuk memanggang dengan sempurna.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 249,
+        "productName": "Pisau Dapur",
+        "price": 250000,
+        "description": "Pisau dapur stainless steel yang tajam.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 250,
+        "productName": "Set Gelas",
+        "price": 300000,
+        "description": "Set gelas kaca elegan untuk menyajikan minuman.",
+        "isFreeShipping": false
+      }
+    ]
+  },
+  {
+    "storeId": 107,
+    "storeName": "Toko Pakaian Trendy",
+    "address": "Jl. Fashion No. 15, Bandung",
+    "image": "https://example.com/images/store7.jpg",
+    "rating": "4.8",
+    "products": [
+      {
+        "productId": 251,
+        "productName": "Kaos Pria",
+        "price": 150000,
+        "description": "Kaos pria berkualitas tinggi dan nyaman.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 252,
+        "productName": "Dress Wanita",
+        "price": 300000,
+        "description": "Dress wanita stylish untuk berbagai acara.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 253,
+        "productName": "Jaket Musim Dingin",
+        "price": 500000,
+        "description": "Jaket hangat untuk musim dingin.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 254,
+        "productName": "Celana Jeans",
+        "price": 250000,
+        "description": "Celana jeans nyaman untuk aktivitas sehari-hari.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 255,
+        "productName": "Sepatu Sneakers",
+        "price": 400000,
+        "description": "Sepatu sneakers stylish untuk gaya sehari-hari.",
+        "isFreeShipping": true
+      }
+    ]
+  },
+  {
+    "storeId": 108,
+    "storeName": "Toko Olahraga Fit",
+    "address": "Jl. Olahraga No. 2, Medan",
+    "image": "https://example.com/images/store8.jpg",
+    "rating": "4.9",
+    "products": [
+      {
+        "productId": 256,
+        "productName": "Sepeda Gunung",
+        "price": 1500000,
+        "description": "Sepeda gunung untuk petualangan di alam.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 257,
+        "productName": "Bola Basket",
+        "price": 300000,
+        "description": "Bola basket berkualitas untuk bermain di lapangan.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 258,
+        "productName": "Alat Fitness",
+        "price": 600000,
+        "description": "Alat fitness untuk latihan di rumah.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 259,
+        "productName": "Matras Yoga",
+        "price": 250000,
+        "description": "Matras yoga nyaman untuk latihan yoga.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 260,
+        "productName": "Kostum Renang",
+        "price": 200000,
+        "description": "Kostum renang untuk olahraga air.",
+        "isFreeShipping": true
+      }
+    ]
+  },
+  {
+    "storeId": 109,
+    "storeName": "Toko Mainan Anak",
+    "address": "Jl. Mainan No. 6, Yogyakarta",
+    "image": "https://example.com/images/store9.jpg",
+    "rating": "5.0",
+    "products": [
+      {
+        "productId": 261,
+        "productName": "Boneka Teddy",
+        "price": 200000,
+        "description": "Boneka teddy lucu untuk menemani anak Anda.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 262,
+        "productName": "Mobil-Mobilan",
+        "price": 150000,
+        "description": "Mobil-mobilan untuk anak-anak yang suka berkreasi.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 263,
+        "productName": "Puzzle 1000 Pcs",
+        "price": 300000,
+        "description": "Puzzle seru untuk meningkatkan keterampilan anak.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 264,
+        "productName": "Kucing Peliharaan",
+        "price": 50000,
+        "description": "Mainan kucing peliharaan yang menyenangkan.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 265,
+        "productName": "Bola Karet",
+        "price": 75000,
+        "description": "Bola karet untuk bermain di luar.",
+        "isFreeShipping": true
+      }
+    ]
+  },
+  {
+    "storeId": 110,
+    "storeName": "Toko Kesehatan dan Kecantikan",
+    "address": "Jl. Kecantikan No. 11, Jakarta",
+    "image": "https://example.com/images/store10.jpg",
+    "rating": "4.8",
+    "products": [
+      {
+        "productId": 266,
+        "productName": "Sabun Mandi Organik",
+        "price": 50000,
+        "description": "Sabun mandi organik untuk kulit sehat.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 267,
+        "productName": "Shampoo Herbal",
+        "price": 60000,
+        "description": "Shampoo herbal untuk rambut berkilau.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 268,
+        "productName": "Krem Wajah",
+        "price": 120000,
+        "description": "Krem wajah untuk perawatan kulit.",
+        "isFreeShipping": true
+      },
+      {
+        "productId": 269,
+        "productName": "Lipstik Matte",
+        "price": 75000,
+        "description": "Lipstik matte dengan warna tahan lama.",
+        "isFreeShipping": false
+      },
+      {
+        "productId": 270,
+        "productName": "Minyak Aromaterapi",
+        "price": 90000,
+        "description": "Minyak aromaterapi untuk relaksasi.",
+        "isFreeShipping": true
+      }
+    ]
+  }
+]

@@ -1,4 +1,4 @@
-const FileManager = require("./fileManager"); // Mengimpor kelas FileManager
+const FileManager = require("../../utils/fileManager"); // Mengimpor kelas FileManager
 
 class ProductManager extends FileManager {
   constructor(dataPath) {
@@ -16,7 +16,7 @@ class ProductManager extends FileManager {
 }
 
 // Penggunaan
-const dataPath = "./data/products.json";
+const dataPath = "./models/data/products.json";
 const productManager = new ProductManager(dataPath);
 
 module.exports = productManager;
