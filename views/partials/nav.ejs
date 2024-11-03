@@ -9,7 +9,7 @@
       <!-- Logo -->
       <a
         class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
-        href="../templates/creative-agency/index.html"
+        href="/main/<%= user.id%>"
         aria-label="Preline"
       >
         <svg
@@ -126,12 +126,21 @@
       </div> -->
       <!-- location end -->
 
-      <button
-        type="button"
-        class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl border border-transparent bg-lime-400 text-black hover:bg-lime-500 focus:outline-none focus:bg-lime-500 transition disabled:opacity-50 disabled:pointer-events-none"
-      >
-        Hire us
-      </button>
+      <a href="/main/<%= user.id %>/profile">
+        <img
+          src="<%= user.img %>"
+          alt="Profile Picture"
+          class="w-12 h-12 rounded-full border-1 border-gray-300"
+        />
+      </a>
+      <form action="/logout" method="POST">
+        <button
+          type="submit"
+          class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl border border-transparent bg-lime-400 text-black hover:bg-lime-500 focus:outline-none focus:bg-lime-500 transition disabled:opacity-50 disabled:pointer-events-none"
+        >
+          Log Out
+        </button>
+      </form>
 
       <div class="md:hidden">
         <button

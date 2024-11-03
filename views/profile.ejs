@@ -1,0 +1,136 @@
+<div class="">
+  <div class="w-auto mx-auto bg-white shadow-md rounded-lg">
+    <div class="relative">
+      <div
+        class="h-40 bg-cover bg-center rounded-t-lg"
+        style="background-color: rgb(0, 219, 0)"
+      ></div>
+      <div class="absolute inset-x-0 top-32 flex justify-center">
+        <div class="relative">
+          <img
+            alt="Profile picture of a person with curly hair, smiling and looking to the side"
+            class="h-24 w-24 rounded-full border-4 border-white"
+            height="100"
+            src="https://storage.googleapis.com/a1aa/image/T3v0LosQ15axKFuCGC233LwZKhIxsMh2DSUdSzpvg2dVGP7E.jpg"
+            width="100"
+          />
+          <div class="absolute bottom-0 right-0 h-6 w-6 bg-red-500 rounded-full flex items-center justify-center">
+            <i class="fas fa-camera text-white text-xs"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-16">
+      <h1 class="text-2xl">1.567 OVO Points</h1>
+    </div>
+    <div class="flex justify-center mt-4 text-gray-600">
+      <form
+        action="/main/<%= user.id %>/profile"
+        method="post"
+        class="w-[1000px]"
+        id="myForm"
+      >
+        <div class="mt-6 mb-6 border-b border-gray">
+          <label for="">Name</label><br />
+          <input type="hidden" name="oldName" value="<%= user.name %>"/>
+          <input
+            type="text"
+            id="fullName"
+            name="name"
+            placeholder="Enter your name"
+            class="border-b border-gray w-full mt-2"
+            value="<%= user.name %>"
+          />
+        </div>
+
+        <label for="noHp" class="">Mobile Number</label><br />
+        <div class="flex items-center border-b border-gray rounded-md h-12">
+          <span class="pr-4 text-lg">+62</span>
+          <input type="hidden" name="oldNoHp" value="<%= user.noHp %>" />
+          <input
+            type="number"
+            id="noHp"
+            name="noHp"
+            class="block w-full rounded-lg text-lg"
+            required
+            placeholder="12345678"
+            value="<%= user.noHp %>"
+          />
+        </div>
+
+        <div class="mt-6 border-b border-gray">
+          <label for="">Enter Your New Email Address</label>
+          <input type="hidden" name="oldEmail" value="<%= user.email %>" />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="border-b border-gray w-full mt-2"
+            placeholder="Enter Email"
+            value="<%= user.email %>"
+          />
+        </div>
+
+        <div class="mt-6 border-b border-gray">
+          <label for="password">Enter Your New Password</label>
+          <input type="hidden" name="oldPassword" value="<%= user.password %>" />
+          <div class="flex items-center">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="border-b border-gray w-full mt-2"
+              placeholder="Enter New Password"
+              value="<%= user.password %>"
+            />
+            <button
+              type="button"
+              id="togglePassword"
+              class="ml-2 text-gray-600 focus:outline-none"
+            >
+              <span id="toggleText" class="p-4">Show</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <label for="sex" class="block ">Sex</label>
+          <select id="sex" name="sex" class="w-full mt-2  border-b border-gray">
+            <option value="select" disabled <%= user.sex ? '' : 'selected' %>>Please select your sex</option>
+            <option value="Male" id="male" <%= user.sex === 'Male' ? 'selected' : '' %>>Male</option>
+            <option value="Female" id="female" <%= user.sex === 'Female' ? 'selected' : '' %>>Female</option>
+            <option value="Other" id="non" <%= user.sex === 'Other' ? 'selected' : '' %>>Don't want to mention</option>
+          </select>
+        </div>
+        
+
+        <% if (typeof messages !== 'undefined' && messages.length > 0) { %>
+          <div class="bg-red-500 text-sm text-white rounded-lg p-4 mt-4" role="alert">
+            <ul>
+              <% messages.forEach(function(msg) { %>
+                <li><%= msg %></li>
+              <% }); %>
+            </ul>
+          </div>
+        <% } %>
+
+        <% if (typeof updateMessage !== 'undefined' && updateMessage) { %>
+          <div class="bg-green-500 text-sm text-white rounded-lg p-4 mt-4" role="alert">
+            <%= updateMessage %>
+          </div>
+        <% } %>
+
+        <div class="flex justify-center mt-6 mb-6">
+          <button
+            type="submit"
+            id="updateData"
+            class="px-4 py-2 w-64 rounded-[50px] text-white"
+            style="background-color: rgb(44, 201, 63)"
+          >
+            Update
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
