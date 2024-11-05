@@ -7,10 +7,10 @@ class FileManager {
   }
 
   async createDirAndFile() {
-    const dirPath = "./data";
+    const dirPath = "./models/data";
     try {
       await fs.mkdir(dirPath, { recursive: true });
-      await fs.writeFile(this.dataPath, "[]", { flag: "wx" }); // Hanya buat jika tidak ada
+      await fs.writeFile(this.dataPath, "[]", { flag: "wx" });
     } catch (error) {
       if (error.code !== "EEXIST") {
         console.error("Error creating directory or file:", error);

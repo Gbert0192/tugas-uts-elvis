@@ -8,11 +8,9 @@
       <div class="absolute inset-x-0 top-32 flex justify-center">
         <div class="relative">
           <img
+            src="https://storage.googleapis.com/a1aa/image/T3v0LosQ15axKFuCGC233LwZKhIxsMh2DSUdSzpvg2dVGP7E.jpg"
             alt="Profile picture of a person with curly hair, smiling and looking to the side"
             class="h-24 w-24 rounded-full border-4 border-white"
-            height="100"
-            src="https://storage.googleapis.com/a1aa/image/T3v0LosQ15axKFuCGC233LwZKhIxsMh2DSUdSzpvg2dVGP7E.jpg"
-            width="100"
           />
           <div class="absolute bottom-0 right-0 h-6 w-6 bg-red-500 rounded-full flex items-center justify-center">
             <i class="fas fa-camera text-white text-xs"></i>
@@ -20,117 +18,145 @@
         </div>
       </div>
     </div>
+
     <div class="text-center mt-16">
       <h1 class="text-2xl">1.567 OVO Points</h1>
     </div>
+
     <div class="flex justify-center mt-4 text-gray-600">
       <form
-        action="/main/<%= user.id %>/profile"
-        method="post"
-        class="w-[1000px]"
-        id="myForm"
-      >
-        <div class="mt-6 mb-6 border-b border-gray">
-          <label for="">Name</label><br />
-          <input type="hidden" name="oldName" value="<%= user.name %>"/>
+      action="/main/<%= user.id %>/profile"
+      method="post"
+      class="w-full max-w-[1000px] mx-auto p-6 bg-white rounded-lg shadow-md"
+      id="myForm"
+      enctype="multipart/form-data"
+    >
+      <!-- Name Field -->
+      <div class="mb-6 border-b border-gray">
+        <label for="fullName" class="text-gray-700">Name</label>
+        <input type="hidden" name="oldName" value="<%= user.name %>" />
+        <input
+          type="text"
+          id="fullName"
+          name="name"
+          placeholder="Enter your name"
+          class="border-b border-gray w-full mt-2 p-2 rounded focus:outline-none focus:border-green-500"
+          value="<%= user.name %>"
+          required
+        />
+      </div>
+    
+      <!-- Mobile Number Field -->
+      <label for="noHp" class="text-gray-700">Mobile Number</label>
+      <div class="flex items-center border-b border-gray rounded-md h-12 mb-6">
+        <span class="pr-4 text-lg">+62</span>
+        <input type="hidden" name="oldNoHp" value="<%= user.noHp %>" />
+        <input
+          type="tel"
+          id="noHp"
+          name="noHp"
+          class="block w-full rounded-lg text-lg p-2 focus:outline-none focus:border-green-500"
+          required
+          placeholder="12345678"
+          value="<%= user.noHp %>"
+        />
+      </div>
+    
+      <!-- Email Field -->
+      <div class="mb-6 border-b border-gray">
+        <label for="email" class="text-gray-700">Enter Your New Email Address</label>
+        <input type="hidden" name="oldEmail" value="<%= user.email %>" />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="border-b border-gray w-full mt-2 p-2 rounded focus:outline-none focus:border-green-500"
+          placeholder="Enter Email"
+          value="<%= user.email %>"
+          required
+        />
+      </div>
+    
+      <!-- Password Field -->
+      <div class="mb-6 border-b border-gray">
+        <label for="password" class="text-gray-700">Enter Your New Password</label>
+        <input type="hidden" name="oldPassword" value="<%= user.password %>" />
+        <div class="flex items-center">
           <input
-            type="text"
-            id="fullName"
-            name="name"
-            placeholder="Enter your name"
-            class="border-b border-gray w-full mt-2"
-            value="<%= user.name %>"
+            type="password"
+            id="password"
+            name="password"
+            class="border-b border-gray w-full mt-2 p-2 rounded focus:outline-none focus:border-green-500"
+            placeholder="Enter New Password"
+            value="<%= user.password %>"
           />
-        </div>
-
-        <label for="noHp" class="">Mobile Number</label><br />
-        <div class="flex items-center border-b border-gray rounded-md h-12">
-          <span class="pr-4 text-lg">+62</span>
-          <input type="hidden" name="oldNoHp" value="<%= user.noHp %>" />
-          <input
-            type="number"
-            id="noHp"
-            name="noHp"
-            class="block w-full rounded-lg text-lg"
-            required
-            placeholder="12345678"
-            value="<%= user.noHp %>"
-          />
-        </div>
-
-        <div class="mt-6 border-b border-gray">
-          <label for="">Enter Your New Email Address</label>
-          <input type="hidden" name="oldEmail" value="<%= user.email %>" />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            class="border-b border-gray w-full mt-2"
-            placeholder="Enter Email"
-            value="<%= user.email %>"
-          />
-        </div>
-
-        <div class="mt-6 border-b border-gray">
-          <label for="password">Enter Your New Password</label>
-          <input type="hidden" name="oldPassword" value="<%= user.password %>" />
-          <div class="flex items-center">
-            <input
-              type="password"
-              id="password"
-              name="password"
-              class="border-b border-gray w-full mt-2"
-              placeholder="Enter New Password"
-              value="<%= user.password %>"
-            />
-            <button
-              type="button"
-              id="togglePassword"
-              class="ml-2 text-gray-600 focus:outline-none"
-            >
-              <span id="toggleText" class="p-4">Show</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="mt-6">
-          <label for="sex" class="block ">Sex</label>
-          <select id="sex" name="sex" class="w-full mt-2  border-b border-gray">
-            <option value="select" disabled <%= user.sex ? '' : 'selected' %>>Please select your sex</option>
-            <option value="Male" id="male" <%= user.sex === 'Male' ? 'selected' : '' %>>Male</option>
-            <option value="Female" id="female" <%= user.sex === 'Female' ? 'selected' : '' %>>Female</option>
-            <option value="Other" id="non" <%= user.sex === 'Other' ? 'selected' : '' %>>Don't want to mention</option>
-          </select>
-        </div>
-        
-
-        <% if (typeof messages !== 'undefined' && messages.length > 0) { %>
-          <div class="bg-red-500 text-sm text-white rounded-lg p-4 mt-4" role="alert">
-            <ul>
-              <% messages.forEach(function(msg) { %>
-                <li><%= msg %></li>
-              <% }); %>
-            </ul>
-          </div>
-        <% } %>
-
-        <% if (typeof updateMessage !== 'undefined' && updateMessage) { %>
-          <div class="bg-green-500 text-sm text-white rounded-lg p-4 mt-4" role="alert">
-            <%= updateMessage %>
-          </div>
-        <% } %>
-
-        <div class="flex justify-center mt-6 mb-6">
           <button
-            type="submit"
-            id="updateData"
-            class="px-4 py-2 w-64 rounded-[50px] text-white"
-            style="background-color: rgb(44, 201, 63)"
+            type="button"
+            id="togglePassword"
+            class="ml-2 text-gray-600 focus:outline-none"
           >
-            Update
+            <span id="toggleText" class="p-4">Show</span>
           </button>
         </div>
-      </form>
+      </div>
+    
+      <!-- Sex Selection Field -->
+      <div class="mb-6">
+        <label for="sex" class="block text-gray-700">Sex</label>
+        <select id="sex" name="sex" class="w-full mt-2 border-b border-gray rounded p-2 focus:outline-none focus:border-green-500">
+          <option value="" disabled <%= !user.sex ? 'selected' : '' %>>Please select your sex</option>
+          <option value="Male" <%= user.sex === 'Male' ? 'selected' : '' %>>Male</option>
+          <option value="Female" <%= user.sex === 'Female' ? 'selected' : '' %>>Female</option>
+          <option value="Other" <%= user.sex === 'Other' ? 'selected' : '' %>>Don't want to mention</option>
+        </select>
+      </div>
+    
+
+    
+      <!-- Photo Upload -->
+      <div class="flex flex-col items-center justify-center p-6 border rounded-lg shadow-md bg-white mt-11">
+        <label for="photo-upload" class="flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-lg w-48 h-48 cursor-pointer hover:border-gray-400 hover:bg-gray-50 transition duration-200 ease-in-out">
+          <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M17 9.00195C19.175 9.01406 20.3529 9.11051 21.1213 9.8789C22 10.7576 22 12.1718 22 15.0002V16.0002C22 18.8286 22 20.2429 21.1213 21.1215C20.2426 22.0002 18.8284 22.0002 16 22.0002H8C5.17157 22.0002 3.75736 22.0002 2.87868 21.1215C2 20.2429 2 18.8286 2 16.0002L2 15.0002C2 12.1718 2 10.7576 2.87868 9.87889C3.64706 9.11051 4.82497 9.01406 7 9.00195" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M12 15L12 2M12 2L15 5.5M12 2L9 5.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            <span class="text-sm text-gray-600 font-semibold">Upload Photo</span>
+        </label>
+        <input type="file" id="photo-upload" class="hidden" name="img"/>
+      </div>
+
+      <!-- Flash Messages -->
+      <% if (typeof messages !== 'undefined' && messages.length > 0) { %>
+        <div class="bg-red-500 text-sm text-white rounded-lg p-4 mt-4" role="alert">
+          <ul>
+            <% messages.forEach(function(msg) { %>
+              <li><%= msg %></li>
+            <% }); %>
+          </ul>
+        </div>
+      <% } %>
+    
+      <% if (typeof updateMessage !== 'undefined' && updateMessage) { %>
+        <div class="bg-green-500 text-sm text-white rounded-lg p-4 mt-4" role="alert">
+          <%= updateMessage %>
+        </div>
+      <% } %>
+      <% if (typeof uploadMessage !== 'undefined' && uploadMessage) { %>
+        <div class="bg-green-500 text-sm text-white rounded-lg p-4 mt-4" role="alert">
+          <%= uploadMessage %>
+        </div>
+      <% } %>
+    
+      <!-- Update Button -->
+      <div class="flex justify-center mt-6">
+        <button
+          type="submit"
+          id="updateData"
+          class="px-4 py-2 w-64 rounded-[50px] text-white"
+          style="background-color: rgb(44, 201, 63)"
+        >
+          Update
+        </button>
+      </div>
+    </form>
+    
     </div>
   </div>
 </div>
