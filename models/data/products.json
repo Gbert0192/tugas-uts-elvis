@@ -11,70 +11,90 @@
         "productName": "Beras 5kg",
         "price": 50000,
         "description": "Beras berkualitas untuk masakan harian Anda.",
-        "isFreeShipping": true
+        "isFreeShipping": true,
+        "img": "https://example.com/images/beras5kg.jpg",
+        "weight": "5kg"
       },
       {
         "productId": 202,
         "productName": "Minyak Goreng 1L",
         "price": 15000,
         "description": "Minyak goreng berkualitas untuk menggoreng makanan lezat.",
-        "isFreeShipping": false
+        "isFreeShipping": false,
+        "img": "https://example.com/images/minyakgoreng1l.jpg",
+        "weight": "1L"
       },
       {
         "productId": 203,
         "productName": "Gula Pasir 1kg",
         "price": 12000,
         "description": "Gula pasir murni, cocok untuk segala jenis minuman dan makanan.",
-        "isFreeShipping": false
+        "isFreeShipping": false,
+        "img": "https://example.com/images/gulapasir1kg.jpg",
+        "weight": "1kg"
       },
       {
         "productId": 204,
         "productName": "Susu UHT 1L",
         "price": 12000,
         "description": "Susu UHT segar untuk kebutuhan nutrisi Anda.",
-        "isFreeShipping": true
+        "isFreeShipping": true,
+        "img": "https://example.com/images/susu1l.jpg",
+        "weight": "1L"
       },
       {
         "productId": 205,
         "productName": "Teh Celup",
         "price": 8000,
         "description": "Teh celup pilihan untuk menemani waktu santai Anda.",
-        "isFreeShipping": false
+        "isFreeShipping": false,
+        "img": "https://example.com/images/tehcelup.jpg",
+        "weight": "250g"
       },
       {
         "productId": 206,
         "productName": "Kopi Bubuk 250g",
         "price": 35000,
         "description": "Kopi bubuk berkualitas untuk pagi yang menyegarkan.",
-        "isFreeShipping": true
+        "isFreeShipping": true,
+        "img": "https://example.com/images/kopibubuk250g.jpg",
+        "weight": "250g"
       },
       {
         "productId": 207,
         "productName": "Biskuit Oreo",
         "price": 20000,
         "description": "Biskuit Oreo dengan rasa cokelat dan krim yang lezat.",
-        "isFreeShipping": false
+        "isFreeShipping": false,
+        "img": "https://example.com/images/biskuitoreo.jpg",
+        "weight": "200g"
       },
       {
         "productId": 208,
         "productName": "Mie Instan",
         "price": 3000,
         "description": "Mie instan praktis dan enak untuk semua kesempatan.",
-        "isFreeShipping": true
+        "isFreeShipping": true,
+        "img": "https://example.com/images/mieinstan.jpg",
+        "weight": "85g"
       },
       {
         "productId": 209,
         "productName": "Bubur Instan",
         "price": 15000,
         "description": "Bubur instan lezat dan mudah disajikan.",
-        "isFreeShipping": false
+        "isFreeShipping": false,
+        "img": "https://example.com/images/buburinstan.jpg",
+        "weight": "300g"
       },
       {
         "productId": 210,
         "productName": "Kecap Manis",
         "price": 10000,
         "description": "Kecap manis untuk menambah cita rasa masakan Anda.",
-        "isFreeShipping": true
+        "isFreeShipping": true,
+        "img": "https://example.com/images/kecapmanis.jpg",
+        "weight": "400ml"
       }
     ]
   },
@@ -90,70 +110,90 @@
         "productName": "Telur Ayam 1kg",
         "price": 20000,
         "description": "Telur ayam segar untuk berbagai masakan.",
-        "isFreeShipping": false
+        "isFreeShipping": false,
+        "img": "https://example.com/images/telurayam1kg.jpg",
+        "weight": "1kg"
       },
       {
         "productId": 212,
         "productName": "Daging Sapi 1kg",
         "price": 120000,
         "description": "Daging sapi segar dan berkualitas tinggi.",
-        "isFreeShipping": true
+        "isFreeShipping": true,
+        "img": "https://example.com/images/daging1kg.jpg",
+        "weight": "1kg"
       },
       {
         "productId": 213,
         "productName": "Ayam Potong 1kg",
         "price": 60000,
         "description": "Ayam potong segar untuk masakan lezat.",
-        "isFreeShipping": false
+        "isFreeShipping": false,
+        "img": "https://example.com/images/ayampotong1kg.jpg",
+        "weight": "1kg"
       },
       {
         "productId": 214,
         "productName": "Sayur Bayam 250g",
         "price": 5000,
         "description": "Bayam segar dan penuh nutrisi.",
-        "isFreeShipping": true
+        "isFreeShipping": true,
+        "img": "https://example.com/images/sayurbayam250g.jpg",
+        "weight": "250g"
       },
       {
         "productId": 215,
         "productName": "Kacang Tanah 500g",
         "price": 25000,
         "description": "Kacang tanah yang cocok untuk camilan dan masakan.",
-        "isFreeShipping": false
+        "isFreeShipping": false,
+        "img": "https://example.com/images/kacangtanah500g.jpg",
+        "weight": "500g"
       },
       {
         "productId": 216,
         "productName": "Bawang Merah 250g",
         "price": 8000,
         "description": "Bawang merah segar untuk menambah aroma masakan.",
-        "isFreeShipping": true
+        "isFreeShipping": true,
+        "img": "https://example.com/images/bawangmerah250g.jpg",
+        "weight": "250g"
       },
       {
         "productId": 217,
         "productName": "Bawang Putih 250g",
         "price": 10000,
         "description": "Bawang putih segar dengan aroma yang khas.",
-        "isFreeShipping": false
+        "isFreeShipping": false,
+        "img": "https://example.com/images/bawangputih250g.jpg",
+        "weight": "250g"
       },
       {
         "productId": 218,
         "productName": "Cabai Merah 250g",
         "price": 15000,
         "description": "Cabai merah segar untuk masakan pedas.",
-        "isFreeShipping": true
+        "isFreeShipping": true,
+        "img": "https://example.com/images/cabaimerah250g.jpg",
+        "weight": "250g"
       },
       {
         "productId": 219,
         "productName": "Saus Tomat",
         "price": 12000,
         "description": "Saus tomat segar, cocok untuk berbagai masakan.",
-        "isFreeShipping": false
+        "isFreeShipping": false,
+        "img": "https://example.com/images/saustomat.jpg",
+        "weight": "300g"
       },
       {
         "productId": 220,
         "productName": "Susu Kental Manis",
         "price": 10000,
         "description": "Susu kental manis untuk menambah cita rasa pada minuman.",
-        "isFreeShipping": true
+        "isFreeShipping": true,
+        "img": "https://example.com/images/susukentalmanis.jpg",
+        "weight": "400g"
       }
     ]
   },
@@ -169,413 +209,783 @@
         "productName": "Kue Coklat",
         "price": 30000,
         "description": "Kue coklat lembut dengan rasa manis yang pas.",
-        "isFreeShipping": false
+        "isFreeShipping": false,
+        "img": "https://example.com/images/kuecoklat.jpg",
+        "weight": "200g"
       },
       {
         "productId": 222,
         "productName": "Roti Bakar",
         "price": 15000,
         "description": "Roti bakar hangat dengan isian manis.",
-        "isFreeShipping": true
+        "isFreeShipping": true,
+        "img": "https://example.com/images/rotibakar.jpg",
+        "weight": "100g"
       },
       {
         "productId": 223,
-        "productName": "Kue Lapis",
+        "productName": "Donat",
         "price": 20000,
-        "description": "Kue lapis warna-warni dengan rasa lezat.",
-        "isFreeShipping": false
+        "description": "Donat empuk dengan beragam topping.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/donat.jpg",
+        "weight": "150g"
       },
       {
         "productId": 224,
-        "productName": "Kue Cubir",
-        "price": 18000,
-        "description": "Kue cubir tradisional yang lembut.",
-        "isFreeShipping": true
+        "productName": "Kue Lapis",
+        "price": 25000,
+        "description": "Kue lapis yang lembut dan lezat.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/kuelapis.jpg",
+        "weight": "300g"
       },
       {
         "productId": 225,
-        "productName": "Donat",
-        "price": 25000,
-        "description": "Donat manis dengan taburan gula atau cokelat.",
-        "isFreeShipping": false
+        "productName": "Kue Tart",
+        "price": 60000,
+        "description": "Kue tart untuk perayaan spesial Anda.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/kuetart.jpg",
+        "weight": "500g"
       },
       {
         "productId": 226,
-        "productName": "Brownies",
-        "price": 35000,
-        "description": "Brownies cokelat lembut yang lezat.",
-        "isFreeShipping": true
+        "productName": "Kue Cincin",
+        "price": 25000,
+        "description": "Kue cincin yang renyah dan manis.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/kuecincin.jpg",
+        "weight": "200g"
       },
       {
         "productId": 227,
-        "productName": "Kue Tart",
-        "price": 60000,
-        "description": "Kue tart spesial untuk berbagai acara.",
-        "isFreeShipping": false
+        "productName": "Kue Kering",
+        "price": 30000,
+        "description": "Kue kering dengan rasa coklat.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/kuekking.jpg",
+        "weight": "150g"
       },
       {
         "productId": 228,
-        "productName": "Pudding",
-        "price": 15000,
-        "description": "Pudding manis dengan rasa yang menyegarkan.",
-        "isFreeShipping": true
+        "productName": "Brownies",
+        "price": 35000,
+        "description": "Brownies coklat yang fudgy.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/brownies.jpg",
+        "weight": "250g"
       },
       {
         "productId": 229,
-        "productName": "Kue Kering",
+        "productName": "Pudding Coklat",
         "price": 20000,
-        "description": "Kue kering renyah dan lezat untuk camilan.",
-        "isFreeShipping": false
+        "description": "Pudding coklat lembut dan creamy.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/puddingcoklat.jpg",
+        "weight": "200g"
       },
       {
         "productId": 230,
-        "productName": "Kue Pudding",
-        "price": 17000,
-        "description": "Kue pudding lembut dengan berbagai rasa.",
-        "isFreeShipping": true
+        "productName": "Kue Cubir",
+        "price": 15000,
+        "description": "Kue cubir dengan rasa vanilla.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/kuecubir.jpg",
+        "weight": "100g"
       }
     ]
   },
   {
     "storeId": 104,
-    "storeName": "Toko Buah Segar",
-    "address": "Jl. Buah No. 5, Medan",
+    "storeName": "Pasar Segar",
+    "address": "Jl. Pasar No. 1, Jakarta",
     "image": "https://example.com/images/store4.jpg",
-    "rating": "4.5",
+    "rating": "4.7",
     "products": [
       {
-        "productId": 231,
-        "productName": "Apel",
+        "productId": 301,
+        "productName": "Sayur Brokoli 250g",
         "price": 15000,
-        "description": "Apel segar dengan rasa manis dan renyah.",
-        "isFreeShipping": false
+        "description": "Sayur brokoli segar untuk hidangan sehat.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/brokoli250g.jpg",
+        "weight": "250g"
       },
       {
-        "productId": 232,
-        "productName": "Pisang",
-        "price": 5000,
-        "description": "Pisang segar untuk camilan sehat.",
-        "isFreeShipping": true
-      },
-      {
-        "productId": 233,
-        "productName": "Jeruk",
-        "price": 12000,
-        "description": "Jeruk segar kaya vitamin C.",
-        "isFreeShipping": false
-      },
-      {
-        "productId": 234,
-        "productName": "Mangga",
-        "price": 20000,
-        "description": "Mangga manis dan juicy untuk menyegarkan hari Anda.",
-        "isFreeShipping": true
-      },
-      {
-        "productId": 235,
-        "productName": "Anggur",
-        "price": 30000,
-        "description": "Anggur segar dengan rasa manis.",
-        "isFreeShipping": false
-      },
-      {
-        "productId": 236,
-        "productName": "Kiwi",
+        "productId": 302,
+        "productName": "Tomat 1kg",
         "price": 25000,
-        "description": "Kiwi segar yang kaya akan nutrisi.",
-        "isFreeShipping": true
+        "description": "Tomat segar untuk salad dan masakan.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/tomat1kg.jpg",
+        "weight": "1kg"
       },
       {
-        "productId": 237,
-        "productName": "Semangka",
-        "price": 15000,
-        "description": "Semangka segar untuk menyegarkan tubuh.",
-        "isFreeShipping": false
+        "productId": 303,
+        "productName": "Wortel 500g",
+        "price": 12000,
+        "description": "Wortel segar, baik untuk kesehatan mata.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/wortel500g.jpg",
+        "weight": "500g"
       },
       {
-        "productId": 238,
-        "productName": "Pepaya",
-        "price": 8000,
-        "description": "Pepaya segar untuk meningkatkan kesehatan pencernaan.",
-        "isFreeShipping": true
+        "productId": 304,
+        "productName": "Kacang Hijau 250g",
+        "price": 10000,
+        "description": "Kacang hijau untuk campuran bubur.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/kacanghijau250g.jpg",
+        "weight": "250g"
       },
       {
-        "productId": 239,
-        "productName": "Strawberry",
-        "price": 40000,
-        "description": "Strawberry segar dan manis untuk camilan.",
-        "isFreeShipping": false
-      },
-      {
-        "productId": 240,
-        "productName": "Nanas",
+        "productId": 305,
+        "productName": "Kentang 1kg",
         "price": 20000,
-        "description": "Nanas segar yang enak dan juicy.",
-        "isFreeShipping": true
+        "description": "Kentang segar untuk berbagai masakan.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/kentang1kg.jpg",
+        "weight": "1kg"
+      },
+      {
+        "productId": 306,
+        "productName": "Bawang Merah 250g",
+        "price": 10000,
+        "description": "Bawang merah untuk bumbu masakan.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/bawangmerah250g.jpg",
+        "weight": "250g"
+      },
+      {
+        "productId": 307,
+        "productName": "Cabai Merah 100g",
+        "price": 5000,
+        "description": "Cabai merah segar untuk masakan pedas.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/cabaimerah100g.jpg",
+        "weight": "100g"
+      },
+      {
+        "productId": 308,
+        "productName": "Bayam 300g",
+        "price": 8000,
+        "description": "Sayur bayam segar, kaya vitamin.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/bayam300g.jpg",
+        "weight": "300g"
+      },
+      {
+        "productId": 309,
+        "productName": "Kailan 200g",
+        "price": 12000,
+        "description": "Sayur kailan segar untuk tumisan.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/kailan200g.jpg",
+        "weight": "200g"
+      },
+      {
+        "productId": 310,
+        "productName": "Lobak 300g",
+        "price": 9000,
+        "description": "Lobak segar, ideal untuk sup.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/lobak300g.jpg",
+        "weight": "300g"
       }
     ]
   },
   {
     "storeId": 105,
-    "storeName": "Toko Elektronik XYZ",
-    "address": "Jl. Elektronik No. 3, Jakarta",
+    "storeName": "Minimarket ABC",
+    "address": "Jl. Mini No. 2, Bandung",
     "image": "https://example.com/images/store5.jpg",
-    "rating": "4.7",
+    "rating": "4.6",
     "products": [
       {
-        "productId": 241,
-        "productName": "Smartphone XYZ",
-        "price": 3000000,
-        "description": "Smartphone dengan kamera 48MP dan baterai tahan lama.",
-        "isFreeShipping": true
+        "productId": 311,
+        "productName": "Sabun Mandi 100g",
+        "price": 12000,
+        "description": "Sabun mandi dengan aroma segar.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/sabunmandi100g.jpg",
+        "weight": "100g"
       },
       {
-        "productId": 242,
-        "productName": "Laptop ABC",
-        "price": 12000000,
-        "description": "Laptop ringan dengan performa tinggi.",
-        "isFreeShipping": false
+        "productId": 312,
+        "productName": "Shampo 200ml",
+        "price": 15000,
+        "description": "Shampo berkualitas untuk rambut sehat.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/shampo200ml.jpg",
+        "weight": "200ml"
       },
       {
-        "productId": 243,
-        "productName": "Televisi 55\"",
-        "price": 7000000,
-        "description": "Televisi LED 55 inci dengan kualitas gambar UHD.",
-        "isFreeShipping": true
+        "productId": 313,
+        "productName": "Pasta Gigi 150g",
+        "price": 8000,
+        "description": "Pasta gigi dengan mint segar.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/pastagigi150g.jpg",
+        "weight": "150g"
       },
       {
-        "productId": 244,
-        "productName": "Kamera DSLR",
-        "price": 6000000,
-        "description": "Kamera DSLR untuk fotografi profesional.",
-        "isFreeShipping": false
+        "productId": 314,
+        "productName": "Deodoran 50ml",
+        "price": 25000,
+        "description": "Deodoran untuk menjaga kesegaran sepanjang hari.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/deodoran50ml.jpg",
+        "weight": "50ml"
       },
       {
-        "productId": 245,
-        "productName": "Headphone Bluetooth",
-        "price": 1500000,
-        "description": "Headphone wireless dengan suara jernih.",
-        "isFreeShipping": true
+        "productId": 315,
+        "productName": "Hand Sanitizer 100ml",
+        "price": 15000,
+        "description": "Hand sanitizer untuk menjaga kebersihan tangan.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/handsanitizer100ml.jpg",
+        "weight": "100ml"
+      },
+      {
+        "productId": 316,
+        "productName": "Tissue Basah 80 pcs",
+        "price": 20000,
+        "description": "Tissue basah untuk membersihkan tangan dan wajah.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/tissuebasah80pcs.jpg",
+        "weight": "80 pcs"
+      },
+      {
+        "productId": 317,
+        "productName": "Kapas 50 pcs",
+        "price": 10000,
+        "description": "Kapas halus untuk perawatan kulit.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/kapas50pcs.jpg",
+        "weight": "50 pcs"
+      },
+      {
+        "productId": 318,
+        "productName": "Bulu Mata Palsu",
+        "price": 30000,
+        "description": "Bulu mata palsu untuk penampilan cantik.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/bulumatapalsu.jpg",
+        "weight": "1 set"
+      },
+      {
+        "productId": 319,
+        "productName": "Pelembap Wajah 50ml",
+        "price": 22000,
+        "description": "Pelembap wajah untuk kulit lembut.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/pelembapwajah50ml.jpg",
+        "weight": "50ml"
+      },
+      {
+        "productId": 320,
+        "productName": "Sikat Gigi",
+        "price": 5000,
+        "description": "Sikat gigi dengan bulu lembut.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/sikatgigi.jpg",
+        "weight": "1 pcs"
       }
     ]
   },
   {
     "storeId": 106,
-    "storeName": "Toko Peralatan Dapur",
-    "address": "Jl. Dapur No. 8, Surabaya",
+    "storeName": "Toko Buah Segar",
+    "address": "Jl. Buah No. 3, Yogyakarta",
     "image": "https://example.com/images/store6.jpg",
-    "rating": "4.6",
+    "rating": "4.5",
     "products": [
       {
-        "productId": 246,
-        "productName": "Blender 600W",
-        "price": 800000,
-        "description": "Blender dengan daya 600W untuk smoothies.",
-        "isFreeShipping": false
+        "productId": 321,
+        "productName": "Apel 1kg",
+        "price": 30000,
+        "description": "Apel segar, manis dan juicy.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/apel1kg.jpg",
+        "weight": "1kg"
       },
       {
-        "productId": 247,
-        "productName": "Panci Set 5 Pcs",
-        "price": 1200000,
-        "description": "Set panci lengkap untuk memasak.",
-        "isFreeShipping": true
+        "productId": 322,
+        "productName": "Jeruk 1kg",
+        "price": 25000,
+        "description": "Jeruk segar yang kaya vitamin C.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/jeruk1kg.jpg",
+        "weight": "1kg"
       },
       {
-        "productId": 248,
-        "productName": "Mikrofon Oven",
-        "price": 1000000,
-        "description": "Mikrofon oven untuk memanggang dengan sempurna.",
-        "isFreeShipping": false
+        "productId": 323,
+        "productName": "Pisang 1kg",
+        "price": 20000,
+        "description": "Pisang manis yang siap dimakan.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/pisang1kg.jpg",
+        "weight": "1kg"
       },
       {
-        "productId": 249,
-        "productName": "Pisau Dapur",
-        "price": 250000,
-        "description": "Pisau dapur stainless steel yang tajam.",
-        "isFreeShipping": true
+        "productId": 324,
+        "productName": "Mangga 500g",
+        "price": 15000,
+        "description": "Mangga manis, cocok untuk pencuci mulut.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/mangga500g.jpg",
+        "weight": "500g"
       },
       {
-        "productId": 250,
-        "productName": "Set Gelas",
-        "price": 300000,
-        "description": "Set gelas kaca elegan untuk menyajikan minuman.",
-        "isFreeShipping": false
+        "productId": 325,
+        "productName": "Nanas 1kg",
+        "price": 30000,
+        "description": "Nanas segar untuk jus dan salad.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/nanas1kg.jpg",
+        "weight": "1kg"
+      },
+      {
+        "productId": 326,
+        "productName": "Strawberry 250g",
+        "price": 25000,
+        "description": "Strawberry segar untuk dessert.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/strawberry250g.jpg",
+        "weight": "250g"
+      },
+      {
+        "productId": 327,
+        "productName": "Kiwi 200g",
+        "price": 20000,
+        "description": "Kiwi segar yang kaya nutrisi.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/kiwi200g.jpg",
+        "weight": "200g"
+      },
+      {
+        "productId": 328,
+        "productName": "Raspberry 150g",
+        "price": 30000,
+        "description": "Raspberry segar untuk smoothies.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/raspberry150g.jpg",
+        "weight": "150g"
+      },
+      {
+        "productId": 329,
+        "productName": "Melon 1kg",
+        "price": 35000,
+        "description": "Melon manis, sempurna untuk musim panas.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/melon1kg.jpg",
+        "weight": "1kg"
+      },
+      {
+        "productId": 330,
+        "productName": "Semangka 1kg",
+        "price": 20000,
+        "description": "Semangka segar, ideal untuk dibagikan.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/semangka1kg.jpg",
+        "weight": "1kg"
       }
     ]
   },
   {
     "storeId": 107,
-    "storeName": "Toko Pakaian Trendy",
-    "address": "Jl. Fashion No. 15, Bandung",
+    "storeName": "Kedai Kopi",
+    "address": "Jl. Kopi No. 4, Jakarta",
     "image": "https://example.com/images/store7.jpg",
     "rating": "4.8",
     "products": [
       {
-        "productId": 251,
-        "productName": "Kaos Pria",
-        "price": 150000,
-        "description": "Kaos pria berkualitas tinggi dan nyaman.",
-        "isFreeShipping": true
+        "productId": 331,
+        "productName": "Kopi Arabika 250g",
+        "price": 60000,
+        "description": "Kopi arabika premium, kualitas terbaik.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/kopiarabika250g.jpg",
+        "weight": "250g"
       },
       {
-        "productId": 252,
-        "productName": "Dress Wanita",
-        "price": 300000,
-        "description": "Dress wanita stylish untuk berbagai acara.",
-        "isFreeShipping": false
+        "productId": 332,
+        "productName": "Kopi Robusta 250g",
+        "price": 50000,
+        "description": "Kopi robusta dengan cita rasa kuat.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/kopirobusta250g.jpg",
+        "weight": "250g"
       },
       {
-        "productId": 253,
-        "productName": "Jaket Musim Dingin",
-        "price": 500000,
-        "description": "Jaket hangat untuk musim dingin.",
-        "isFreeShipping": true
+        "productId": 333,
+        "productName": "Susu Kental Manis 380g",
+        "price": 12000,
+        "description": "Susu kental manis untuk kopi.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/susukentalmanis380g.jpg",
+        "weight": "380g"
       },
       {
-        "productId": 254,
-        "productName": "Celana Jeans",
-        "price": 250000,
-        "description": "Celana jeans nyaman untuk aktivitas sehari-hari.",
-        "isFreeShipping": false
+        "productId": 334,
+        "productName": "Gula Pasir 1kg",
+        "price": 10000,
+        "description": "Gula pasir untuk manisnya kopi.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/gulapasir1kg.jpg",
+        "weight": "1kg"
       },
       {
-        "productId": 255,
-        "productName": "Sepatu Sneakers",
-        "price": 400000,
-        "description": "Sepatu sneakers stylish untuk gaya sehari-hari.",
-        "isFreeShipping": true
+        "productId": 335,
+        "productName": "Alat Penyeduh Kopi",
+        "price": 75000,
+        "description": "Alat penyeduh kopi untuk membuat kopi di rumah.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/alatpenyeduhkopi.jpg",
+        "weight": "1 pcs"
+      },
+      {
+        "productId": 336,
+        "productName": "Cangkir Kopi 200ml",
+        "price": 15000,
+        "description": "Cangkir kopi untuk menikmati kopi hangat.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/cangkirkopi200ml.jpg",
+        "weight": "200ml"
+      },
+      {
+        "productId": 337,
+        "productName": "Saringan Kopi",
+        "price": 20000,
+        "description": "Saringan kopi untuk menyaring kopi seduh.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/saringankopi.jpg",
+        "weight": "1 pcs"
+      },
+      {
+        "productId": 338,
+        "productName": "Kopi Bubuk 250g",
+        "price": 40000,
+        "description": "Kopi bubuk untuk penyeduhan.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/kopibubuk250g.jpg",
+        "weight": "250g"
+      },
+      {
+        "productId": 339,
+        "productName": "Kopi Instan 100g",
+        "price": 25000,
+        "description": "Kopi instan praktis untuk perjalanan.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/kopiinstan100g.jpg",
+        "weight": "100g"
+      },
+      {
+        "productId": 340,
+        "productName": "Mug Kopi 300ml",
+        "price": 20000,
+        "description": "Mug kopi untuk dinikmati setiap hari.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/mugkopi300ml.jpg",
+        "weight": "300ml"
       }
     ]
   },
   {
     "storeId": 108,
-    "storeName": "Toko Olahraga Fit",
-    "address": "Jl. Olahraga No. 2, Medan",
+    "storeName": "Dapur Ibu",
+    "address": "Jl. Dapur No. 5, Surabaya",
     "image": "https://example.com/images/store8.jpg",
     "rating": "4.9",
     "products": [
       {
-        "productId": 256,
-        "productName": "Sepeda Gunung",
-        "price": 1500000,
-        "description": "Sepeda gunung untuk petualangan di alam.",
-        "isFreeShipping": false
+        "productId": 341,
+        "productName": "Minyak Goreng 1L",
+        "price": 20000,
+        "description": "Minyak goreng berkualitas tinggi.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/minyakgoreng1L.jpg",
+        "weight": "1L"
       },
       {
-        "productId": 257,
-        "productName": "Bola Basket",
-        "price": 300000,
-        "description": "Bola basket berkualitas untuk bermain di lapangan.",
-        "isFreeShipping": true
+        "productId": 342,
+        "productName": "Beras 5kg",
+        "price": 60000,
+        "description": "Beras premium untuk hidangan keluarga.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/beras5kg.jpg",
+        "weight": "5kg"
       },
       {
-        "productId": 258,
-        "productName": "Alat Fitness",
-        "price": 600000,
-        "description": "Alat fitness untuk latihan di rumah.",
-        "isFreeShipping": true
+        "productId": 343,
+        "productName": "Garam 500g",
+        "price": 3000,
+        "description": "Garam halus untuk masakan.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/garam500g.jpg",
+        "weight": "500g"
       },
       {
-        "productId": 259,
-        "productName": "Matras Yoga",
-        "price": 250000,
-        "description": "Matras yoga nyaman untuk latihan yoga.",
-        "isFreeShipping": false
+        "productId": 344,
+        "productName": "Saus Tomat 500g",
+        "price": 12000,
+        "description": "Saus tomat untuk pasta dan pizza.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/sauztomat500g.jpg",
+        "weight": "500g"
       },
       {
-        "productId": 260,
-        "productName": "Kostum Renang",
-        "price": 200000,
-        "description": "Kostum renang untuk olahraga air.",
-        "isFreeShipping": true
+        "productId": 345,
+        "productName": "Bumbu Penyedap 100g",
+        "price": 8000,
+        "description": "Bumbu penyedap untuk memperlezat masakan.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/bumbupenyedap100g.jpg",
+        "weight": "100g"
+      },
+      {
+        "productId": 346,
+        "productName": "Susu Cair 1L",
+        "price": 22000,
+        "description": "Susu cair segar untuk minuman.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/susucair1L.jpg",
+        "weight": "1L"
+      },
+      {
+        "productId": 347,
+        "productName": "Margarine 250g",
+        "price": 15000,
+        "description": "Margarine lembut untuk kue.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/margarine250g.jpg",
+        "weight": "250g"
+      },
+      {
+        "productId": 348,
+        "productName": "Pasta Gigi 100g",
+        "price": 12000,
+        "description": "Pasta gigi untuk kebersihan mulut.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/pastagigi100g.jpg",
+        "weight": "100g"
+      },
+      {
+        "productId": 349,
+        "productName": "Kecap Manis 500ml",
+        "price": 15000,
+        "description": "Kecap manis untuk makanan.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/kecapmanis500ml.jpg",
+        "weight": "500ml"
+      },
+      {
+        "productId": 350,
+        "productName": "Soda 1L",
+        "price": 12000,
+        "description": "Soda manis untuk kesegaran.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/soda1L.jpg",
+        "weight": "1L"
       }
     ]
   },
   {
     "storeId": 109,
-    "storeName": "Toko Mainan Anak",
-    "address": "Jl. Mainan No. 6, Yogyakarta",
+    "storeName": "Toko Kelontong",
+    "address": "Jl. Kelontong No. 6, Bandung",
     "image": "https://example.com/images/store9.jpg",
-    "rating": "5.0",
+    "rating": "4.7",
     "products": [
       {
-        "productId": 261,
-        "productName": "Boneka Teddy",
-        "price": 200000,
-        "description": "Boneka teddy lucu untuk menemani anak Anda.",
-        "isFreeShipping": true
+        "productId": 351,
+        "productName": "Mie Instan 100g",
+        "price": 3000,
+        "description": "Mie instan untuk cepat saji.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/mieinstan100g.jpg",
+        "weight": "100g"
       },
       {
-        "productId": 262,
-        "productName": "Mobil-Mobilan",
-        "price": 150000,
-        "description": "Mobil-mobilan untuk anak-anak yang suka berkreasi.",
-        "isFreeShipping": false
+        "productId": 352,
+        "productName": "Keripik Kentang 250g",
+        "price": 15000,
+        "description": "Keripik kentang renyah.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/keripikkentang250g.jpg",
+        "weight": "250g"
       },
       {
-        "productId": 263,
-        "productName": "Puzzle 1000 Pcs",
-        "price": 300000,
-        "description": "Puzzle seru untuk meningkatkan keterampilan anak.",
-        "isFreeShipping": true
+        "productId": 353,
+        "productName": "Kacang Garuda 500g",
+        "price": 20000,
+        "description": "Kacang garuda untuk cemilan.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/kacanggaruda500g.jpg",
+        "weight": "500g"
       },
       {
-        "productId": 264,
-        "productName": "Kucing Peliharaan",
-        "price": 50000,
-        "description": "Mainan kucing peliharaan yang menyenangkan.",
-        "isFreeShipping": false
+        "productId": 354,
+        "productName": "Kue Kering 200g",
+        "price": 25000,
+        "description": "Kue kering untuk camilan.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/kuekering200g.jpg",
+        "weight": "200g"
       },
       {
-        "productId": 265,
-        "productName": "Bola Karet",
-        "price": 75000,
-        "description": "Bola karet untuk bermain di luar.",
-        "isFreeShipping": true
+        "productId": 355,
+        "productName": "Coklat Batangan 100g",
+        "price": 20000,
+        "description": "Coklat batangan lezat.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/coklatbatangan100g.jpg",
+        "weight": "100g"
+      },
+      {
+        "productId": 356,
+        "productName": "Permen 150g",
+        "price": 10000,
+        "description": "Permen manis untuk anak-anak.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/permen150g.jpg",
+        "weight": "150g"
+      },
+      {
+        "productId": 357,
+        "productName": "Pasta Gigi 100g",
+        "price": 12000,
+        "description": "Pasta gigi untuk kebersihan mulut.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/pastagigi100g.jpg",
+        "weight": "100g"
+      },
+      {
+        "productId": 358,
+        "productName": "Kecap Manis 500ml",
+        "price": 15000,
+        "description": "Kecap manis untuk makanan.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/kecapmanis500ml.jpg",
+        "weight": "500ml"
+      },
+      {
+        "productId": 359,
+        "productName": "Gula Pasir 1kg",
+        "price": 10000,
+        "description": "Gula pasir untuk manisnya makanan.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/gulapasir1kg.jpg",
+        "weight": "1kg"
+      },
+      {
+        "productId": 360,
+        "productName": "Kecap Asin 500ml",
+        "price": 15000,
+        "description": "Kecap asin untuk masakan.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/kecapasin500ml.jpg",
+        "weight": "500ml"
       }
     ]
   },
   {
     "storeId": 110,
-    "storeName": "Toko Kesehatan dan Kecantikan",
-    "address": "Jl. Kecantikan No. 11, Jakarta",
+    "storeName": "Toko Bahan Kue",
+    "address": "Jl. Kue No. 7, Yogyakarta",
     "image": "https://example.com/images/store10.jpg",
-    "rating": "4.8",
+    "rating": "4.6",
     "products": [
       {
-        "productId": 266,
-        "productName": "Sabun Mandi Organik",
+        "productId": 361,
+        "productName": "Tepung Terigu 1kg",
+        "price": 15000,
+        "description": "Tepung terigu untuk semua jenis kue.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/tepungterigu1kg.jpg",
+        "weight": "1kg"
+      },
+      {
+        "productId": 362,
+        "productName": "Gula Pasir 1kg",
+        "price": 10000,
+        "description": "Gula pasir untuk manisnya kue.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/gulapasir1kg.jpg",
+        "weight": "1kg"
+      },
+      {
+        "productId": 363,
+        "productName": "Coklat Bubuk 200g",
+        "price": 25000,
+        "description": "Coklat bubuk untuk kue dan minuman.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/coklatbubuk200g.jpg",
+        "weight": "200g"
+      },
+      {
+        "productId": 364,
+        "productName": "Mentega 250g",
+        "price": 20000,
+        "description": "Mentega untuk membuat kue.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/mentega250g.jpg",
+        "weight": "250g"
+      },
+      {
+        "productId": 365,
+        "productName": "Susu Kental Manis 380g",
+        "price": 12000,
+        "description": "Susu kental manis untuk kue.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/susukentalmanis380g.jpg",
+        "weight": "380g"
+      },
+      {
+        "productId": 366,
+        "productName": "Kek Coklat 500g",
+        "price": 45000,
+        "description": "Kek coklat siap saji.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/kekcoklat500g.jpg",
+        "weight": "500g"
+      },
+      {
+        "productId": 367,
+        "productName": "Pasta Gigi 100g",
+        "price": 12000,
+        "description": "Pasta gigi untuk kebersihan mulut.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/pastagigi100g.jpg",
+        "weight": "100g"
+      },
+      {
+        "productId": 368,
+        "productName": "Wajan Kue 1 pcs",
         "price": 50000,
-        "description": "Sabun mandi organik untuk kulit sehat.",
-        "isFreeShipping": true
+        "description": "Wajan kue untuk membuat kue.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/wajankue1pcs.jpg",
+        "weight": "1 pcs"
       },
       {
-        "productId": 267,
-        "productName": "Shampoo Herbal",
-        "price": 60000,
-        "description": "Shampoo herbal untuk rambut berkilau.",
-        "isFreeShipping": false
+        "productId": 369,
+        "productName": "Cetakan Kue 1 pcs",
+        "price": 30000,
+        "description": "Cetakan kue untuk membuat kue berbentuk.",
+        "isFreeShipping": true,
+        "img": "https://example.com/images/cetakankue1pcs.jpg",
+        "weight": "1 pcs"
       },
       {
-        "productId": 268,
-        "productName": "Krem Wajah",
-        "price": 120000,
-        "description": "Krem wajah untuk perawatan kulit.",
-        "isFreeShipping": true
-      },
-      {
-        "productId": 269,
-        "productName": "Lipstik Matte",
-        "price": 75000,
-        "description": "Lipstik matte dengan warna tahan lama.",
-        "isFreeShipping": false
-      },
-      {
-        "productId": 270,
-        "productName": "Minyak Aromaterapi",
-        "price": 90000,
-        "description": "Minyak aromaterapi untuk relaksasi.",
-        "isFreeShipping": true
+        "productId": 370,
+        "productName": "Mesin Pengaduk Kue",
+        "price": 250000,
+        "description": "Mesin pengaduk kue untuk membuat adonan.",
+        "isFreeShipping": false,
+        "img": "https://example.com/images/mesinpengadukkue.jpg",
+        "weight": "1 unit"
       }
     ]
   }

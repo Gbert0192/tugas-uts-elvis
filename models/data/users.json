@@ -3,18 +3,19 @@
     "noHp": "6282162305550",
     "email": "gtiofandy@gmail.com",
     "name": "Gilbert Tiofandy",
-    "password": "gilbert12@",
+    "password": "gilbert",
     "history": [],
-    "img": "https://i.pinimg.com/564x/9a/3e/48/9a3e48043a2d4980ef887acf6f260116.jpg",
-    "sex": "Female",
+    "sex": "Male",
+    "img": "/img/users/13d45c3d-d841-41b2-9ff2-988d6f7896a9-profileimg.png",
     "id": "13d45c3d-d841-41b2-9ff2-988d6f7896a9"
   },
   {
-    "noHp": "6285373766235",
+    "noHp": "6282162306666",
     "email": "amah@gmail.com",
-    "nama": "amah23",
-    "password": "amahamahamah",
+    "name": "amahamah",
+    "password": "asdasd",
     "sex": "Female",
-    "id": "82ab09f5-75d7-4b66-800f-5cab5a66b135"
+    "img": "/img/users/c78c9351-bb41-4ed4-8445-094d1fd12d12-profileimg.png",
+    "id": "c78c9351-bb41-4ed4-8445-094d1fd12d12"
   }
 ]

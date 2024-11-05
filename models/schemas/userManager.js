@@ -28,6 +28,7 @@ class UserManager extends FileManager {
 
   async addUser(user) {
     const users = await this.loadData();
+    user.img = "";
     user.id = uuidv4();
     users.push(user);
     await this.saveData(users);
