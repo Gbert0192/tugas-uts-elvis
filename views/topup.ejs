@@ -1,0 +1,91 @@
+<div class="flex items-center justify-center my-10">
+  <div class="bg-white p-8 rounded-lg shadow-md w-96">
+    <a href="/main/<%= user.id %>"><span>&#8592;</span> </a>
+    <h1 class="text-2xl font-bold text-center mb-6">Top-Up Your Account</h1>
+    <form id="topupForm" method="post" action="/main/<%= user.id %>/topup">
+      <div class="mb-4">
+        <label for="noHp" class="block text-sm font-medium text-gray-700"
+          >Account Number:</label
+        >
+        <input
+          type="text"
+          id="noHp"
+          name="noHp"
+          required
+          class="mt-1 block w-full border border-gray-300 rounded-md p-2"
+          placeholder="Enter your account number"
+          value="<%= user.noHp %>"
+        />
+      </div>
+      <div class="mb-4">
+        <label for="amount" class="block text-sm font-medium text-gray-700"
+          >Amount to Top-Up:</label
+        >
+        <input
+          type="number"
+          id="amount"
+          name="amount"
+          required
+          min="1"
+          class="mt-1 block w-full border border-gray-300 rounded-md p-2"
+          placeholder="Enter amount"
+        />
+      </div>
+      <div class="mb-4">
+        <label for="password" class="block text-sm font-medium text-gray-700"
+          >password to Top-Up:</label
+        >
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          min="1"
+          class="mt-1 block w-full border border-gray-300 rounded-md p-2"
+          placeholder="Enter password"
+        />
+      </div>
+      <div class="mb-4">
+        <label
+          for="paymentMethod"
+          class="block text-sm font-medium text-gray-700"
+          >Payment Method:</label
+        >
+        <select
+          id="paymentMethod"
+          name="paymentMethod"
+          required
+          class="mt-1 block w-full border border-gray-300 rounded-md p-2"
+        >
+          <option value="">Select a method</option>
+          <option value="creditCard">Credit Card</option>
+          <option value="debitCard">Debit Card</option>
+          <option value="paypal">PayPal</option>
+        </select>
+      </div>
+      <% if (typeof message !== 'undefined' && message) { %>
+      <div
+        class="bg-green-500 text-sm text-white rounded-lg p-4 mt-4"
+        role="alert"
+      >
+        <%= message %>
+      </div>
+      <% } %> <% if (typeof errorMessage !== 'undefined' && errorMessage) { %>
+      <div
+        class="bg-red-500 text-sm text-white rounded-lg p-4 mt-4"
+        role="alert"
+      >
+        <%= errorMessage %>
+      </div>
+      <% } %>
+      <button
+        type="submit"
+        class="w-full bg-blue-500 text-white font-bold py-2 rounded-md hover:bg-blue-600 mt-2"
+      >
+        Top-Up
+      </button>
+    </form>
+
+    <div id="message" class="mt-4 text-center text-red-500"></div>
+  </div>
+</div>

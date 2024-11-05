@@ -1,156 +1,166 @@
-<main class="bg-gray-100">
-  <div class="container mx-auto">
-    <!-- Categories Section -->
-    <div class="flex justify-center space-x-8 py-8 flex-wrap">
-      <div class="text-center">
-        <img
-          alt="Mom & Baby"
-          class="mx-auto rounded-full"
-          height="50"
-          src="https://storage.googleapis.com/a1aa/image/XE6mqqshS2YpIVjuhn4wdvoVhlP4NJhNNw3ESxFZ508nfw1JA.jpg"
-          width="50"
-        />
-        <p class="mt-2 text-sm">Mom & Baby</p>
+<main class="bg-gray-100 py-10">
+  <div class="flex justify-center mb-8">
+    <!-- fungsi rp -->
+    <% function formatCurrency(amount) { %> <%=
+    amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %> <% } %>
+    <a class="mx-5" href="/main/<%= user.id%>/topup">
+      <div
+        class="bg-white rounded-lg shadow-md p-4 flex items-center space-x-4"
+      >
+        <div class="text-left">
+          <p class="text-gray-500">Balance</p>
+          <p class="text-xl font-bold">
+            Rp.<%= formatCurrency(user.balance[0].walletBalances)%>
+          </p>
+        </div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 48 48"
+            id="wallet"
+            class="w-10 h-10"
+          >
+            <path
+              fill="#58bf97"
+              d="M6.1 23.8v-19c0-1.1.9-2 2-2h10l-1.3 4-6.9 14.1-3.8 2.9z"
+            ></path>
+            <path
+              fill="#38a378"
+              d="M17 6.8h-4c0 1.7-1.3 3-3 3v11h3.1l3.9-14z"
+            ></path>
+            <path
+              fill="#58bf97"
+              d="m13 20.6 2-5.9 2-6 2-6.3c.3-1 1.5-1.6 2.5-1.3l17.1 5.7c1 .3 1.6 1.5 1.3 2.5l-3.8 11.4"
+            ></path>
+            <path
+              fill="#a15b4c"
+              d="M38 20.9H10c-2.2 0-4 1.8-4 4v18c0 2.2 1.8 4 4 4h28c2.2 0 4-1.8 4-4v-18c0-2.2-1.8-4-4-4z"
+            ></path>
+            <path
+              fill="#fec367"
+              d="M41 40.9h-8.1c-2.2 0-3.9-1.8-3.9-4s1.7-4 3.9-4H41"
+            ></path>
+            <path
+              fill="#010101"
+              d="M17.2 21.8c-.1 0-.2 0-.3-.1-.5-.2-.8-.7-.6-1.3L20.4 8c.2-.5.7-.8 1.3-.6 1 .3 2.2-.2 2.5-1.3.1-.3.3-.5.5-.6.2-.1.5-.1.8-.1l7.6 2.5c.5.2.8.7.6 1.3-.3 1 .2 2.2 1.3 2.5.3.1.5.3.6.5.1.2.1.5.1.8l-2.6 8c-.2.5-.7.8-1.3.6-.5-.2-.8-.7-.6-1.3l2.4-7.1c-1.2-.8-1.9-2.2-1.8-3.6l-5.9-2c-.8 1.2-2.2 1.9-3.6 1.8l-3.8 11.5c-.5.6-.9.9-1.3.9z"
+            ></path>
+            <path
+              fill="#38a378"
+              d="m31.9 20.8 2.6-8c-1.6-.5-2.4-2.2-1.9-3.8L25 6.5c-.5 1.6-2.2 2.4-3.8 1.9l-.2.7-2 5.9-1.9 5.8"
+            ></path>
+            <circle
+              cx="27.3"
+              cy="12.5"
+              r="2"
+              fill="#060707"
+              transform="rotate(-71.652 27.252 12.543)"
+            ></circle>
+            <circle cx="33" cy="36.8" r="1" fill="#060707"></circle>
+            <path
+              fill="#060707"
+              d="M38 19.8h-.5l3.4-10.1c.3-.8.2-1.6-.2-2.3-.4-.7-1-1.3-1.7-1.5L21.9.2c-.8-.2-1.6-.2-2.3.2-.6.3-1.1.8-1.4 1.4H8c-1.7 0-3 1.4-3 3l.1 19v.1c-.1.3-.1.6-.1.9v18c0 2.8 2.2 5 5 5h28c2.8 0 5-2.2 5-5v-18c0-2.8-2.2-5-5-5zm-18-17c.1-.3.3-.5.5-.6.2-.1.5-.2.7-.1l17.1 5.7c.3.1.5.3.6.5.1.2.1.5 0 .7l-3.6 10.8h-2.1l2.2-6.6c.1-.3.1-.5-.1-.8-.1-.2-.3-.4-.6-.5-1-.3-1.6-1.5-1.3-2.5.2-.5-.1-1.1-.6-1.3l-7.6-2.5c-.3-.1-.5-.1-.8.1-.2.1-.4.3-.5.6-.3 1-1.5 1.6-2.5 1.3-.5-.2-1.1.1-1.3.6l-3.9 11.7h-2.1L20 2.8zm11.2 17H18.5l3.4-10.2c1.4.1 2.8-.6 3.6-1.8l5.9 2c-.1 1.4.6 2.8 1.8 3.6l-2 6.4zm-19 0H11v-9.1c1.4-.4 2.5-1.5 2.9-2.9h2.3l-4 12zM8 3.8h9.5l-.7 2H13c-.3 0-.5.1-.7.3-.2.2-.3.4-.3.7 0 1.1-.9 2-2 2-.6 0-1 .4-1 1v10.1c-.7.1-1.4.5-2 .9v-16c0-.5.4-1 1-1zm33 36h-8.1c-1.6 0-2.9-1.3-2.9-3s1.3-3 2.9-3H41v6zm0-8h-8.1c-2.7 0-4.9 2.2-4.9 5s2.2 5 4.9 5H41v1c0 1.7-1.3 3-3 3H10c-1.7 0-3-1.3-3-3v-18c0-1.7 1.3-3 3-3h28c1.7 0 3 1.3 3 3v7z"
+            ></path>
+          </svg>
+        </div>
       </div>
-      <div class="text-center">
-        <img
-          alt="Fruit & Vegetable"
-          class="mx-auto rounded-full"
-          height="50"
-          src="https://storage.googleapis.com/a1aa/image/PQAgnuF6kP5zId8hi8EtIpoaiyZnKg5VGdJpHCHqptVofw1JA.jpg"
-          width="50"
-        />
-        <p class="mt-2 text-sm">Fruit & Vegetable</p>
-      </div>
-      <!-- Tambahkan kategori lain di sini -->
-      <div class="text-center">
-        <img
-          alt="Snacks & Ice Cream"
-          class="mx-auto rounded-full"
-          height="50"
-          src="https://storage.googleapis.com/a1aa/image/ZOd4sw03MwbDJlYnHeEoJkLgpucrw6rYLA85d54mfsUgeDXnA.jpg"
-          width="50"
-        />
-        <p class="mt-2 text-sm">Snacks & Ice Cream</p>
-      </div>
-      <div class="text-center">
-        <img
-          alt="Health & Personal Care"
-          class="mx-auto rounded-full"
-          height="50"
-          src="https://storage.googleapis.com/a1aa/image/fjWbGkyyKuRzASSuaKWLiQQyhmK6H7n2fvuVZc2NO2pSeDXnA.jpg"
-          width="50"
-        />
-        <p class="mt-2 text-sm">Health & Personal Care</p>
-      </div>
-      <div class="text-center">
-        <img
-          alt="Staples & Cooking"
-          class="mx-auto rounded-full"
-          height="50"
-          src="https://storage.googleapis.com/a1aa/image/fdESEtfehrYfoTz6AHdwu1bkehABMiZbiCaJ0S7aPHbsxPcdC.jpg"
-          width="50"
-        />
-        <p class="mt-2 text-sm">Staples & Cooking</p>
-      </div>
-      <div class="text-center">
-        <img
-          alt="Beverages"
-          class="mx-auto rounded-full"
-          height="50"
-          src="https://storage.googleapis.com/a1aa/image/wRqGfWjJGb1WViLtGwBZN0uasGWcWDkeArEhdxPXaDNdeDXnA.jpg"
-          width="50"
-        />
-        <p class="mt-2 text-sm">Beverages</p>
-      </div>
-      <div class="text-center">
-        <img
-          alt="Frozen & Meat"
-          class="mx-auto rounded-full"
-          height="50"
-          src="https://storage.googleapis.com/a1aa/image/NfrE87RUEE2jY63IFUVUYvmcD7KEaew3KCc44T7fsoZe4HuOB.jpg"
-          width="50"
-        />
-        <p class="mt-2 text-sm">Frozen & Meat</p>
-      </div>
-      <div class="text-center">
-        <img
-          alt="Dairy & Eggs"
-          class="mx-auto rounded-full"
-          height="50"
-          src="https://storage.googleapis.com/a1aa/image/fPevwDeeKPzqBQ3Ne66YeLfWq8Eo6SVEhVbKWEowvxWGNfhrTA.jpg"
-          width="50"
-        />
-        <p class="mt-2 text-sm">Dairy & Eggs</p>
-      </div>
-      <div class="text-center">
-        <img
-          alt="Instant Food"
-          class="mx-auto rounded-full"
-          height="50"
-          src="https://storage.googleapis.com/a1aa/image/lWKHw6RyUU42LVi5F5iE1DYoWgX58LyifSzsCrWE0hZFfhrTA.jpg"
-          width="50"
-        />
-        <p class="mt-2 text-sm">Instant Food</p>
-      </div>
-      <div class="text-center">
-        <img
-          alt="Home Care"
-          class="mx-auto rounded-full"
-          height="50"
-          src="https://storage.googleapis.com/a1aa/image/fRsd3xQ8un1xcKKVIaVDIxVTPgtloDmww4rtRiPB1VFLfhrTA.jpg"
-          width="50"
-        />
-        <p class="mt-2 text-sm">Home Care</p>
-      </div>
-      <div class="text-center">
-        <img
-          alt="Breakfast & Bakery"
-          class="mx-auto rounded-full"
-          height="50"
-          src="https://storage.googleapis.com/a1aa/image/Xxt3k39KbNJzE56NiTNkprzSQLIxVoVpif1JssXzjvkIfhrTA.jpg"
-          width="50"
-        />
-        <p class="mt-2 text-sm">Breakfast & Bakery</p>
-      </div>
-      <div class="text-center">
-        <img
-          alt="Hobby & Lifestyle"
-          class="mx-auto rounded-full"
-          height="50"
-          src="https://storage.googleapis.com/a1aa/image/Hg3WJS95fgzAK6ixVYFvDDyHfdgW8PoR73SiOgzQdKrUeDXnA.jpg"
-          width="50"
-        />
-        <p class="mt-2 text-sm">Hobby & Lifestyle</p>
-      </div>
-    </div>
+    </a>
 
-    <!-- Banner Section -->
-    <div class="relative">
-      <div class="w-full h-96 bg-gray-200">
-        <img
-          src="/img/home-page-banner.png"
-          alt=""
-          class="w-full h-full object-cover"
-        />
-        <span
-          class="absolute left-4 top-1/2 transform -translate-y-1/2 text-black text-6xl font-bold"
-        >
-          From Desktop To Your Door
-        </span>
+    <!-- pesan topup berhasil -->
+
+    <button class="mx-5">
+      <div
+        class="bg-white rounded-lg shadow-md p-4 flex items-center space-x-4"
+      >
+        <div class="text-left">
+          <p class="text-gray-500">Balance Point</p>
+          <p class="text-xl font-bold">
+            <%= formatCurrency(user.balance[0].balancePoints)%>
+          </p>
+        </div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 48 48"
+            id="wallet"
+            class="w-10 h-10"
+          >
+            <path
+              fill="#58bf97"
+              d="M6.1 23.8v-19c0-1.1.9-2 2-2h10l-1.3 4-6.9 14.1-3.8 2.9z"
+            ></path>
+            <path
+              fill="#38a378"
+              d="M17 6.8h-4c0 1.7-1.3 3-3 3v11h3.1l3.9-14z"
+            ></path>
+            <path
+              fill="#58bf97"
+              d="m13 20.6 2-5.9 2-6 2-6.3c.3-1 1.5-1.6 2.5-1.3l17.1 5.7c1 .3 1.6 1.5 1.3 2.5l-3.8 11.4"
+            ></path>
+            <path
+              fill="#a15b4c"
+              d="M38 20.9H10c-2.2 0-4 1.8-4 4v18c0 2.2 1.8 4 4 4h28c2.2 0 4-1.8 4-4v-18c0-2.2-1.8-4-4-4z"
+            ></path>
+            <path
+              fill="#fec367"
+              d="M41 40.9h-8.1c-2.2 0-3.9-1.8-3.9-4s1.7-4 3.9-4H41"
+            ></path>
+            <path
+              fill="#010101"
+              d="M17.2 21.8c-.1 0-.2 0-.3-.1-.5-.2-.8-.7-.6-1.3L20.4 8c.2-.5.7-.8 1.3-.6 1 .3 2.2-.2 2.5-1.3.1-.3.3-.5.5-.6.2-.1.5-.1.8-.1l7.6 2.5c.5.2.8.7.6 1.3-.3 1 .2 2.2 1.3 2.5.3.1.5.3.6.5.1.2.1.5.1.8l-2.6 8c-.2.5-.7.8-1.3.6-.5-.2-.8-.7-.6-1.3l2.4-7.1c-1.2-.8-1.9-2.2-1.8-3.6l-5.9-2c-.8 1.2-2.2 1.9-3.6 1.8l-3.8 11.5c-.5.6-.9.9-1.3.9z"
+            ></path>
+            <path
+              fill="#38a378"
+              d="m31.9 20.8 2.6-8c-1.6-.5-2.4-2.2-1.9-3.8L25 6.5c-.5 1.6-2.2 2.4-3.8 1.9l-.2.7-2 5.9-1.9 5.8"
+            ></path>
+            <circle
+              cx="27.3"
+              cy="12.5"
+              r="2"
+              fill="#060707"
+              transform="rotate(-71.652 27.252 12.543)"
+            ></circle>
+            <circle cx="33" cy="36.8" r="1" fill="#060707"></circle>
+            <path
+              fill="#060707"
+              d="M38 19.8h-.5l3.4-10.1c.3-.8.2-1.6-.2-2.3-.4-.7-1-1.3-1.7-1.5L21.9.2c-.8-.2-1.6-.2-2.3.2-.6.3-1.1.8-1.4 1.4H8c-1.7 0-3 1.4-3 3l.1 19v.1c-.1.3-.1.6-.1.9v18c0 2.8 2.2 5 5 5h28c2.8 0 5-2.2 5-5v-18c0-2.8-2.2-5-5-5zm-18-17c.1-.3.3-.5.5-.6.2-.1.5-.2.7-.1l17.1 5.7c.3.1.5.3.6.5.1.2.1.5 0 .7l-3.6 10.8h-2.1l2.2-6.6c.1-.3.1-.5-.1-.8-.1-.2-.3-.4-.6-.5-1-.3-1.6-1.5-1.3-2.5.2-.5-.1-1.1-.6-1.3l-7.6-2.5c-.3-.1-.5-.1-.8.1-.2.1-.4.3-.5.6-.3 1-1.5 1.6-2.5 1.3-.5-.2-1.1.1-1.3.6l-3.9 11.7h-2.1L20 2.8zm11.2 17H18.5l3.4-10.2c1.4.1 2.8-.6 3.6-1.8l5.9 2c-.1 1.4.6 2.8 1.8 3.6l-2 6.4zm-19 0H11v-9.1c1.4-.4 2.5-1.5 2.9-2.9h2.3l-4 12zM8 3.8h9.5l-.7 2H13c-.3 0-.5.1-.7.3-.2.2-.3.4-.3.7 0 1.1-.9 2-2 2-.6 0-1 .4-1 1v10.1c-.7.1-1.4.5-2 .9v-16c0-.5.4-1 1-1zm33 36h-8.1c-1.6 0-2.9-1.3-2.9-3s1.3-3 2.9-3H41v6zm0-8h-8.1c-2.7 0-4.9 2.2-4.9 5s2.2 5 4.9 5H41v1c0 1.7-1.3 3-3 3H10c-1.7 0-3-1.3-3-3v-18c0-1.7 1.3-3 3-3h28c1.7 0 3 1.3 3 3v7z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+
+  <div class="container mx-auto">
+    <!-- Section Background di Atas Banner -->
+    <div class="bg-gray-300">
+      <div class="relative">
+        <!-- Banner Section -->
+        <div class="w-full h-96 bg-gray-200">
+          <img
+            src="/img/home-page-banner.png"
+            alt="Banner Image"
+            class="w-full h-full object-cover"
+          />
+          <span
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 text-black text-6xl font-bold"
+          >
+            From Desktop To Your Door
+          </span>
+        </div>
       </div>
     </div>
 
     <!-- Top Stores Section -->
     <div class="mt-8 px-4">
       <div class="flex justify-between items-center">
-        <h2 class="text-2xl font-bold">Top stores on GrabMart</h2>
+        <h2 class="text-2xl font-bold">stores on GrabMart</h2>
       </div>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-4"
       >
-        <% stores.forEach(store => { %>
-        <%-include('./homePagePartials/store.ejs', { store }) %> <% }) %>
+        <!-- Loop untuk menampilkan toko -->
+        <% stores.forEach(store => { %> <%-
+        include('./homePagePartials/store.ejs', { store }) %> <% }) %>
       </div>
     </div>
   </div>

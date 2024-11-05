@@ -5,6 +5,7 @@ const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
+const topUpRoutes = require("./routes/topUp");
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use(
 
 app.use("/", authRoutes);
 app.use("/main", userRoutes);
+app.use("/main", topUpRoutes);
 
 // Halaman 404 / Not Found
 app.use((req, res) => {
@@ -33,6 +35,7 @@ app.use((req, res) => {
     layout: false,
     message: "Page not found",
     code: "404",
+    href: req.session.user ? `/main/${req.session.user.id}` : "/",
   });
 });
 

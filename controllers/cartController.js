@@ -1,5 +1,4 @@
 const userManager = require("../models/schemas/userManager");
-const productManager = require("../models/schemas/productManager");
 
 exports.getCartPage = async (req, res) => {
   const requestedId = req.params.id;
@@ -36,3 +35,5 @@ exports.getCartPage = async (req, res) => {
     });
   }
 };
+
+//blm ni

@@ -4,18 +4,100 @@
     "email": "gtiofandy@gmail.com",
     "name": "Gilbert Tiofandy",
     "password": "gilbert",
-    "history": [],
     "sex": "Male",
-    "img": "/img/users/13d45c3d-d841-41b2-9ff2-988d6f7896a9-profileimg.png",
+    "history": [],
+    "balance": [
+      {
+        "walletBalances": 200000,
+        "balancePoints": 0
+      },
+      {
+        "topUpHistory": [
+          {}
+        ]
+      }
+    ],
+    "img": "/img/users/13d45c3d-d841-41b2-9ff2-988d6f7896a9-profileimg.jpg",
     "id": "13d45c3d-d841-41b2-9ff2-988d6f7896a9"
   },
   {
-    "noHp": "6282162306666",
-    "email": "amah@gmail.com",
-    "name": "amahamah",
-    "password": "asdasd",
+    "id": "b24ba093-e2f4-430e-8b5e-cbf053a69e26",
+    "noHp": "6285373764444",
+    "email": "tes@gmail.com",
+    "name": "tesaja",
+    "password": "testesaja2",
     "sex": "Female",
-    "img": "/img/users/c78c9351-bb41-4ed4-8445-094d1fd12d12-profileimg.png",
-    "id": "c78c9351-bb41-4ed4-8445-094d1fd12d12"
+    "history": [],
+    "balance": [
+      {
+        "walletBalances": 1947747,
+        "balancePoints": 0
+      },
+      {
+        "topUpHistory": [
+          {
+            "amount": 200000,
+            "paymentMethod": "debitCard",
+            "date": "2024-11-05T18:31:26.977Z"
+          },
+          {
+            "amount": 200000,
+            "paymentMethod": "debitCard",
+            "date": "2024-11-05T18:31:36.374Z"
+          },
+          {
+            "amount": 200000,
+            "paymentMethod": "debitCard",
+            "date": "2024-11-05T18:32:52.592Z"
+          },
+          {
+            "amount": 200000,
+            "paymentMethod": "debitCard",
+            "date": "2024-11-05T18:35:18.574Z"
+          },
+          {
+            "amount": 200000,
+            "paymentMethod": "debitCard",
+            "date": "2024-11-05T18:35:21.218Z"
+          },
+          {
+            "amount": 200000,
+            "paymentMethod": "debitCard",
+            "date": "2024-11-05T18:35:27.927Z"
+          },
+          {
+            "amount": 200000,
+            "paymentMethod": "debitCard",
+            "date": "2024-11-05T18:38:00.015Z"
+          },
+          {
+            "amount": 200000,
+            "paymentMethod": "debitCard",
+            "date": "2024-11-05T18:38:16.493Z"
+          },
+          {
+            "amount": 12312,
+            "paymentMethod": "creditCard",
+            "date": "2024-11-05T18:41:09.327Z"
+          },
+          {
+            "amount": 12312,
+            "paymentMethod": "creditCard",
+            "date": "2024-11-05T18:41:22.482Z"
+          },
+          {
+            "amount": 123123,
+            "paymentMethod": "debitCard",
+            "date": "2024-11-05T18:42:04.090Z"
+          },
+          {
+            "amount": 200000,
+            "paymentMethod": "debitCard",
+            "date": "2024-11-05T18:42:27.967Z"
+          }
+        ]
+      }
+    ],
+    "img": "/img/users/b24ba093-e2f4-430e-8b5e-cbf053a69e26-profileimg.jpg"
   }
 ]

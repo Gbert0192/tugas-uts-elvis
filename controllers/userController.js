@@ -87,6 +87,7 @@ exports.getUserProfile = async (req, res) => {
   }
 };
 
+//update user profile main/:id/profile
 exports.updateUserProfile = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {

@@ -3,7 +3,7 @@
     "storeId": 101,
     "storeName": "Toko Serba Ada",
     "address": "Jl. Kebon Jeruk No. 12, Jakarta",
-    "image": "https://example.com/images/store1.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnXrn3yFxb_UMbT_E_Bv8Mim1RZD7AOxkN0w&s",
     "rating": "4.8",
     "products": [
       {
@@ -102,7 +102,7 @@
     "storeId": 102,
     "storeName": "Supermarket ABC",
     "address": "Jl. Raya No. 45, Bandung",
-    "image": "https://example.com/images/store2.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwno10lgQ0iHch5FWC5V8YP9kw4uHV6mJnjg&s",
     "rating": "4.9",
     "products": [
       {
@@ -201,7 +201,7 @@
     "storeId": 103,
     "storeName": "Toko Kue Manis",
     "address": "Jl. Kue No. 10, Yogyakarta",
-    "image": "https://example.com/images/store3.jpg",
+    "image": "https://marketplace.canva.com/EAFlwZ_eG-4/1/0/1600w/canva-coklat-ilustrasi-toko-roti-logo-zhqfepcqvi4.jpg",
     "rating": "5.0",
     "products": [
       {
@@ -300,7 +300,7 @@
     "storeId": 104,
     "storeName": "Pasar Segar",
     "address": "Jl. Pasar No. 1, Jakarta",
-    "image": "https://example.com/images/store4.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTBoBBLc40_NVJurGzHkxDvwvzeQxj6S6nrQ&s",
     "rating": "4.7",
     "products": [
       {
@@ -397,9 +397,9 @@
   },
   {
     "storeId": 105,
-    "storeName": "Minimarket ABC",
+    "storeName": "Binhar Market",
     "address": "Jl. Mini No. 2, Bandung",
-    "image": "https://example.com/images/store5.jpg",
+    "image": "https://jasadesainlogo.id/wp-content/uploads/2020/03/binhar-mart.png",
     "rating": "4.6",
     "products": [
       {
@@ -498,7 +498,7 @@
     "storeId": 106,
     "storeName": "Toko Buah Segar",
     "address": "Jl. Buah No. 3, Yogyakarta",
-    "image": "https://example.com/images/store6.jpg",
+    "image": "https://i.pinimg.com/474x/5f/2e/fc/5f2efc8ebd39c9f4ed1aad100ff73a02.jpg",
     "rating": "4.5",
     "products": [
       {
@@ -597,7 +597,7 @@
     "storeId": 107,
     "storeName": "Kedai Kopi",
     "address": "Jl. Kopi No. 4, Jakarta",
-    "image": "https://example.com/images/store7.jpg",
+    "image": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/logo-design-template-904b8a70d4df0b951111e98671d38e11_screen.jpg?ts=1660156436",
     "rating": "4.8",
     "products": [
       {
@@ -696,7 +696,7 @@
     "storeId": 108,
     "storeName": "Dapur Ibu",
     "address": "Jl. Dapur No. 5, Surabaya",
-    "image": "https://example.com/images/store8.jpg",
+    "image": "https://warungfreelancer.com/src/gambar/produk/beli-template-logo-dapur-masakan.webp",
     "rating": "4.9",
     "products": [
       {
@@ -793,9 +793,9 @@
   },
   {
     "storeId": 109,
-    "storeName": "Toko Kelontong",
+    "storeName": "Warung Kelontong",
     "address": "Jl. Kelontong No. 6, Bandung",
-    "image": "https://example.com/images/store9.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnj9GDp5CFbMdYTd1YzROw74WAyMUMFiJ3EQ&s",
     "rating": "4.7",
     "products": [
       {
@@ -894,7 +894,7 @@
     "storeId": 110,
     "storeName": "Toko Bahan Kue",
     "address": "Jl. Kue No. 7, Yogyakarta",
-    "image": "https://example.com/images/store10.jpg",
+    "image": "https://mms.img.susercontent.com/ee7dd5946a097ddd51db5b01bbd22b62",
     "rating": "4.6",
     "products": [
       {
