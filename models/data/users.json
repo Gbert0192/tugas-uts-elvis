@@ -8,7 +8,7 @@
     "history": [],
     "balance": [
       {
-        "walletBalances": 375123,
+        "walletBalances": 698246,
         "balancePoints": 0
       },
       {
@@ -33,6 +33,16 @@
             "amount": 12000,
             "paymentMethod": "creditCard",
             "date": "2024-11-06T04:34:30.483Z"
+          },
+          {
+            "amount": 123123,
+            "paymentMethod": "creditCard",
+            "date": "2024-11-07T06:02:05.903Z"
+          },
+          {
+            "amount": 200000,
+            "paymentMethod": "creditCard",
+            "date": "2024-11-07T06:02:17.199Z"
           }
         ]
       }

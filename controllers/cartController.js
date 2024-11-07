@@ -2,7 +2,7 @@ const userManager = require("../models/schemas/userManager");
 const { default: axios } = require("axios");
 const { priceToIdr } = require("../utils/format");
 
-exports.getStoreProductPage = async (req, res) => {
+exports.getCheckOutPage = async (req, res) => {
   const requestedId = req.params.id;
   const loggedInUserId = req.user.id;
   const storeId = req.params.storeId;

@@ -226,13 +226,11 @@ function updateCartBadge() {
   const uniqueItemCount = countUniqueItemsInCart();
   const cartBadge = document.getElementById("badge-count");
 
-  // Menampilkan jumlah produk atau 0 jika tidak ada produk
   cartBadge.textContent = uniqueItemCount > 0 ? uniqueItemCount : 0;
 }
 
-// Event listener untuk menambah produk ke keranjang
 document.getElementById("add-to-cart").addEventListener("click", function () {
-  const product = { id: 1, name: "Makeup Product" }; // contoh produk
+  // const product = { id: 1, name: "Makeup Product" };
   addToCart(this);
 });
 
@@ -246,3 +244,61 @@ document.querySelector(".fa-times").addEventListener("click", function () {
   document.getElementById("offcanvas-right").classList.add("translate-x-full");
   document.getElementById("offcanvas-right").classList.remove("translate-x-0");
 });
+
+document
+  .getElementById("checkout")
+  .addEventListener("click", async function () {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const total = calculateTotal(cart);
+
+    const response = await fetch("/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        total: total,
+        cart: cart,
+      }),
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      console.log("Pesanan berhasil dikirim!");
+    } else {
+      console.error("Gagal mengirim pesanan");
+    }
+  });
+
+// checkout
+document
+  .getElementById("checkout")
+  .addEventListener("click", async function () {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const total = calculateTotal(cart);
+
+    try {
+      const response = await fetch("/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          total: total,
+          cart: cart,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        console.log("Pesanan berhasil dikirim!");
+        alert("Checkout berhasil!");
+      } else {
+        console.error("Gagal mengirim pesanan");
+        alert("Checkout gagal!");
+      }
+    } catch (error) {
+      console.error("Terjadi kesalahan saat mengirim data ke server:", error);
+    }
+  });
