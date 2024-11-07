@@ -8,12 +8,32 @@
     "history": [],
     "balance": [
       {
-        "walletBalances": 200000,
+        "walletBalances": 375123,
         "balancePoints": 0
       },
       {
         "topUpHistory": [
-          {}
+          {},
+          {
+            "amount": 20000,
+            "paymentMethod": "debitCard",
+            "date": "2024-11-06T04:12:53.499Z"
+          },
+          {
+            "amount": 20000,
+            "paymentMethod": "debitCard",
+            "date": "2024-11-06T04:24:19.322Z"
+          },
+          {
+            "amount": 123123,
+            "paymentMethod": "creditCard",
+            "date": "2024-11-06T04:31:47.019Z"
+          },
+          {
+            "amount": 12000,
+            "paymentMethod": "creditCard",
+            "date": "2024-11-06T04:34:30.483Z"
+          }
         ]
       }
     ],

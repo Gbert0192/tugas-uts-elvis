@@ -1,8 +1,5 @@
 <main class="bg-gray-100 py-10">
   <div class="flex justify-center mb-8">
-    <!-- fungsi rp -->
-    <% function formatCurrency(amount) { %> <%=
-    amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %> <% } %>
     <a class="mx-5" href="/main/<%= user.id%>/topup">
       <div
         class="bg-white rounded-lg shadow-md p-4 flex items-center space-x-4"
@@ -64,8 +61,6 @@
         </div>
       </div>
     </a>
-
-    <!-- pesan topup berhasil -->
 
     <button class="mx-5">
       <div
@@ -131,10 +126,8 @@
   </div>
 
   <div class="container mx-auto">
-    <!-- Section Background di Atas Banner -->
     <div class="bg-gray-300">
       <div class="relative">
-        <!-- Banner Section -->
         <div class="w-full h-96 bg-gray-200">
           <img
             src="/img/home-page-banner.png"
@@ -152,16 +145,90 @@
 
     <!-- Top Stores Section -->
     <div class="mt-8 px-4">
-      <div class="flex justify-between items-center">
-        <h2 class="text-2xl font-bold">stores on GrabMart</h2>
+      <% categoryList.forEach(category => { %>
+      <div class="mt-8">
+        <h3 class="text-3xl font-bold mb-4 capitalize">
+          <%= category.charAt(0).toUpperCase() + category.slice(1) %>
+        </h3>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <% const categoryProducts = categorizedProducts[category]; if
+          (categoryProducts && categoryProducts.length > 0) { %> <%
+          categoryProducts.forEach(product => { %>
+          <div class="group text-center">
+            <a
+              href="/main/<%= user.id%>/store/<%= product.id%>/<%= product.category%>"
+            >
+              <div
+                class="border border-gray-300 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-4"
+              >
+                <div
+                  class="mx-auto w-32 h-32 bg-gray-200 flex items-center justify-center rounded-lg overflow-hidden relative mb-4"
+                >
+                  <img
+                    src="<%= product.thumbnail %>"
+                    alt="product Image"
+                    class="object-cover w-full h-full rounded-lg group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+
+                <p class="mt-2 font-semibold text-gray-800">
+                  <%= product.title %>
+                </p>
+                <p class="mt-2 font-semibold text-gray-800">
+                  <%= priceToIdr(product.price * 16000) %>
+                </p>
+
+                <p class="text-sm text-gray-600">
+                  1.7km - <i class="fas fa-star text-yellow-500"></i> <%=
+                  product.rating || 'N/A' %> ⭐
+                </p>
+              </div>
+            </a>
+
+            <div class="mt-4">
+              <button
+                type="button"
+                class="w-full py-2 px-4 flex justify-center items-center text-sm font-medium rounded-lg border border-transparent bg-green-600 text-white hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none"
+                data-product-id="<%= product.id%>"
+                onclick="addToCartHome(this)"
+              >
+                <svg
+                  class="shrink-0"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m5 11 4-7"></path>
+                  <path d="m19 11-4-7"></path>
+                  <path d="M2 11h20"></path>
+                  <path
+                    d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8c.9 0 1.8-.7 2-1.6l1.7-7.4"
+                  ></path>
+                  <path d="m9 11 1 9"></path>
+                  <path d="M4.5 15.5h15"></path>
+                  <path d="m15 11-1 9"></path>
+                </svg>
+                <span class="ml-2">Add to Cart</span>
+              </button>
+            </div>
+          </div>
+
+          <% }) %> <% } else { %>
+          <p class="col-span-6 text-center text-gray-500">
+            No products available in this category.
+          </p>
+          <% } %>
+        </div>
       </div>
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-4"
-      >
-        <!-- Loop untuk menampilkan toko -->
-        <% stores.forEach(store => { %> <%-
-        include('./homePagePartials/store.ejs', { store }) %> <% }) %>
-      </div>
+      <% }); %>
     </div>
   </div>
 </main>

@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
 const topUpRoutes = require("./routes/topUp");
+const storeProductPage = require("./routes/product");
 
 const app = express();
 
@@ -16,7 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-// Inisialisasi middleware session
 app.use(
   session({
     secret: "secret aja",
@@ -28,6 +28,7 @@ app.use(
 app.use("/", authRoutes);
 app.use("/main", userRoutes);
 app.use("/main", topUpRoutes);
+app.use("/main", storeProductPage);
 
 // Halaman 404 / Not Found
 app.use((req, res) => {

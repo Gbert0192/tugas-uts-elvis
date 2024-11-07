@@ -1,8 +1,15 @@
 const userManager = require("../models/schemas/userManager");
+const productManager = require("../models/schemas/productManager");
+const { default: axios } = require("axios");
+const { priceToIdr } = require("../utils/format");
 
-exports.getCartPage = async (req, res) => {
+exports.getStoreProductPage = async (req, res) => {
   const requestedId = req.params.id;
   const loggedInUserId = req.user.id;
+  const storeId = req.params.storeId;
+  const storeCategory = req.params.storeCategory;
+
+
   try {
     if (requestedId !== loggedInUserId) {
       return res.status(403).render("errors/error", {
@@ -12,6 +19,8 @@ exports.getCartPage = async (req, res) => {
       });
     }
     const user = await userManager.findUserId(requestedId);
+    // const products = await productManager.findProductsByStoreId(storeId);
+
     if (!user) {
       return res.status(404).render("errors/error", {
         layout: false,
@@ -19,12 +28,18 @@ exports.getCartPage = async (req, res) => {
         code: "404",
       });
     }
-    res.render("profile", {
+    const productId = await axios.get(`https://dummyjson.com/products/${storeId}`)
+    const productCategory = await axios.get(`https://dummyjson.com/products/category/${storeCategory}`)
+    console.log(`https://dummyjson.com/products/${storeId}`)
+    const product = productId.data
+    const category = productCategory.data.products
+    res.render("product", {
       layout: "partials/main",
-      title: "Profil Pengguna",
+      title: "Produk Toko",
       user,
-      updateMessage,
-      messages,
+      product,
+      category,
+      priceToIdr
     });
   } catch (error) {
     console.error("Error loading user profile:", error);
@@ -36,4 +51,3 @@ exports.getCartPage = async (req, res) => {
   }
 };
 
-//blm ni

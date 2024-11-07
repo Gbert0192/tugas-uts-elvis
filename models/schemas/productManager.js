@@ -2,16 +2,27 @@ const FileManager = require("../../utils/fileManager"); // Mengimpor kelas FileM
 
 class ProductManager extends FileManager {
   constructor(dataPath) {
-    super(dataPath); // Memanggil konstruktor superclass dengan dataPath
+    super(dataPath);
   }
 
   async loadStores() {
-    const data = await this.loadData(); // Memanggil loadData() jika diperlukan
+    const data = await this.loadData();
     return data;
   }
 
   saveProducts(products) {
     this.saveData(products);
+  }
+
+  async findProductsByStoreId(storeId) {
+    const stores = await this.loadData();
+
+    const store = stores.find((store) => store.storeId === Number(storeId));
+
+    if (store && store.products) {
+      return store.products;
+    }
+    return [];
   }
 }
 

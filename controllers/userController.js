@@ -1,6 +1,8 @@
 const { validationResult } = require("express-validator");
 const userManager = require("../models/schemas/userManager");
 const productManager = require("../models/schemas/productManager");
+const axios = require("axios");
+const { priceToIdr, formatCurrency } = require("../utils/format");
 
 // Mengambil data pengguna berdasarkan ID
 exports.getUserData = async (req, res) => {
@@ -19,13 +21,39 @@ exports.getUserData = async (req, res) => {
     }
 
     if (requestedId === loggedInUserId) {
-      const stores = await productManager.loadStores();
-      return res.render("homePage", {
-        layout: "partials/main",
-        title: "Main Page Login",
-        user,
-        stores,
-      });
+      try {
+        const getCategoryList = await axios.get(
+          "https://dummyjson.com/products/category-list"
+        );
+
+        const categoryList = getCategoryList.data;
+
+        let categorizedProducts = {};
+
+        for (let category of categoryList) {
+          const getCategory = await axios.get(
+            `https://dummyjson.com/products/category/${category}`
+          );
+          categorizedProducts[category] = getCategory.data.products;
+        }
+
+        return res.render("homePage", {
+          layout: "partials/main",
+          title: "Main Page Login",
+          user,
+          categoryList,
+          categorizedProducts,
+          priceToIdr,
+          formatCurrency,
+        });
+      } catch (error) {
+        console.error("Error loading data:", error);
+        return res.status(500).render("errors/error", {
+          layout: false,
+          message: "Terjadi kesalahan saat memuat produk. " + error.message,
+          code: "500",
+        });
+      }
     } else {
       return res.status(403).render("errors/error", {
         layout: false,

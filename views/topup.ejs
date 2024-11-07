@@ -1,7 +1,9 @@
 <div class="flex items-center justify-center my-10">
   <div class="bg-white p-8 rounded-lg shadow-md w-96">
-    <a href="/main/<%= user.id %>"><span>&#8592;</span> </a>
-    <h1 class="text-2xl font-bold text-center mb-6">Top-Up Your Account</h1>
+    <a href="/main/<%= user.id %>" class="text-xl mx-1">&laquo; Back</a>
+    <h1 class="text-2xl font-bold text-center mb-6 mt-2">
+      Top-Up Your Account
+    </h1>
     <form id="topupForm" method="post" action="/main/<%= user.id %>/topup">
       <div class="mb-4">
         <label for="noHp" class="block text-sm font-medium text-gray-700"
@@ -85,7 +87,6 @@
         Top-Up
       </button>
     </form>
-
     <div id="message" class="mt-4 text-center text-red-500"></div>
   </div>
 </div>

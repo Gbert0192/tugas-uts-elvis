@@ -106,7 +106,7 @@ exports.postTopUpPage = async (req, res) => {
     await userManager.updateUser(user.id, user);
 
     req.session.topUpMessages = "Top-Up Berhasil";
-    return res.redirect(`/main/${requestedId}/topup`); // Mengarahkan ke halaman top-up yang benar
+    return res.redirect(`/main/${requestedId}/topup`);
   } catch (error) {
     console.error("Error processing top-up:", error);
     return res.status(500).render("errors/error", {
