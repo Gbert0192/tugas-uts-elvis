@@ -311,13 +311,23 @@
             >
               Password Confirmation:
             </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-              class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out"
-            />
+            <div class="relative">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out pr-12"
+              />
+              <button
+                type="button"
+                id="togglePassword"
+                class="absolute top-1/2 right-2 transform -translate-y-1/2 px-2 text-gray-600 focus:outline-none"
+              >
+                <span id="toggleText" class="p-1">Show</span>
+              </button>
+            </div>
+
             <p class="text-sm text-gray-500 mt-1">
               Ensure your password is correct before proceeding.
             </p>
@@ -362,6 +372,7 @@
 
     <!-- modal end -->
     <script src="/js/checkout.js"></script>
+    <script src="/js/loginDom.js"></script>
     <script src="/js/preline.js"></script>
   </body>
 </html>

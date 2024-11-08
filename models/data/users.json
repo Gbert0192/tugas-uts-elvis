@@ -29,11 +29,57 @@
           }
         ],
         "paymentMethod": "Gopay"
+      },
+      {
+        "orderId": "GMT-f5d77a29",
+        "alamatUser": "Perapat Ulu, Lawe Bulan, Aceh Tenggara, Aceh, Sumatra, 24651, Indonesia",
+        "alamatDetail": "tes",
+        "driverNotes": "tes",
+        "shoppingTotal": "8577220",
+        "date": "2024-11-08T16:31:58.067Z",
+        "cart": [
+          {
+            "name": "Eyeshadow Palette with Mirror",
+            "price": "19.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png"
+          },
+          {
+            "name": "Powder Canister",
+            "price": "14.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/thumbnail.png"
+          },
+          {
+            "name": "Knoll Saarinen Executive Conference Chair",
+            "price": "499.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/thumbnail.png"
+          }
+        ],
+        "paymentMethod": "Tunai"
+      },
+      {
+        "orderId": "GMT-6f2f09eb",
+        "alamatUser": "Perapat Ulu, Lawe Bulan, Aceh Tenggara, Aceh, Sumatra, 24651, Indonesia",
+        "alamatDetail": "asd",
+        "driverNotes": "asd",
+        "shoppingTotal": "265540",
+        "date": "2024-11-08T16:41:36.436Z",
+        "cart": [
+          {
+            "name": "Powder Canister",
+            "price": "14.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/thumbnail.png"
+          }
+        ],
+        "paymentMethod": "Gopay"
       }
     ],
     "balance": [
       {
-        "walletBalances": 4294020
+        "walletBalances": 4028480
       },
       {
         "topUpHistory": [
@@ -139,5 +185,23 @@
       }
     ],
     "img": "/img/users/b24ba093-e2f4-430e-8b5e-cbf053a69e26-profileimg.jpg"
+  },
+  {
+    "id": "c482c388-b612-47de-b18e-712b284a16c3",
+    "noHp": "6285373766235",
+    "email": "amah@gmail.com",
+    "name": "amahamah",
+    "password": "amahamah12",
+    "sex": "Female",
+    "history": [],
+    "balance": [
+      {
+        "walletBalances": 0
+      },
+      {
+        "topUpHistory": []
+      }
+    ],
+    "img": ""
   }
 ]
