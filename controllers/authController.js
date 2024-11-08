@@ -8,13 +8,16 @@ const { v4: uuidv4 } = require("uuid"); // Import uuid versi 4
 exports.renderLoginPage = (req, res) => {
   const nomorHp = req.session.nomorHp || null;
   const message = req.session.message || null;
+  const messageError = req.session.messageError || null;
   req.session.message = null;
+  req.session.messageError = null;
 
   res.render("loginPage/login", {
     layout: "loginPage/mainLogin",
     title: "Login Page",
     message,
     nomorHp,
+    messageError,
     method: "Register",
     href: "/register",
   });
@@ -29,13 +32,13 @@ exports.loginUser = async (req, res) => {
     );
 
     if (result === null) {
-      req.session.message = "User dengan nomor HP tidak ditemukan";
+      req.session.messageError = "User dengan nomor HP tidak ditemukan";
       req.session.nomorHp = req.body.noHp;
       return res.redirect("/");
     }
 
     if (result === false) {
-      req.session.message = "Password Salah, Mohon coba kembali";
+      req.session.messageError = "Password Salah, Mohon coba kembali";
       req.session.nomorHp = req.body.noHp;
       return res.redirect("/");
     }
