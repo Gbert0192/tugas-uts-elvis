@@ -1,54 +1,64 @@
 [
   {
+    "id": "13d45c3d-d841-41b2-9ff2-988d6f7896a9",
     "noHp": "6282162305550",
     "email": "gtiofandy@gmail.com",
     "name": "Gilbert Tiofandy",
     "password": "gilbert",
     "sex": "Male",
-    "history": [],
+    "history": [
+      {
+        "orderId": "GMT-536e4eda",
+        "alamatUser": "Perapat Ulu, Lawe Bulan, Aceh Tenggara, Aceh, Sumatra, 24651, Indonesia",
+        "alamatDetail": "tes 1",
+        "driverNotes": "testing 2",
+        "shoppingTotal": "587380",
+        "date": "2024-11-08T15:45:44.381Z",
+        "cart": [
+          {
+            "name": "Powder Canister",
+            "price": "14.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/thumbnail.png"
+          },
+          {
+            "name": "Eyeshadow Palette with Mirror",
+            "price": "19.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png"
+          }
+        ],
+        "paymentMethod": "Gopay"
+      }
+    ],
     "balance": [
       {
-        "walletBalances": 698246,
-        "balancePoints": 0
+        "walletBalances": 4294020
       },
       {
         "topUpHistory": [
-          {},
           {
-            "amount": 20000,
-            "paymentMethod": "debitCard",
-            "date": "2024-11-06T04:12:53.499Z"
+            "topUpId": "GTU-b33a379a",
+            "amount": 200000,
+            "paymentMethod": "paypal",
+            "date": "2024-11-08T15:43:32.413Z"
           },
           {
-            "amount": 20000,
-            "paymentMethod": "debitCard",
-            "date": "2024-11-06T04:24:19.322Z"
-          },
-          {
-            "amount": 123123,
+            "topUpId": "GTU-f9c2f38f",
+            "amount": 3000000,
             "paymentMethod": "creditCard",
-            "date": "2024-11-06T04:31:47.019Z"
+            "date": "2024-11-08T15:45:08.819Z"
           },
           {
-            "amount": 12000,
-            "paymentMethod": "creditCard",
-            "date": "2024-11-06T04:34:30.483Z"
-          },
-          {
-            "amount": 123123,
-            "paymentMethod": "creditCard",
-            "date": "2024-11-07T06:02:05.903Z"
-          },
-          {
+            "topUpId": "GTU-d977a139",
             "amount": 200000,
             "paymentMethod": "creditCard",
-            "date": "2024-11-07T06:02:17.199Z"
+            "date": "2024-11-08T16:25:46.265Z"
           }
         ]
       }
     ],
-    "img": "/img/users/13d45c3d-d841-41b2-9ff2-988d6f7896a9-profileimg.jpg",
-    "id": "13d45c3d-d841-41b2-9ff2-988d6f7896a9"
+    "img": "/img/users/13d45c3d-d841-41b2-9ff2-988d6f7896a9-profileimg.jpg"
   },
   {
     "id": "b24ba093-e2f4-430e-8b5e-cbf053a69e26",

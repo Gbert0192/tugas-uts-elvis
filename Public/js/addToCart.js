@@ -6,17 +6,6 @@ function priceToIdr(value) {
     maximumFractionDigits: 0,
   });
 }
-async function updateCart(productId, newQuantity) {
-  const response = await fetch("/update-cart", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ productId, quantity: newQuantity }),
-  });
-  const result = await response.json();
-  if (result.success) {
-    console.log("Quantity updated successfully");
-  }
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   const decreaseButton = document.getElementById("decrease");
@@ -52,7 +41,7 @@ async function addToCart(button) {
   }
 
   const quantityDisplay = document.getElementById("quantity");
-  let quantity = parseInt(quantityDisplay.textContent) || 1; // Default 1 jika tidak ditemukan atau tidak valid
+  let quantity = parseInt(quantityDisplay.textContent) || 1;
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -80,7 +69,7 @@ async function addToCartHome(button) {
 
   if (!product) {
     console.error("Produk tidak ditemukan atau data tidak lengkap!");
-    return; // Hentikan eksekusi jika produk tidak ditemukan
+    return;
   }
 
   // Tetapkan quantity ke 1
@@ -132,21 +121,40 @@ function updateCartInOffcanvas() {
   const cartContainer = document.getElementById("cart-items");
   cartContainer.innerHTML = "";
 
-  // Perulangan untuk setiap produk di keranjang
-  cart.forEach((product) => {
-    const productDiv = document.createElement("div");
-    productDiv.classList.add(
+  const checkoutButton = document.getElementById("checkout-products");
+
+  if (cart.length === 0) {
+    // Jika keranjang kosong, tampilkan pesan "Keranjang Kosong" dan disable tombol checkout
+    const emptyCartMessage = document.createElement("div");
+    emptyCartMessage.classList.add(
       "flex",
       "items-center",
-      "justify-between",
-      "p-2",
-      "border-b"
+      "justify-center",
+      "h-full",
+      "text-gray-500",
+      "text-lg",
+      "animate-pulse"
     );
-    productDiv.innerHTML = `
+    emptyCartMessage.innerHTML = `<p>Keranjang Kosong :(</p>`;
+    cartContainer.appendChild(emptyCartMessage);
+
+    checkoutButton.disabled = true; // Disable tombol checkout jika keranjang kosong
+  } else {
+    // Jika keranjang tidak kosong, tampilkan produk-produk di keranjang
+    cart.forEach((product) => {
+      const productDiv = document.createElement("div");
+      productDiv.classList.add(
+        "flex",
+        "items-center",
+        "justify-between",
+        "p-2",
+        "border-b"
+      );
+      productDiv.innerHTML = `
         <div class="flex items-center">
             <img src="${product.image}" alt="${
-      product.name
-    }" class="w-12 h-12" />
+        product.name
+      }" class="w-12 h-12" />
             <div class="ml-4">
             <h4 class="text-sm font-semibold">${product.name}</h4>
             <p class="text-xs text-gray-500">Price: ${priceToIdr(
@@ -176,10 +184,12 @@ function updateCartInOffcanvas() {
             </button>
         </div>
         `;
+      cartContainer.appendChild(productDiv);
+    });
 
-    // Menambahkan setiap div produk ke dalam container
-    cartContainer.appendChild(productDiv);
-  });
+    checkoutButton.disabled = false; // Aktifkan tombol checkout jika keranjang tidak kosong
+  }
+
   const total = calculateTotal(cart);
   const totalDiv = document.getElementById("cart-total");
   totalDiv.textContent = `Total: ${priceToIdr(total)}`;
@@ -229,14 +239,48 @@ function updateCartBadge() {
   cartBadge.textContent = uniqueItemCount > 0 ? uniqueItemCount : 0;
 }
 
+document
+  .getElementById("checkout-products")
+  .addEventListener("click", function () {
+    sendCartToBackend();
+  });
+
+function sendCartToBackend() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (cart.length === 0) {
+    console.log("Keranjang kosong, tidak ada yang dikirim.");
+    return;
+  }
+
+  const data = {
+    cart: cart,
+    total: calculateTotal(cart),
+  };
+
+  const pathSegments = window.location.pathname.split("/");
+  const userId = pathSegments[2];
+
+  console.log("User ID di frontend:", userId);
+
+  fetch(`/checkout/${userId}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+}
+
 document.getElementById("add-to-cart").addEventListener("click", function () {
-  // const product = { id: 1, name: "Makeup Product" };
   addToCart(this);
 });
 
 // Memperbarui tampilan keranjang saat halaman dimuat
 document.addEventListener("DOMContentLoaded", function () {
   updateCartInOffcanvas();
+  updateCartBadge();
+  toggleCheckoutButton();
 });
 
 // Event listener untuk menutup offcanvas
@@ -244,61 +288,3 @@ document.querySelector(".fa-times").addEventListener("click", function () {
   document.getElementById("offcanvas-right").classList.add("translate-x-full");
   document.getElementById("offcanvas-right").classList.remove("translate-x-0");
 });
-
-document
-  .getElementById("checkout")
-  .addEventListener("click", async function () {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    const total = calculateTotal(cart);
-
-    const response = await fetch("/checkout", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        total: total,
-        cart: cart,
-      }),
-    });
-
-    const result = await response.json();
-    if (result.success) {
-      console.log("Pesanan berhasil dikirim!");
-    } else {
-      console.error("Gagal mengirim pesanan");
-    }
-  });
-
-// checkout
-document
-  .getElementById("checkout")
-  .addEventListener("click", async function () {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const total = calculateTotal(cart);
-
-    try {
-      const response = await fetch("/checkout", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          total: total,
-          cart: cart,
-        }),
-      });
-
-      const result = await response.json();
-      if (result.success) {
-        console.log("Pesanan berhasil dikirim!");
-        alert("Checkout berhasil!");
-      } else {
-        console.error("Gagal mengirim pesanan");
-        alert("Checkout gagal!");
-      }
-    } catch (error) {
-      console.error("Terjadi kesalahan saat mengirim data ke server:", error);
-    }
-  });

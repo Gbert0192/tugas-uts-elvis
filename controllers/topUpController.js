@@ -1,5 +1,5 @@
 const userManager = require("../models/schemas/userManager");
-
+const { generateTopUpCode } = require("../utils/generateOrderCode");
 exports.getTopUpPage = async (req, res) => {
   const errorMessage = req.session.topUpWrongPw || null;
   const message = req.session.topUpMessages || null;
@@ -61,7 +61,6 @@ exports.postTopUpPage = async (req, res) => {
 
     const { noHp, amount, paymentMethod, password } = req.body;
 
-    console.log("Mencari user dengan noHp:", noHp);
     user = await userManager.findUserNoHp(noHp);
 
     if (!user) {
@@ -79,7 +78,7 @@ exports.postTopUpPage = async (req, res) => {
     );
     if (!isPasswordValid) {
       req.session.topUpWrongPw = "Password Salah!";
-      return res.redirect(`/main/${requestedId}/topup`); // Mengarahkan dengan ID yang benar
+      return res.redirect(`/main/${requestedId}/topup`);
     }
 
     const topUpAmount = parseFloat(amount);
@@ -95,18 +94,22 @@ exports.postTopUpPage = async (req, res) => {
       });
     }
 
-    user.balance[0].walletBalances += topUpAmount;
+    setTimeout(async () => {
+      user.balance[0].walletBalances += topUpAmount;
 
-    const topUpEntry = {
-      amount: topUpAmount,
-      paymentMethod: paymentMethod,
-      date: new Date().toISOString(),
-    };
-    user.balance[1].topUpHistory.push(topUpEntry);
-    await userManager.updateUser(user.id, user);
+      const topUpEntry = {
+        topUpId: generateTopUpCode(),
+        amount: topUpAmount,
+        paymentMethod: paymentMethod,
+        date: new Date().toISOString(),
+      };
+      user.balance[1].topUpHistory.push(topUpEntry);
+      await userManager.updateUser(user.id, user);
 
-    req.session.topUpMessages = "Top-Up Berhasil";
-    return res.redirect(`/main/${requestedId}/topup`);
+      req.session.topUpMessages = "Top-Up Berhasil";
+
+      res.redirect(`/main/${requestedId}/topup`);
+    }, 2000);
   } catch (error) {
     console.error("Error processing top-up:", error);
     return res.status(500).render("errors/error", {

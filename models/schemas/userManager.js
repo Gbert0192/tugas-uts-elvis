@@ -31,7 +31,6 @@ class UserManager extends FileManager {
     user.balance = [
       {
         walletBalances: 0,
-        balancePoints: 0,
       },
       {
         topUpHistory: [],
@@ -50,7 +49,6 @@ class UserManager extends FileManager {
 
   async findUserNoHp(noHp) {
     const users = await this.loadData();
-    console.log("Data pengguna yang dimuat:", users); // Log untuk melihat data yang dimuat
     return users.find((user) => user.noHp === noHp);
   }
 
@@ -64,6 +62,17 @@ class UserManager extends FileManager {
 
     users[index] = { ...users[index], ...updatedUser };
 
+    await this.saveData(users);
+  }
+
+  async addOrderToHistory(userId, order) {
+    const users = await this.loadData();
+    const user = users.find((user) => user.id === userId);
+
+    if (!user) {
+      throw new Error("User not found");
+    }
+    user.history.push(order);
     await this.saveData(users);
   }
 }

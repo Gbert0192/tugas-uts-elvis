@@ -1,0 +1,175 @@
+<!-- ========== START NAV ========== -->
+<header
+  class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7 bg-white sticky top-0 shadow"
+>
+  <nav
+    class="relative max-w-7xl w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center px-4 md:px-8 mx-auto"
+  >
+    <div class="md:col-span-3">
+      <a
+        class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
+        href="/main/<%= user.id%>"
+        aria-label="Preline"
+      >
+        <h1 class="ai-give-up-logo">AiGiveUP</h1>
+      </a>
+    </div>
+
+    <!-- Add Search Input here -->
+    <div class="md:col-span-6 flex justify-center items-center mt-4 md:mt-0">
+      <form
+        action="/main/<%= user.id%>/search"
+        method="GET"
+        class="flex items-center w-full max-w-lg"
+      >
+        <input
+          type="text"
+          name="query"
+          placeholder="Cari produk..."
+          class="w-full py-2 px-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-lime-400"
+        />
+        <button
+          type="submit"
+          class="ml-2 py-2 px-4 bg-lime-400 text-white rounded-lg hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-lime-400"
+        >
+          Cari
+        </button>
+      </form>
+    </div>
+
+    <div
+      class="flex items-center gap-x-1 md:gap-x-2 ms-auto py-1 md:ps-6 md:order-3 md:col-span-3"
+    >
+      <!-- History di kiri -->
+      <a
+        href="/productHistory/<%= user.id %>"
+        class="relative group mr-auto pt-2"
+      >
+        <svg
+          width="40px"
+          height="40px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M12 8V12L14.5 14.5"
+              stroke="#1C274C"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              d="M5.60423 5.60423L5.0739 5.0739V5.0739L5.60423 5.60423ZM4.33785 6.87061L3.58786 6.87438C3.58992 7.28564 3.92281 7.61853 4.33408 7.6206L4.33785 6.87061ZM6.87963 7.63339C7.29384 7.63547 7.63131 7.30138 7.63339 6.88717C7.63547 6.47296 7.30138 6.13549 6.88717 6.13341L6.87963 7.63339ZM5.07505 4.32129C5.07296 3.90708 4.7355 3.57298 4.32129 3.57506C3.90708 3.57715 3.57298 3.91462 3.57507 4.32882L5.07505 4.32129ZM3.75 12C3.75 11.5858 3.41421 11.25 3 11.25C2.58579 11.25 2.25 11.5858 2.25 12H3.75ZM16.8755 20.4452C17.2341 20.2378 17.3566 19.779 17.1492 19.4204C16.9418 19.0619 16.483 18.9393 16.1245 19.1468L16.8755 20.4452ZM19.1468 16.1245C18.9393 16.483 19.0619 16.9418 19.4204 17.1492C19.779 17.3566 20.2378 17.2341 20.4452 16.8755L19.1468 16.1245ZM5.14033 5.07126C4.84598 5.36269 4.84361 5.83756 5.13505 6.13191C5.42648 6.42626 5.90134 6.42862 6.19569 6.13719L5.14033 5.07126ZM18.8623 5.13786C15.0421 1.31766 8.86882 1.27898 5.0739 5.0739L6.13456 6.13456C9.33366 2.93545 14.5572 2.95404 17.8017 6.19852L18.8623 5.13786ZM5.0739 5.0739L3.80752 6.34028L4.86818 7.40094L6.13456 6.13456L5.0739 5.0739ZM4.33408 7.6206L6.87963 7.63339L6.88717 6.13341L4.34162 6.12062L4.33408 7.6206ZM5.08784 6.86684L5.07505 4.32129L3.57507 4.32882L3.58786 6.87438L5.08784 6.86684ZM12 3.75C16.5563 3.75 20.25 7.44365 20.25 12H21.75C21.75 6.61522 17.3848 2.25 12 2.25V3.75ZM12 20.25C7.44365 20.25 3.75 16.5563 3.75 12H2.25C2.25 17.3848 6.61522 21.75 12 21.75V20.25ZM16.1245 19.1468C14.9118 19.8483 13.5039 20.25 12 20.25V21.75C13.7747 21.75 15.4407 21.2752 16.8755 20.4452L16.1245 19.1468ZM20.25 12C20.25 13.5039 19.8483 14.9118 19.1468 16.1245L20.4452 16.8755C21.2752 15.4407 21.75 13.7747 21.75 12H20.25ZM6.19569 6.13719C7.68707 4.66059 9.73646 3.75 12 3.75V2.25C9.32542 2.25 6.90113 3.32791 5.14033 5.07126L6.19569 6.13719Z"
+              fill="#1C274C"
+            ></path>
+          </g>
+        </svg>
+        <span
+          class="absolute left-1/2 transform -translate-x-1/2 text-sm text-white bg-black p-2 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          History
+        </span>
+      </a>
+
+      <a href="/main/<%= user.id %>/profile" class="relative group">
+        <img
+          src="<%= user.img %>"
+          alt="Profile Picture"
+          class="w-12 h-12 rounded-full border-1 border-gray-300"
+        />
+        <span
+          class="absolute left-1/2 transform -translate-x-1/2 text-sm text-white bg-black p-2 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          Profile
+        </span>
+      </a>
+
+      <form action="/logout" method="POST">
+        <button
+          type="submit"
+          class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl border border-transparent bg-lime-400 text-black hover:bg-lime-500 focus:outline-none focus:bg-lime-500 transition disabled:opacity-50 disabled:pointer-events-none"
+        >
+          Log Out
+        </button>
+      </form>
+
+      <button data-hs-overlay="#offcanvas-right" class="relative">
+        <!-- Keranjang Belanja -->
+        <div
+          class="bg-lime-400 rounded-full w-16 h-12 flex items-center justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 100 100"
+            id="cart"
+          >
+            <path
+              d="M91.8 27.3L81.1 61c-.8 2.4-2.9 4-5.4 4H34.4c-2.4 0-4.7-1.5-5.5-3.7L13.1 19H4c-2.2 0-4-1.8-4-4s1.8-4 4-4h11.9c1.7 0 3.2 1.1 3.8 2.7L36 57h38l8.5-27H35.4c-2.2 0-4-1.8-4-4s1.8-4 4-4H88c1.3 0 2.5.7 3.2 1.7.8 1 1 2.4.6 3.6zm-55.4 43c-1.7 0-3.4.7-4.6 1.9-1.2 1.2-1.9 2.9-1.9 4.6 0 1.7.7 3.4 1.9 4.6 1.2 1.2 2.9 1.9 4.6 1.9s3.4-.7 4.6-1.9c1.2-1.2 1.9-2.9 1.9-4.6 0-1.7-.7-3.4-1.9-4.6-1.2-1.2-2.9-1.9-4.6-1.9zm35.9 0c-1.7 0-3.4.7-4.6 1.9s-1.9 2.9-1.9 4.6c0 1.7.7 3.4 1.9 4.6 1.2 1.2 2.9 1.9 4.6 1.9 1.7 0 3.4-.7 4.6-1.9 1.2-1.2 1.9-2.9 1.9-4.6 0-1.7-.7-3.4-1.9-4.6s-2.9-1.9-4.6-1.9z"
+            ></path>
+          </svg>
+        </div>
+        <!-- Badge Jumlah Item -->
+        <div
+          id="badge-count"
+          class="absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-semibold"
+        >
+          0
+        </div>
+      </button>
+
+      <!-- Offcanvas dengan background gelap -->
+      <div
+        id="offcanvas-right"
+        class="hs-overlay hs-overlay-open:translate-x-0 fixed top-0 right-0 bottom-0 z-[60] min-w-64 w-96 max-w-full bg-gray-900 border-l border-gray-200 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out"
+      >
+        <div
+          class="max-w-md mx-auto bg-white shadow-lg rounded-lg mt-10 flex flex-col h-screen"
+        >
+          <div class="flex items-center justify-between p-3 border-b">
+            <i class="fas fa-times text-gray-500"></i>
+            <h2 class="text-lg font-semibold">Keranjang</h2>
+            <div></div>
+          </div>
+
+          <!-- Daftar Produk di Keranjang -->
+          <div
+            id="cart-items"
+            class="p-3 flex-grow overflow-auto max-h-[calc(100vh-200px)]"
+          ></div>
+
+          <div class="p-4 border-t">
+            <span id="cart-total">Total: </span>
+            <a href="/checkout/<%= user.id %>">
+              <button
+                id="checkout-products"
+                class="w-full bg-green-500 text-white py-2 rounded-lg disabled:bg-green-300 disabled:cursor-not-allowed"
+              >
+                Pesan
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
+          data-hs-overlay="#offcanvas-right"
+        >
+          <span class="sr-only text-2xl font-bold">Tutup</span>
+          &times;
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- ========== END NAV ========== -->

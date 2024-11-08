@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Pacifico&family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/checkout.css" />
+  </head>
+  <body class="bg-gray-100 min-h-screen flex flex-col font-roboto">
+    <header
+      class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7 bg-white sticky top-0 shadow"
+    >
+      <nav
+        class="relative max-w-7xl w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center px-4 md:px-8 mx-auto"
+      >
+        <div class="md:col-span-3">
+          <!-- Logo -->
+          <a
+            class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
+            href="/main/<%= user.id %>"
+            aria-label="Preline"
+          >
+            <a
+              class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
+              href="/main/<%= user.id%>"
+              aria-label="Preline"
+            >
+              <h1 class="ai-give-up-logo">AiGiveUP</h1>
+            </a>
+          </a>
+          <!-- End Logo -->
+        </div>
+
+        <div
+          class="flex items-center gap-x-1 md:gap-x-2 ms-auto py-1 md:ps-6 md:order-3 md:col-span-3"
+        >
+          <a href="/main/<%= user.id %>/profile">
+            <img
+              src="/img/users/13d45c3d-d841-41b2-9ff2-988d6f7896a9-profileimg.jpg"
+              alt="Profile Picture"
+              class="w-12 h-12 rounded-full border-1 border-gray-300"
+            />
+          </a>
+          <form action="/logout" method="POST">
+            <button
+              type="submit"
+              class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl border border-transparent bg-lime-400 text-black hover:bg-lime-500 focus:outline-none focus:bg-lime-500 transition disabled:opacity-50 disabled:pointer-events-none"
+            >
+              Log Out
+            </button>
+          </form>
+
+          <div class="md:hidden">
+            <button
+              type="button"
+              class="hs-collapse-toggle size-[38px] flex justify-center items-center text-sm font-semibold rounded-xl border border-gray-200 text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
+              id="hs-navbar-hcail-collapse"
+              aria-expanded="false"
+              aria-controls="hs-navbar-hcail"
+              aria-label="Toggle navigation"
+              data-hs-collapse="#hs-navbar-hcail"
+            >
+              <svg
+                class="hs-collapse-open:hidden shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="3" x2="21" y1="6" y2="6"></line>
+                <line x1="3" x2="21" y1="12" y2="12"></line>
+                <line x1="3" x2="21" y1="18" y2="18"></line>
+              </svg>
+              <svg
+                class="hs-collapse-open:block hidden shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 6 6 18"></path>
+                <path d="m6 6 12 12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          id="hs-navbar-hcail"
+          class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block md:w-auto md:basis-auto md:order-2 md:col-span-6"
+          aria-labelledby="hs-navbar-hcail-collapse"
+        ></div>
+      </nav>
+    </header>
+
+    <form action="/checkout/<%= user.id %>/confirm" method="post">
+      <main class="max-w-6xl mx-auto flex-grow overflow-auto mt-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            class="bg-white p-6 rounded-lg shadow-md transition-all hover:shadow-xl"
+          >
+            <h2 class="text-xl text-semibold mb-2">
+              <a href="/main/<%= user.id %>">&laquo; Back?</a>
+            </h2>
+            <h2 class="text-xl font-semibold mb-4">Info Pengantaran</h2>
+            <div class="flex justify-between mb-4">
+              <div class="w-3/3">
+                <div id="map"></div>
+              </div>
+            </div>
+            <div class="mb-4 flex flex-col">
+              <span class="font-semibold text-xl" id="distance">Jarak : </span>
+              <!-- pesanan -->
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700">Alamat</label>
+              <input
+                class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                readonly=""
+                type="text"
+                id="user-address"
+                placeholder="Masukkan alamat Anda"
+                name="alamatUser"
+              />
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700">Detail Alamat</label>
+              <input
+                class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="Lantai, nomor unit"
+                type="text"
+                name="alamatDetail"
+              />
+            </div>
+            <div>
+              <label class="block text-gray-700">Catatan untuk pengemudi</label>
+              <input
+                class="w-full p-2 border border-green-500 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="Cth: Akan saya temui di lobi"
+                type="text"
+                name="driverNotes"
+              />
+            </div>
+          </div>
+          <!-- Ringkasan Pesanan -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-md transition-all hover:shadow-xl"
+          >
+            <div class="flex justify-between items-center mb-4">
+              <h2 class="text-xl font-semibold">Ringkasan Pesanan</h2>
+            </div>
+            <div class="mb-4">
+              <% cart.forEach((item, index) => { %>
+              <div class="flex items-center mb-2">
+                <img
+                  alt="<%= item.name %>"
+                  class="w-12 h-12 rounded-md"
+                  height="50"
+                  src="<%= item.image %>"
+                  width="50"
+                />
+                <div class="ml-4 flex-1">
+                  <p class="font-semibold"><%= item.name %></p>
+                  <p class="text-sm text-green-500">
+                    <%= priceToIdr(item.price * 16000) %>
+                  </p>
+                </div>
+                <div class="flex items-center">
+                  <span class="mx-2"> <%= item.quantity %> x</span>
+                </div>
+                <div class="ml-4 text-right">
+                  <p class="font-semibold text-green-600">
+                    <%= priceToIdr(item.price * 16000 * item.quantity) %>
+                  </p>
+                </div>
+
+                <!-- Input hidden untuk item -->
+                <input
+                  type="hidden"
+                  name="cart[<%= index %>][name]"
+                  value="<%= item.name %>"
+                />
+                <input
+                  type="hidden"
+                  name="cart[<%= index %>][price]"
+                  value="<%= item.price %>"
+                />
+                <input
+                  type="hidden"
+                  name="cart[<%= index %>][quantity]"
+                  value="<%= item.quantity %>"
+                />
+                <input
+                  type="hidden"
+                  name="cart[<%= index %>][image]"
+                  value="<%= item.image %>"
+                />
+                <!-- input hidden utk item -->
+              </div>
+              <% }) %>
+            </div>
+            <div class="border-t pt-4">
+              <div class="flex justify-between mb-2">
+                <span>Subtotal</span>
+                <span class="text-green-600 text-semibold">
+                  <%= priceToIdr(cart.reduce((acc, item) => acc + (item.price *
+                  item.quantity * 16000), 0)) %>
+                </span>
+              </div>
+              <div class="flex justify-between mb-2">
+                <span>Delivery fee</span>
+                <span class="text-green-600 text-semibold"
+                  ><%= priceToIdr(delivery) %></span
+                >
+              </div>
+              <div class="flex justify-between mb-2">
+                <span>Order fee</span>
+                <span class="text-green-600 text-semibold"
+                  ><%= priceToIdr(orderFee) %></span
+                >
+              </div>
+              <div class="flex justify-between mb-2">
+                <span>Store packaging charge</span>
+                <span class="text-green-600 text-semibold"
+                  ><%= priceToIdr(storeFee) %></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Metode Pembayaran -->
+        <div
+          class="bg-white p-6 rounded-lg shadow-md mt-6 transition-all hover:shadow-xl"
+        >
+          <h2 class="text-xl font-semibold mb-4">Metode Pembayaran</h2>
+          <div class="mb-4">
+            <div class="flex flex-col">
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="Gopay"
+                  class="form-radio text-green-500"
+                  required
+                />
+                <span class="ml-2 block relative group">
+                  <span class="font-bold">Gopay</span> <br />
+                  <span class="text-green-400">
+                    Balance: <%= priceToIdr(userBalance) %>
+                  </span>
+                  <span class="relative inline-block">
+                    <a
+                      href="/main/<%= user.id %>/topup"
+                      class="text-xl text-blue-500 hover:text-blue-700 inline-block"
+                    >
+                      +
+                    </a>
+                    <span
+                      class="absolute left-1/2 transform -translate-x-1/2 text-sm text-white bg-gray-900 p-2 rounded-md opacity-0 transition-opacity duration-300 invisible group-hover:opacity-100 group-hover:visible"
+                    >
+                      Topup?
+                    </span>
+                  </span>
+                </span>
+              </label>
+
+              <hr class="my-1 border-t-1 border-gray-300" />
+
+              <label class="inline-flex items-center mt-2">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="Tunai"
+                  class="form-radio text-gray-500"
+                  required
+                />
+                <span class="ml-2">Tunai</span>
+              </label>
+            </div>
+          </div>
+          <div class="mb-6">
+            <input type="hidden" value="<%= user.noHp %>" name="noHp" />
+            <label
+              for="password"
+              class="block text-xl font-semibold mb-2 text-gray-700"
+            >
+              Password Confirmation:
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out"
+            />
+            <p class="text-sm text-gray-500 mt-1">
+              Ensure your password is correct before proceeding.
+            </p>
+            <% if(message) { %>
+            <div
+              class="bg-red-500 text-sm text-white rounded-lg p-4 mt-4"
+              role="alert"
+            >
+              <%= message %>
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </main>
+      <footer
+        class="bg-gradient-to-r from-green-600 to-green-500 text-white py-6 mt-11 shadow-lg"
+      >
+        <div
+          class="container mx-auto flex justify-center items-center space-x-4"
+        >
+          <p class="text-lg">Total:</p>
+          <p class="text-lg font-semibold">
+            <%= priceToIdr( cart.reduce((acc, item) => acc + (item.price *
+            item.quantity * 16000), 0) + delivery + orderFee + storeFee ) %>
+          </p>
+          <input
+            type="hidden"
+            value="<%= cart.reduce((acc, item) => acc + (item.price *
+            item.quantity * 16000), 0) + delivery + orderFee + storeFee%>"
+            name="shoppingTotal"
+          />
+          <button
+            type="submit"
+            class="bg-lime-500 text-white py-2 px-6 rounded-md hover:bg-lime-700 transition-all"
+          >
+            CheckOut
+          </button>
+        </div>
+      </footer>
+    </form>
+    <!-- modal start -->
+
+    <!-- modal end -->
+    <script src="/js/checkout.js"></script>
+    <script src="/js/preline.js"></script>
+  </body>
+</html>
