@@ -1,0 +1,71 @@
+.checkmark {
+  width: 100px;
+  height: 100px;
+  animation: scaleCheck 1s ease-in-out forwards;
+}
+
+/* Animasi untuk ceklis secara keseluruhan */
+@keyframes scaleCheck {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animasi untuk path SVG */
+.checkmark path {
+  opacity: 0;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawCheck 2s ease forwards;
+}
+
+@keyframes drawCheck {
+  0% {
+    opacity: 1;
+    stroke-dashoffset: 100;
+  }
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Animasi teks */
+.text-animation {
+  opacity: 0;
+  transform: translateY(20px); /* Geser teks ke bawah */
+  animation: fadeInUp 1s ease-out forwards 1s; /* Delay animasi agar dimulai setelah SVG selesai */
+}
+
+/* Keyframes untuk animasi teks */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animasi untuk tombol */
+.button-animation {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: buttonFadeIn 1s ease-out forwards 2s;
+}
+
+@keyframes buttonFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

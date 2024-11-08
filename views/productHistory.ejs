@@ -1,0 +1,68 @@
+<div class="bg-white min-h-screen mt-2">
+  <!-- Main Content -->
+  <div class="p-4">
+    <a href="/main/<%= user.id %>">
+      <button
+        type="button"
+        class="py-3 px-4 bg-green-400 focus:bg-green-300 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent shadow-lg hover:shadow-xl transition-transform duration-300 transform hover:scale-105"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-arrow-left"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M15 8a.5.5 0 0 1-.5.5H3.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 0 1 .708.708L3.707 7.5H14.5a.5.5 0 0 1 .5.5z"
+          ></path>
+        </svg>
+        Back
+      </button>
+    </a>
+    <h1 class="text-2xl font-semibold">Purchases</h1>
+    <div class="flex space-x-4 mt-4">
+      <div class="flex space-x-4 mt-4">
+        <a href="/productHistory/<%= user.id%>">
+          <button class="text-black border-b-2 border-green-500">
+            Product History
+          </button>
+        </a>
+
+        <a href="/topUpHistory/<%= user.id%>">
+          <button class="text-gray-400">TopUp History</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Loop through the history -->
+    <% user.history.forEach((order) => { %>
+    <div class="mt-4 p-4 bg-white shadow rounded-lg border">
+      <div class="flex justify-between items-center">
+        <div>
+          <div class="text-lg font-semibold"><%= order.orderId %></div>
+          <div class="text-gray-500 text-sm">
+            <%= new Date(order.date).toLocaleString() %>
+            <span class="text-green-500 font-bold">SELESAI</span>
+          </div>
+        </div>
+      </div>
+      <div class="mt-2 text-gray-700 preline">
+        <% order.cart.forEach((item) => { %> <%= item.quantity %> x <%=
+        item.name %>
+        <br />
+        <% }); %>
+      </div>
+      <div class="mt-2 text-gray-700 preline">
+        Price:
+        <span class="text-green-400">
+          <%= priceToIdr(order.cart.reduce((total, item) => total +
+          parseFloat(item.price) * parseInt(item.quantity) * 16000, 0)) %></span
+        >
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>

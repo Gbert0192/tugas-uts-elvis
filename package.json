@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js & npm run build:css",
+    "dev": "nodemon app.js ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "npx tailwindcss build src/css/tailwind.css -o public/css/styles.css --watch"
   },
@@ -13,6 +13,7 @@
   "description": "",
   "dependencies": {
     "autoprefixer": "^10.4.20",
+    "axios": "^1.7.7",
     "cookie-parser": "^1.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.1",

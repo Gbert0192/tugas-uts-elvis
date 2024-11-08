@@ -1,0 +1,11 @@
+#map {
+  height: 200px;
+  width: 400px;
+  z-index: 20;
+}
+.destination-item {
+  margin: 5px 0;
+}
+.leaflet-routing-container {
+  display: none !important;
+}

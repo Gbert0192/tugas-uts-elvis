@@ -8,7 +8,7 @@
       <div class="absolute inset-x-0 top-32 flex justify-center">
         <div class="relative">
           <img
-            src="https://storage.googleapis.com/a1aa/image/T3v0LosQ15axKFuCGC233LwZKhIxsMh2DSUdSzpvg2dVGP7E.jpg"
+            src="<%= user.img %>"
             alt="Profile picture of a person with curly hair, smiling and looking to the side"
             class="h-24 w-24 rounded-full border-4 border-white"
           />
@@ -19,9 +19,13 @@
       </div>
     </div>
 
+    <% function formatCurrency(amount) { %>
+      <%= amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
+    <% } %>
     <div class="text-center mt-16">
-      <h1 class="text-2xl">1.567 OVO Points</h1>
+      <h1 class="text-xl font-semibold">Rp.<%= formatCurrency(user.balance[0].walletBalances) %></h1>
     </div>
+    
 
     <div class="flex justify-center mt-4 text-gray-600">
       <form

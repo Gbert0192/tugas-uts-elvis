@@ -1,0 +1,109 @@
+<div class="min-h-screen">
+  <div class="flex items-center justify-between ml-5 mt-5">
+    <a href="/main/<%= user.id%>">
+      <button
+        type="button"
+        class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-gradient-to-r from-teal-400 to-teal-600 text-white hover:from-teal-500 hover:to-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-400 dark:focus:ring-teal-600 shadow-lg hover:shadow-xl transition-transform duration-300 transform hover:scale-105"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-arrow-left"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M15 8a.5.5 0 0 1-.5.5H3.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 0 1 .708.708L3.707 7.5H14.5a.5.5 0 0 1 .5.5z"
+          />
+        </svg>
+        Back
+      </button>
+    </a>
+
+    <div class="keterangan flex-1 text-center">
+      <% if (typeof categoryName !== 'undefined' && categoryName) { %>
+      <h1 class="font-bold text-3xl">
+        <%= categoryName.replace(/\-/g, ' ').split(' ').map(word =>
+        word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ') %>
+        Category
+      </h1>
+      <% } else if (typeof query !== 'undefined' && query) { %>
+      <h1 class="font-bold text-3xl">Search For <%= query %></h1>
+      <% } %>
+    </div>
+  </div>
+
+  <% if (products.length > 0) { %>
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-10"
+  >
+    <% products.forEach(product => { %>
+    <div class="group text-center">
+      <a
+        href="/main/<%= user.id%>/store/<%= product.id%>/<%= product.category%>"
+      >
+        <div
+          class="border border-gray-300 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-4"
+        >
+          <div
+            class="mx-auto w-32 h-32 bg-gray-200 flex items-center justify-center rounded-lg overflow-hidden relative mb-4"
+          >
+            <img
+              src="<%= product.thumbnail %>"
+              alt="product Image"
+              class="object-cover w-full h-full rounded-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <p class="mt-2 font-semibold text-gray-800"><%= product.title %></p>
+          <p class="mt-2 font-semibold text-gray-800">
+            <%= priceToIdr(product.price * 16000) %>
+          </p>
+          <p class="text-sm text-gray-600">
+            1.7km - <i class="fas fa-star text-yellow-500"></i> <%=
+            product.rating || 'N/A' %> ⭐
+          </p>
+        </div>
+      </a>
+      <div class="mt-4">
+        <button
+          type="button"
+          class="w-full py-2 px-4 flex justify-center items-center text-sm font-medium rounded-lg border border-transparent bg-green-600 text-white hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none"
+          data-product-id="<%= product.id%>"
+          onclick="addToCartHome(this)"
+        >
+          <svg
+            class="shrink-0"
+            xmlns="http://www.w3.org/2000/svg"
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m5 11 4-7"></path>
+            <path d="m19 11-4-7"></path>
+            <path d="M2 11h20"></path>
+            <path
+              d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8c.9 0 1.8-.7 2-1.6l1.7-7.4"
+            ></path>
+            <path d="m9 11 1 9"></path>
+            <path d="M4.5 15.5h15"></path>
+            <path d="m15 11-1 9"></path>
+          </svg>
+          <span class="ml-2">Add to Cart</span>
+        </button>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <% } else { %>
+  <div class="text-center my-10">
+    <p class="text-lg text-gray-600"><%= message %></p>
+  </div>
+  <% } %>
+</div>

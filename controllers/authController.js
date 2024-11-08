@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const userManager = require("../models/schemas/userManager");
 const { secretKey } = require("../middleware/auth");
 const { validationResult } = require("express-validator");
-
+const { v4: uuidv4 } = require("uuid"); // Import uuid versi 4
 // Render halaman login
 exports.renderLoginPage = (req, res) => {
   const nomorHp = req.session.nomorHp || null;
@@ -23,7 +23,10 @@ exports.renderLoginPage = (req, res) => {
 // Proses login dan redirect
 exports.loginUser = async (req, res) => {
   try {
-    const result = await userManager.findUser(req.body.noHp, req.body.password);
+    const result = await userManager.passwordVerfication(
+      req.body.noHp,
+      req.body.password
+    );
 
     if (result === null) {
       req.session.message = "User dengan nomor HP tidak ditemukan";
@@ -100,8 +103,15 @@ exports.registerUser = async (req, res) => {
       req.session.messages = errorMessages;
       return res.redirect("/register");
     }
-
-    await userManager.addUser({ noHp, email, name, password, sex: userSex });
+    const userId = uuidv4();
+    await userManager.addUser({
+      id: userId,
+      noHp,
+      email,
+      name,
+      password,
+      sex: userSex,
+    });
     req.session.message = "User berhasil ditambahkan!";
     return res.redirect("/");
   } catch (error) {

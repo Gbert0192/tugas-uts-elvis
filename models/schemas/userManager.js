@@ -1,13 +1,12 @@
 const FileManager = require("../../utils/fileManager");
-const { v4: uuidv4 } = require("uuid"); // Import uuid versi 4
 
 class UserManager extends FileManager {
   constructor(dataPath) {
     super(dataPath); // Memanggil konstruktor superclass dengan dataPath
   }
 
-  async findUser(noHp, password) {
-    const users = await this.loadData(); // Menunggu hasil loadData
+  async passwordVerfication(noHp, password) {
+    const users = await this.loadData();
     const user = await users.find((user) => user.noHp === noHp);
     if (user) {
       if (user.password === password) {
@@ -28,15 +27,29 @@ class UserManager extends FileManager {
 
   async addUser(user) {
     const users = await this.loadData();
+    user.history = [];
+    user.balance = [
+      {
+        walletBalances: 0,
+      },
+      {
+        topUpHistory: [],
+      },
+    ];
     user.img = "";
-    user.id = uuidv4();
     users.push(user);
+
     await this.saveData(users);
   }
 
   async findUserId(id) {
     const users = await this.loadData();
     return users.find((user) => user.id === id);
+  }
+
+  async findUserNoHp(noHp) {
+    const users = await this.loadData();
+    return users.find((user) => user.noHp === noHp);
   }
 
   async updateUser(userId, updatedUser) {
@@ -49,6 +62,17 @@ class UserManager extends FileManager {
 
     users[index] = { ...users[index], ...updatedUser };
 
+    await this.saveData(users);
+  }
+
+  async addOrderToHistory(userId, order) {
+    const users = await this.loadData();
+    const user = users.find((user) => user.id === userId);
+
+    if (!user) {
+      throw new Error("User not found");
+    }
+    user.history.push(order);
     await this.saveData(users);
   }
 }

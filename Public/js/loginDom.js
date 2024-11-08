@@ -24,3 +24,7 @@ togglePasswordButton.addEventListener("click", () => {
   passwordInput.type = isPasswordVisible ? "password" : "text";
   toggleText.textContent = isPasswordVisible ? "Show" : "Hide";
 });
+
+document.querySelector("form").addEventListener("submit", function () {
+  document.getElementById("loading-spinner").classList.remove("hidden");
+});

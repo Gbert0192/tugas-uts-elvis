@@ -1,19 +1,21 @@
-<div class="text-center">
-  <div class="mx-auto w-36 h-36 bg-gray-200 flex items-center justify-center">
-    <span class="text-gray-500">
-      <img
-        src="<%= store.image %>"
-        alt="Store Image"
-        class="object-cover w-full h-full"
-      />
-    </span>
+<a href="/main/<%= user.id %>/store/<%= store.storeId %>">
+  <div class="text-center">
+    <div class="mx-auto w-36 h-36 bg-gray-200 flex items-center justify-center">
+      <span class="text-gray-500">
+        <img
+          src="<%= store.image %>"
+          alt="Store Image"
+          class="object-cover w-full h-full"
+        />
+      </span>
+    </div>
+    <p class="mt-2 font-bold"><%= store.storeName %></p>
+    <p class="text-sm text-gray-600">
+      1.7km - <i class="fas fa-star text-yellow-500"></i> <%= store.rating ||
+      'N/A' %> ⭐
+    </p>
+    <% if (store.isFreeShipping) { %>
+    <p class="text-xs text-orange-600">Gratis Ongkir</p>
+    <% } %>
   </div>
-  <p class="mt-2 font-bold"><%= store.storeName %></p>
-  <p class="text-sm text-gray-600">
-    1.7km - <i class="fas fa-star text-yellow-500"></i> <%= store.rating ||
-    'N/A' %> ⭐
-  </p>
-  <% if (store.isFreeShipping) { %>
-  <p class="text-xs text-orange-600">Gratis Ongkir</p>
-  <% } %>
-</div>
+</a>
