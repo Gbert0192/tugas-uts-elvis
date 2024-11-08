@@ -75,11 +75,129 @@
           }
         ],
         "paymentMethod": "Gopay"
+      },
+      {
+        "orderId": "GMT-87b88725",
+        "alamatUser": "Perapat Ulu, Lawe Bulan, Aceh Tenggara, Aceh, Sumatra, 24651, Indonesia",
+        "alamatDetail": "asd",
+        "driverNotes": "asd",
+        "shoppingTotal": "223540",
+        "date": "2024-11-08T16:58:41.084Z",
+        "cart": [
+          {
+            "name": "Red Lipstick",
+            "price": "12.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/beauty/Red%20Lipstick/thumbnail.png"
+          }
+        ],
+        "paymentMethod": "Gopay"
+      },
+      {
+        "orderId": "GMT-161de763",
+        "alamatUser": "Perapat Ulu, Lawe Bulan, Aceh Tenggara, Aceh, Sumatra, 24651, Indonesia",
+        "alamatDetail": "",
+        "driverNotes": "",
+        "shoppingTotal": "2785300",
+        "date": "2024-11-08T16:59:44.955Z",
+        "cart": [
+          {
+            "name": "Eyeshadow Palette with Mirror",
+            "price": "19.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png"
+          },
+          {
+            "name": "Powder Canister",
+            "price": "14.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/thumbnail.png"
+          },
+          {
+            "name": "Red Lipstick",
+            "price": "12.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/beauty/Red%20Lipstick/thumbnail.png"
+          },
+          {
+            "name": "Essence Mascara Lash Princess",
+            "price": "9.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
+          },
+          {
+            "name": "Red Nail Polish",
+            "price": "8.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/beauty/Red%20Nail%20Polish/thumbnail.png"
+          },
+          {
+            "name": "Calvin Klein CK One",
+            "price": "49.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/thumbnail.png"
+          },
+          {
+            "name": "Beef Steak",
+            "price": "12.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/groceries/Beef%20Steak/thumbnail.png"
+          },
+          {
+            "name": "Cucumber",
+            "price": "1.49",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/groceries/Cucumber/thumbnail.png"
+          },
+          {
+            "name": "Cooking Oil",
+            "price": "4.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/groceries/Cooking%20Oil/thumbnail.png"
+          },
+          {
+            "name": "Apple",
+            "price": "1.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/groceries/Apple/thumbnail.png"
+          },
+          {
+            "name": "Cat Food",
+            "price": "8.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/groceries/Cat%20Food/thumbnail.png"
+          },
+          {
+            "name": "Dog Food",
+            "price": "10.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/groceries/Dog%20Food/thumbnail.png"
+          },
+          {
+            "name": "Eggs",
+            "price": "2.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/groceries/Eggs/thumbnail.png"
+          },
+          {
+            "name": "Chicken Meat",
+            "price": "9.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/groceries/Chicken%20Meat/thumbnail.png"
+          },
+          {
+            "name": "Green Chili Pepper",
+            "price": "0.99",
+            "quantity": "1",
+            "image": "https://cdn.dummyjson.com/products/images/groceries/Green%20Chili%20Pepper/thumbnail.png"
+          }
+        ],
+        "paymentMethod": "Gopay"
       }
     ],
     "balance": [
       {
-        "walletBalances": 4028480
+        "walletBalances": 3019640
       },
       {
         "topUpHistory": [
@@ -100,6 +218,12 @@
             "amount": 200000,
             "paymentMethod": "creditCard",
             "date": "2024-11-08T16:25:46.265Z"
+          },
+          {
+            "topUpId": "GTU-9328f0a4",
+            "amount": 2000000,
+            "paymentMethod": "debitCard",
+            "date": "2024-11-08T16:59:14.777Z"
           }
         ]
       }
